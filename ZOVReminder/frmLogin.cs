@@ -14,9 +14,41 @@ namespace ZOVReminder
     public partial class FrmLogin : Form
     {
         private int _tryAmount = 3;
+        private bool bAllowToClose = false;
         public FrmLogin()
         {
             InitializeComponent();
+            FillComboBox();
+        }
+
+        private void FillComboBox()
+        {
+            SqlConnection conn = new SqlConnection(String.Format("Server={0};Initial catalog={1};uid=getauthdata;pwd=zow", Properties.Settings.Default.Server, Properties.Settings.Default.Database));
+            try
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand(String.Format("SELECT UserName, Permissions FROM ZOVReminderUsers "), conn);
+                SqlDataReader dataReader = comm.ExecuteReader();
+
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                    {
+                        comboBoxUsers.Properties.Items.Add(dataReader.GetString(0));
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Отсутсвуют пользователи", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Environment.Exit(0);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Отсутсвует подключение к серверу", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+            }
+            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -27,9 +59,12 @@ namespace ZOVReminder
 
             string pwdMD5 = GetHashString(textEditPwd.Text);
 
-            SqlCommand comm = new SqlCommand(String.Format("SELECT UserName, Permissions FROM ZOVReminderUsers WHERE (LCase(UserName)={0} AND PasswordMD5={1})", textEditUser.Text.ToLower(), pwdMD5), conn);
+            SqlCommand comm = new SqlCommand(String.Format("SELECT UserName, Permissions FROM ZOVReminderUsers WHERE (LOWER(UserName)='{0}' AND PasswordMD5='{1}')", comboBoxUsers.Text.ToLower(), pwdMD5), conn);
 
             SqlDataReader dataReader = comm.ExecuteReader();
+
+            bAllowToClose = true;
+            this.Close();
         }
 
         string GetHashString(string s)
@@ -50,6 +85,19 @@ namespace ZOVReminder
                 hash += string.Format("{0:x2}", b);
 
             return hash;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!bAllowToClose)
+            {
+                Environment.Exit(0);
+            }
         }  
     }
 }

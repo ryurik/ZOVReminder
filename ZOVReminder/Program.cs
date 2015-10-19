@@ -16,10 +16,13 @@ namespace ZOVReminder
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+#if DEBUG
+            Application.Run(new FrmLogin());
             Application.Run(new frmMain());
-            //Application.Run(new FrmLogin());
-        
-        
+#else
+            Application.Run(new frmMain());
+#endif
+
         }
     }
 }
