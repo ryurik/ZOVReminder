@@ -13,7 +13,7 @@ namespace ZOVReminder
 {
     public partial class FrmLogin : Form
     {
-        private int tryAmount = 3;
+        private int _tryAmount = 3;
         public FrmLogin()
         {
             InitializeComponent();
