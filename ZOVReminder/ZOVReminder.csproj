@@ -217,6 +217,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\MyConnectionString.cs" />
+    <Compile Include="Classes\Security.cs" />
     <Compile Include="Classes\WorkWithHashes.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -263,13 +265,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram.cd" />
     <None Include="GlobalbaseDataSet.xsc">
       <DependentUpon>GlobalbaseDataSet.xsd</DependentUpon>
     </None>
     <None Include="GlobalbaseDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GlobalbaseDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>GlobalbaseDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="GlobalbaseDataSet.xss">
       <DependentUpon>GlobalbaseDataSet.xsd</DependentUpon>

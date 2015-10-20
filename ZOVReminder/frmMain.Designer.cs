@@ -95,6 +95,7 @@
             this.toggleRecurrenceItem1 = new DevExpress.XtraScheduler.UI.ToggleRecurrenceItem();
             this.changeAppointmentReminderItem1 = new DevExpress.XtraScheduler.UI.ChangeAppointmentReminderItem();
             this.repositoryItemDuration1 = new DevExpress.XtraScheduler.UI.RepositoryItemDuration();
+            this.barButtonItemPasswords = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.calendarToolsRibbonPageCategory1 = new DevExpress.XtraScheduler.UI.CalendarToolsRibbonPageCategory();
             this.appointmentRibbonPage1 = new DevExpress.XtraScheduler.UI.AppointmentRibbonPage();
@@ -103,6 +104,8 @@
             this.fileRibbonPage1 = new DevExpress.XtraScheduler.UI.FileRibbonPage();
             this.commonRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.CommonRibbonPageGroup();
             this.printRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.PrintRibbonPageGroup();
+            this.ribbonPageSettings = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroupSettings = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.homeRibbonPage1 = new DevExpress.XtraScheduler.UI.HomeRibbonPage();
             this.appointmentRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.AppointmentRibbonPageGroup();
             this.navigatorRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.NavigatorRibbonPageGroup();
@@ -113,9 +116,8 @@
             this.timeScaleRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.TimeScaleRibbonPageGroup();
             this.layoutRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.LayoutRibbonPageGroup();
             this.schedulerBarController1 = new DevExpress.XtraScheduler.UI.SchedulerBarController();
-            this.ribbonPageSettings = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroupSettings = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItemPasswords = new DevExpress.XtraBars.BarButtonItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabelUserName = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.mainSchedulerStorage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zOVAppointmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).BeginInit();
@@ -128,14 +130,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panBottom
             // 
             this.panBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panBottom.Location = new System.Drawing.Point(0, 652);
+            this.panBottom.Location = new System.Drawing.Point(0, 1003);
+            this.panBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panBottom.Name = "panBottom";
-            this.panBottom.Size = new System.Drawing.Size(1241, 34);
+            this.panBottom.Size = new System.Drawing.Size(1862, 52);
             this.panBottom.TabIndex = 0;
             this.panBottom.Visible = false;
             // 
@@ -202,25 +206,25 @@
             this.toolStripSeparator1,
             this.mContextClose});
             this.mainContextMenuStrip.Name = "mainContextMenuStrip";
-            this.mainContextMenuStrip.Size = new System.Drawing.Size(177, 54);
+            this.mainContextMenuStrip.Size = new System.Drawing.Size(254, 70);
             this.mainContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.mainContextMenuStrip_Opening);
             // 
             // mContextOpen
             // 
             this.mContextOpen.Name = "mContextOpen";
-            this.mContextOpen.Size = new System.Drawing.Size(176, 22);
+            this.mContextOpen.Size = new System.Drawing.Size(253, 30);
             this.mContextOpen.Text = "Открыть программу";
             this.mContextOpen.Click += new System.EventHandler(this.mContextOpen_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(173, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(250, 6);
             // 
             // mContextClose
             // 
             this.mContextClose.Name = "mContextClose";
-            this.mContextClose.Size = new System.Drawing.Size(176, 22);
+            this.mContextClose.Size = new System.Drawing.Size(253, 30);
             this.mContextClose.Text = "Выход";
             this.mContextClose.Click += new System.EventHandler(this.mContextClose_Click);
             // 
@@ -237,9 +241,10 @@
             this.mainMenu.ContextMenuStrip = this.mainContextMenuStrip;
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem});
-            this.mainMenu.Location = new System.Drawing.Point(0, 141);
+            this.mainMenu.Location = new System.Drawing.Point(0, 181);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(1241, 24);
+            this.mainMenu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.mainMenu.Size = new System.Drawing.Size(1862, 35);
             this.mainMenu.TabIndex = 2;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -248,24 +253,25 @@
             this.ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.ToolStripMenuItem.Name = "ToolStripMenuItem";
-            this.ToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
             this.ToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.mContextClose_Click);
             // 
             // mainSchedulerControl
             // 
             this.mainSchedulerControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainSchedulerControl.Location = new System.Drawing.Point(0, 165);
+            this.mainSchedulerControl.Location = new System.Drawing.Point(0, 216);
+            this.mainSchedulerControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mainSchedulerControl.MenuManager = this.ribbonControl;
             this.mainSchedulerControl.Name = "mainSchedulerControl";
-            this.mainSchedulerControl.Size = new System.Drawing.Size(1241, 487);
+            this.mainSchedulerControl.Size = new System.Drawing.Size(1862, 787);
             this.mainSchedulerControl.Start = new System.DateTime(2015, 10, 1, 0, 0, 0, 0);
             this.mainSchedulerControl.Storage = this.mainSchedulerStorage;
             this.mainSchedulerControl.TabIndex = 3;
@@ -323,6 +329,7 @@
             this.changeAppointmentReminderItem1,
             this.barButtonItemPasswords});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonControl.MaxItemId = 3;
             this.ribbonControl.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbonControl.Name = "ribbonControl";
@@ -336,7 +343,7 @@
             this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1,
             this.repositoryItemDuration1});
-            this.ribbonControl.Size = new System.Drawing.Size(1241, 141);
+            this.ribbonControl.Size = new System.Drawing.Size(1862, 181);
             // 
             // openScheduleItem1
             // 
@@ -581,6 +588,15 @@
             this.repositoryItemDuration1.ShowEmptyItem = true;
             this.repositoryItemDuration1.ValidateOnEnterKey = true;
             // 
+            // barButtonItemPasswords
+            // 
+            this.barButtonItemPasswords.Caption = "Пароли";
+            this.barButtonItemPasswords.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItemPasswords.Glyph")));
+            this.barButtonItemPasswords.Id = 2;
+            this.barButtonItemPasswords.Name = "barButtonItemPasswords";
+            this.barButtonItemPasswords.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItemPasswords.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPasswords_ItemClick);
+            // 
             // calendarToolsRibbonPageCategory1
             // 
             this.calendarToolsRibbonPageCategory1.Control = this.mainSchedulerControl;
@@ -637,6 +653,19 @@
             this.printRibbonPageGroup1.ItemLinks.Add(this.printItem1);
             this.printRibbonPageGroup1.ItemLinks.Add(this.printPageSetupItem1);
             this.printRibbonPageGroup1.Name = "printRibbonPageGroup1";
+            // 
+            // ribbonPageSettings
+            // 
+            this.ribbonPageSettings.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroupSettings});
+            this.ribbonPageSettings.Name = "ribbonPageSettings";
+            this.ribbonPageSettings.Text = "Пароли";
+            // 
+            // ribbonPageGroupSettings
+            // 
+            this.ribbonPageGroupSettings.ItemLinks.Add(this.barButtonItemPasswords);
+            this.ribbonPageGroupSettings.Name = "ribbonPageGroupSettings";
+            this.ribbonPageGroupSettings.Text = "Настройки";
             // 
             // homeRibbonPage1
             // 
@@ -758,38 +787,33 @@
             this.schedulerBarController1.BarItems.Add(this.changeAppointmentReminderItem1);
             this.schedulerBarController1.Control = this.mainSchedulerControl;
             // 
-            // ribbonPageSettings
+            // statusStrip1
             // 
-            this.ribbonPageSettings.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroupSettings});
-            this.ribbonPageSettings.Name = "ribbonPageSettings";
-            this.ribbonPageSettings.Text = "Пароли";
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelUserName});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 981);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1862, 22);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // ribbonPageGroupSettings
+            // toolStripStatusLabelUserName
             // 
-            this.ribbonPageGroupSettings.ItemLinks.Add(this.barButtonItemPasswords);
-            this.ribbonPageGroupSettings.Name = "ribbonPageGroupSettings";
-            this.ribbonPageGroupSettings.Text = "Настройки";
-            // 
-            // barButtonItemPasswords
-            // 
-            this.barButtonItemPasswords.Caption = "Пароли";
-            this.barButtonItemPasswords.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItemPasswords.Glyph")));
-            this.barButtonItemPasswords.Id = 2;
-            this.barButtonItemPasswords.Name = "barButtonItemPasswords";
-            this.barButtonItemPasswords.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItemPasswords.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPasswords_ItemClick);
+            this.toolStripStatusLabelUserName.Name = "toolStripStatusLabelUserName";
+            this.toolStripStatusLabelUserName.Size = new System.Drawing.Size(0, 17);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 686);
+            this.ClientSize = new System.Drawing.Size(1862, 1055);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.mainSchedulerControl);
             this.Controls.Add(this.mainMenu);
             this.Controls.Add(this.panBottom);
             this.Controls.Add(this.ribbonControl);
             this.MainMenuStrip = this.mainMenu;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMain";
             this.Text = "ЗОВ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
@@ -807,6 +831,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -896,6 +922,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageSettings;
         private DevExpress.XtraBars.BarButtonItem barButtonItemPasswords;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupSettings;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelUserName;
     }
 }
 

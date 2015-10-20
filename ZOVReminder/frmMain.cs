@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.Office.Utils;
 using DevExpress.XtraScheduler;
 using DevExpress.XtraScheduler.Commands;
 
@@ -50,11 +51,14 @@ namespace ZOVReminder
             mainSchedulerStorage.AppointmentsInserted += OnAppointmentChangedInsertedDeleted;
             mainSchedulerStorage.AppointmentsDeleted += OnAppointmentChangedInsertedDeleted;
 
+            Debug.WriteLine(zOVAppointmentsTableAdapter.Connection);
+            
             zOVAppointmentsTableAdapter.Fill(globalbaseDataSet.ZOVAppointments);
             zOVResourcesTableAdapter.Fill(globalbaseDataSet.ZOVResources);
             lastEditDate = lastApdateDateTime;
             timerMain.Start();
 
+            toolStripStatusLabelUserName.Text = Program.Security.UserName;
         }
 
         private void OnAppointmentChangedInsertedDeleted(object sender, PersistentObjectsEventArgs e)

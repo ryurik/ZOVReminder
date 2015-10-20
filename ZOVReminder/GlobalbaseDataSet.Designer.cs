@@ -2039,7 +2039,8 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ZOVReminder.Properties.Settings.Default.GlobalbaseConnectionString;
+            this._connection.ConnectionString = Classes.MyConnectionString.ConnectionString;
+            //this._connection.ConnectionString = global::ZOVReminder.Properties.Settings.Default.GlobalbaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2699,7 +2700,8 @@ SELECT UniqueID, ResourceID, ResourceName, Color, Image, CustomField1 FROM ZOVRe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ZOVReminder.Properties.Settings.Default.GlobalbaseConnectionString;
+            this._connection.ConnectionString = Classes.MyConnectionString.ConnectionString;
+//            this._connection.ConnectionString = global::ZOVReminder.Properties.Settings.Default.GlobalbaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
