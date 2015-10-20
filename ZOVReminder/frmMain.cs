@@ -113,6 +113,7 @@ namespace ZOVReminder
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+#if !DEBUG
             e.Cancel = !exitApplicaton;
             if (e.Cancel)
             {
@@ -122,6 +123,7 @@ namespace ZOVReminder
                 notifyIcon.BalloonTipText = "Напоминалка";
                 notifyIcon.ShowBalloonTip(500);
             }
+#endif
         }
 
         private void notifyIcon_DoubleClick(object sender, EventArgs e)
@@ -151,5 +153,11 @@ namespace ZOVReminder
             Visible = true;
         }
 
-       }
+        private void barButtonItemPasswords_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frmPass = new frmPasswords();
+            frmPass.ShowDialog();
+        }
+
+    }
 }

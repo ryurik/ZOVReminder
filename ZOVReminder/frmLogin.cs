@@ -57,7 +57,7 @@ namespace ZOVReminder
             conn.Open();
 
 
-            string pwdMD5 = GetHashString(textEditPwd.Text);
+            string pwdMD5 = Classes.WorkWithHashes.GetHashString(textEditPwd.Text);
 
             SqlCommand comm = new SqlCommand(String.Format("SELECT UserName, Permissions FROM ZOVReminderUsers WHERE (LOWER(UserName)='{0}' AND PasswordMD5='{1}')", comboBoxUsers.Text.ToLower(), pwdMD5), conn);
 
@@ -67,25 +67,6 @@ namespace ZOVReminder
             this.Close();
         }
 
-        string GetHashString(string s)
-        {
-            //переводим строку в байт-массим  
-            byte[] bytes = Encoding.Unicode.GetBytes(s);
-
-            //создаем объект для получения средст шифрования  
-            MD5CryptoServiceProvider csp = new MD5CryptoServiceProvider();
-
-            //вычисляем хеш-представление в байтах  
-            byte[] byteHash = csp.ComputeHash(bytes);
-
-            string hash = string.Empty;
-
-            //формируем одну цельную строку из массива  
-            foreach (byte b in byteHash)
-                hash += string.Format("{0:x2}", b);
-
-            return hash;
-        }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

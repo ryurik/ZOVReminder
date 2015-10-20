@@ -33,6 +33,7 @@
             DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
             DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
             DevExpress.XtraScheduler.TimeRuler timeRuler3 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraBars.Ribbon.ReduceOperation reduceOperation1 = new DevExpress.XtraBars.Ribbon.ReduceOperation();
             this.panBottom = new System.Windows.Forms.Panel();
             this.mainSchedulerStorage = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
             this.zOVAppointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -51,7 +52,7 @@
             this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainSchedulerControl = new DevExpress.XtraScheduler.SchedulerControl();
-            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.openScheduleItem1 = new DevExpress.XtraScheduler.UI.OpenScheduleItem();
             this.saveScheduleItem1 = new DevExpress.XtraScheduler.UI.SaveScheduleItem();
             this.printPreviewItem1 = new DevExpress.XtraScheduler.UI.PrintPreviewItem();
@@ -94,6 +95,7 @@
             this.toggleRecurrenceItem1 = new DevExpress.XtraScheduler.UI.ToggleRecurrenceItem();
             this.changeAppointmentReminderItem1 = new DevExpress.XtraScheduler.UI.ChangeAppointmentReminderItem();
             this.repositoryItemDuration1 = new DevExpress.XtraScheduler.UI.RepositoryItemDuration();
+            this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.calendarToolsRibbonPageCategory1 = new DevExpress.XtraScheduler.UI.CalendarToolsRibbonPageCategory();
             this.appointmentRibbonPage1 = new DevExpress.XtraScheduler.UI.AppointmentRibbonPage();
             this.actionsRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.ActionsRibbonPageGroup();
@@ -111,6 +113,9 @@
             this.timeScaleRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.TimeScaleRibbonPageGroup();
             this.layoutRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.LayoutRibbonPageGroup();
             this.schedulerBarController1 = new DevExpress.XtraScheduler.UI.SchedulerBarController();
+            this.ribbonPageSettings = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroupSettings = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItemPasswords = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.mainSchedulerStorage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zOVAppointmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).BeginInit();
@@ -119,7 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSetBindingSource)).BeginInit();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSchedulerControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).BeginInit();
@@ -258,7 +263,7 @@
             // 
             this.mainSchedulerControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainSchedulerControl.Location = new System.Drawing.Point(0, 165);
-            this.mainSchedulerControl.MenuManager = this.ribbonControl1;
+            this.mainSchedulerControl.MenuManager = this.ribbonControl;
             this.mainSchedulerControl.Name = "mainSchedulerControl";
             this.mainSchedulerControl.Size = new System.Drawing.Size(1241, 487);
             this.mainSchedulerControl.Start = new System.DateTime(2015, 10, 1, 0, 0, 0, 0);
@@ -271,11 +276,11 @@
             this.mainSchedulerControl.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
             this.mainSchedulerControl.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.mainSchedulerControl_EditAppointmentFormShowing);
             // 
-            // ribbonControl1
+            // ribbonControl
             // 
-            this.ribbonControl1.ExpandCollapseItem.Id = 0;
-            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl1.ExpandCollapseItem,
+            this.ribbonControl.ExpandCollapseItem.Id = 0;
+            this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl.ExpandCollapseItem,
             this.openScheduleItem1,
             this.saveScheduleItem1,
             this.printPreviewItem1,
@@ -315,20 +320,23 @@
             this.changeAppointmentStatusItem1,
             this.changeAppointmentLabelItem1,
             this.toggleRecurrenceItem1,
-            this.changeAppointmentReminderItem1});
-            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 41;
-            this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
+            this.changeAppointmentReminderItem1,
+            this.barButtonItemPasswords});
+            this.ribbonControl.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl.MaxItemId = 3;
+            this.ribbonControl.MiniToolbars.Add(this.ribbonMiniToolbar1);
+            this.ribbonControl.Name = "ribbonControl";
+            this.ribbonControl.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.calendarToolsRibbonPageCategory1});
-            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.fileRibbonPage1,
+            this.ribbonPageSettings,
             this.homeRibbonPage1,
             this.viewRibbonPage1});
-            this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1,
             this.repositoryItemDuration1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1241, 141);
+            this.ribbonControl.Size = new System.Drawing.Size(1241, 141);
             // 
             // openScheduleItem1
             // 
@@ -610,6 +618,12 @@
             this.commonRibbonPageGroup1,
             this.printRibbonPageGroup1});
             this.fileRibbonPage1.Name = "fileRibbonPage1";
+            reduceOperation1.Behavior = DevExpress.XtraBars.Ribbon.ReduceOperationBehavior.Single;
+            reduceOperation1.Group = null;
+            reduceOperation1.ItemLinkIndex = 0;
+            reduceOperation1.ItemLinksCount = 0;
+            reduceOperation1.Operation = DevExpress.XtraBars.Ribbon.ReduceOperationType.LargeButtons;
+            this.fileRibbonPage1.ReduceOperations.Add(reduceOperation1);
             // 
             // commonRibbonPageGroup1
             // 
@@ -744,6 +758,28 @@
             this.schedulerBarController1.BarItems.Add(this.changeAppointmentReminderItem1);
             this.schedulerBarController1.Control = this.mainSchedulerControl;
             // 
+            // ribbonPageSettings
+            // 
+            this.ribbonPageSettings.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroupSettings});
+            this.ribbonPageSettings.Name = "ribbonPageSettings";
+            this.ribbonPageSettings.Text = "Пароли";
+            // 
+            // ribbonPageGroupSettings
+            // 
+            this.ribbonPageGroupSettings.ItemLinks.Add(this.barButtonItemPasswords);
+            this.ribbonPageGroupSettings.Name = "ribbonPageGroupSettings";
+            this.ribbonPageGroupSettings.Text = "Настройки";
+            // 
+            // barButtonItemPasswords
+            // 
+            this.barButtonItemPasswords.Caption = "Пароли";
+            this.barButtonItemPasswords.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItemPasswords.Glyph")));
+            this.barButtonItemPasswords.Id = 2;
+            this.barButtonItemPasswords.Name = "barButtonItemPasswords";
+            this.barButtonItemPasswords.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItemPasswords.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPasswords_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -752,7 +788,7 @@
             this.Controls.Add(this.mainSchedulerControl);
             this.Controls.Add(this.mainMenu);
             this.Controls.Add(this.panBottom);
-            this.Controls.Add(this.ribbonControl1);
+            this.Controls.Add(this.ribbonControl);
             this.MainMenuStrip = this.mainMenu;
             this.Name = "frmMain";
             this.Text = "ЗОВ";
@@ -767,7 +803,7 @@
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSchedulerControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).EndInit();
@@ -796,7 +832,7 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private DevExpress.XtraScheduler.SchedulerControl mainSchedulerControl;
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
         private DevExpress.XtraScheduler.UI.OpenScheduleItem openScheduleItem1;
         private DevExpress.XtraScheduler.UI.SaveScheduleItem saveScheduleItem1;
         private DevExpress.XtraScheduler.UI.PrintPreviewItem printPreviewItem1;
@@ -856,6 +892,10 @@
         private DevExpress.XtraScheduler.UI.TimeScaleRibbonPageGroup timeScaleRibbonPageGroup1;
         private DevExpress.XtraScheduler.UI.LayoutRibbonPageGroup layoutRibbonPageGroup1;
         private DevExpress.XtraScheduler.UI.SchedulerBarController schedulerBarController1;
+        private DevExpress.XtraBars.Ribbon.RibbonMiniToolbar ribbonMiniToolbar1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageSettings;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemPasswords;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupSettings;
     }
 }
 
