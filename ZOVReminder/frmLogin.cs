@@ -60,7 +60,8 @@ namespace ZOVReminder
                 bAllowToClose = true;
                 Close();
                 Program.Security.ZOVReminderUsersID = 0;
-                Program.Security.UserName = "Админ";
+                Program.Security.UserName = "SuperАдмин";
+                Program.Security.IsAdmin = true;
                 // needed admins rights
                 return;
             }

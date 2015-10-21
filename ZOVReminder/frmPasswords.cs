@@ -54,6 +54,11 @@ namespace ZOVReminder
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
+            CheckCurrentUserPassword();
+        }
+
+        private void CheckCurrentUserPassword()
+        {
             if (comboBoxUsers.Text == "")
             {
                 MessageBox.Show("Выберите пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -74,7 +79,14 @@ namespace ZOVReminder
                 {
                     while (dataReader.Read())
                     {
-                        comboBoxUsers.Properties.Items.Add(dataReader.GetString(0));
+                        if (dataReader.GetString(0) == Classes.WorkWithHashes.GetHashString(textEditPwd.Text))
+                        {
+                            MessageBox.Show("Ок", "Инфо", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Пароль неправильный", "Инфо", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                 }
                 else

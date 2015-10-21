@@ -59,6 +59,7 @@ namespace ZOVReminder
             timerMain.Start();
 
             toolStripStatusLabelUserName.Text = Program.Security.UserName;
+            ribbonPageSettings.Visible = Program.Security.IsAdmin;
         }
 
         private void OnAppointmentChangedInsertedDeleted(object sender, PersistentObjectsEventArgs e)

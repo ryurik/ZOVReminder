@@ -31,27 +31,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPasswords));
             this.panelLeft = new DevExpress.XtraEditors.PanelControl();
             this.panAll = new DevExpress.XtraEditors.PanelControl();
-            this.panBottom = new DevExpress.XtraEditors.PanelControl();
-            this.textEditPwd = new DevExpress.XtraEditors.TextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnCheck = new DevExpress.XtraEditors.SimpleButton();
+            this.labPasswordConfigm = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.btnApply = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxUsers = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControlUserName = new DevExpress.XtraEditors.LabelControl();
+            this.textEditPwd = new DevExpress.XtraEditors.TextEdit();
+            this.panBottom = new DevExpress.XtraEditors.PanelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.btnApply = new DevExpress.XtraEditors.SimpleButton();
-            this.labPasswordConfigm = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.btnCheck = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panAll)).BeginInit();
             this.panAll.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panBottom)).BeginInit();
-            this.panBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditPwd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxUsers.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxUsers.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPwd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panBottom)).BeginInit();
+            this.panBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeft
@@ -73,24 +73,6 @@
             this.panAll.Size = new System.Drawing.Size(231, 165);
             this.panAll.TabIndex = 1;
             // 
-            // panBottom
-            // 
-            this.panBottom.Controls.Add(this.btnCancel);
-            this.panBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panBottom.Location = new System.Drawing.Point(2, 126);
-            this.panBottom.Name = "panBottom";
-            this.panBottom.Size = new System.Drawing.Size(227, 37);
-            this.panBottom.TabIndex = 0;
-            // 
-            // textEditPwd
-            // 
-            this.textEditPwd.EditValue = "";
-            this.textEditPwd.Location = new System.Drawing.Point(102, 38);
-            this.textEditPwd.Name = "textEditPwd";
-            this.textEditPwd.Properties.PasswordChar = '*';
-            this.textEditPwd.Size = new System.Drawing.Size(117, 20);
-            this.textEditPwd.TabIndex = 6;
-            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.btnCheck);
@@ -106,6 +88,41 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(227, 124);
             this.panelControl1.TabIndex = 4;
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.Location = new System.Drawing.Point(24, 90);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(75, 23);
+            this.btnCheck.TabIndex = 15;
+            this.btnCheck.Text = "Проверить";
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
+            // labPasswordConfigm
+            // 
+            this.labPasswordConfigm.Location = new System.Drawing.Point(13, 67);
+            this.labPasswordConfigm.Name = "labPasswordConfigm";
+            this.labPasswordConfigm.Size = new System.Drawing.Size(83, 13);
+            this.labPasswordConfigm.TabIndex = 14;
+            this.labPasswordConfigm.Text = "Подтверждение";
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.EditValue = "";
+            this.textEdit1.Location = new System.Drawing.Point(102, 64);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.PasswordChar = '*';
+            this.textEdit1.Size = new System.Drawing.Size(117, 20);
+            this.textEdit1.TabIndex = 13;
+            // 
+            // btnApply
+            // 
+            this.btnApply.Enabled = false;
+            this.btnApply.Location = new System.Drawing.Point(142, 90);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.TabIndex = 12;
+            this.btnApply.Text = "Применить";
             // 
             // comboBoxUsers
             // 
@@ -134,6 +151,24 @@
             this.labelControlUserName.TabIndex = 9;
             this.labelControlUserName.Text = "Пользователь";
             // 
+            // textEditPwd
+            // 
+            this.textEditPwd.EditValue = "";
+            this.textEditPwd.Location = new System.Drawing.Point(102, 38);
+            this.textEditPwd.Name = "textEditPwd";
+            this.textEditPwd.Properties.PasswordChar = '*';
+            this.textEditPwd.Size = new System.Drawing.Size(117, 20);
+            this.textEditPwd.TabIndex = 6;
+            // 
+            // panBottom
+            // 
+            this.panBottom.Controls.Add(this.btnCancel);
+            this.panBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panBottom.Location = new System.Drawing.Point(2, 126);
+            this.panBottom.Name = "panBottom";
+            this.panBottom.Size = new System.Drawing.Size(227, 37);
+            this.panBottom.TabIndex = 0;
+            // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -142,41 +177,6 @@
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Отмена";
-            // 
-            // btnApply
-            // 
-            this.btnApply.Enabled = false;
-            this.btnApply.Location = new System.Drawing.Point(142, 90);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(75, 23);
-            this.btnApply.TabIndex = 12;
-            this.btnApply.Text = "Применить";
-            // 
-            // labPasswordConfigm
-            // 
-            this.labPasswordConfigm.Location = new System.Drawing.Point(13, 67);
-            this.labPasswordConfigm.Name = "labPasswordConfigm";
-            this.labPasswordConfigm.Size = new System.Drawing.Size(83, 13);
-            this.labPasswordConfigm.TabIndex = 14;
-            this.labPasswordConfigm.Text = "Подтверждение";
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(102, 64);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.PasswordChar = '*';
-            this.textEdit1.Size = new System.Drawing.Size(117, 20);
-            this.textEdit1.TabIndex = 13;
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Location = new System.Drawing.Point(24, 90);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(75, 23);
-            this.btnCheck.TabIndex = 15;
-            this.btnCheck.Text = "Проверить";
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // frmPasswords
             // 
@@ -191,19 +191,20 @@
             this.MinimizeBox = false;
             this.Name = "frmPasswords";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Пароли";
             this.Load += new System.EventHandler(this.frmPasswords_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panAll)).EndInit();
             this.panAll.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panBottom)).EndInit();
-            this.panBottom.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEditPwd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxUsers.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxUsers.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPwd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panBottom)).EndInit();
+            this.panBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

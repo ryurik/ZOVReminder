@@ -136,10 +136,9 @@
             // panBottom
             // 
             this.panBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panBottom.Location = new System.Drawing.Point(0, 1003);
-            this.panBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panBottom.Location = new System.Drawing.Point(0, 652);
             this.panBottom.Name = "panBottom";
-            this.panBottom.Size = new System.Drawing.Size(1862, 52);
+            this.panBottom.Size = new System.Drawing.Size(1241, 34);
             this.panBottom.TabIndex = 0;
             this.panBottom.Visible = false;
             // 
@@ -206,25 +205,25 @@
             this.toolStripSeparator1,
             this.mContextClose});
             this.mainContextMenuStrip.Name = "mainContextMenuStrip";
-            this.mainContextMenuStrip.Size = new System.Drawing.Size(254, 70);
+            this.mainContextMenuStrip.Size = new System.Drawing.Size(177, 54);
             this.mainContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.mainContextMenuStrip_Opening);
             // 
             // mContextOpen
             // 
             this.mContextOpen.Name = "mContextOpen";
-            this.mContextOpen.Size = new System.Drawing.Size(253, 30);
+            this.mContextOpen.Size = new System.Drawing.Size(176, 22);
             this.mContextOpen.Text = "Открыть программу";
             this.mContextOpen.Click += new System.EventHandler(this.mContextOpen_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(250, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(173, 6);
             // 
             // mContextClose
             // 
             this.mContextClose.Name = "mContextClose";
-            this.mContextClose.Size = new System.Drawing.Size(253, 30);
+            this.mContextClose.Size = new System.Drawing.Size(176, 22);
             this.mContextClose.Text = "Выход";
             this.mContextClose.Click += new System.EventHandler(this.mContextClose_Click);
             // 
@@ -241,10 +240,9 @@
             this.mainMenu.ContextMenuStrip = this.mainContextMenuStrip;
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem});
-            this.mainMenu.Location = new System.Drawing.Point(0, 181);
+            this.mainMenu.Location = new System.Drawing.Point(0, 141);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.mainMenu.Size = new System.Drawing.Size(1862, 35);
+            this.mainMenu.Size = new System.Drawing.Size(1241, 24);
             this.mainMenu.TabIndex = 2;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -253,25 +251,24 @@
             this.ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.выходToolStripMenuItem});
             this.ToolStripMenuItem.Name = "ToolStripMenuItem";
-            this.ToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.ToolStripMenuItem.Text = "Файл";
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.mContextClose_Click);
             // 
             // mainSchedulerControl
             // 
             this.mainSchedulerControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainSchedulerControl.Location = new System.Drawing.Point(0, 216);
-            this.mainSchedulerControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mainSchedulerControl.Location = new System.Drawing.Point(0, 165);
             this.mainSchedulerControl.MenuManager = this.ribbonControl;
             this.mainSchedulerControl.Name = "mainSchedulerControl";
-            this.mainSchedulerControl.Size = new System.Drawing.Size(1862, 787);
+            this.mainSchedulerControl.Size = new System.Drawing.Size(1241, 487);
             this.mainSchedulerControl.Start = new System.DateTime(2015, 10, 1, 0, 0, 0, 0);
             this.mainSchedulerControl.Storage = this.mainSchedulerStorage;
             this.mainSchedulerControl.TabIndex = 3;
@@ -329,7 +326,6 @@
             this.changeAppointmentReminderItem1,
             this.barButtonItemPasswords});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonControl.MaxItemId = 3;
             this.ribbonControl.MiniToolbars.Add(this.ribbonMiniToolbar1);
             this.ribbonControl.Name = "ribbonControl";
@@ -343,7 +339,7 @@
             this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1,
             this.repositoryItemDuration1});
-            this.ribbonControl.Size = new System.Drawing.Size(1862, 181);
+            this.ribbonControl.Size = new System.Drawing.Size(1241, 141);
             // 
             // openScheduleItem1
             // 
@@ -791,9 +787,10 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelUserName});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 981);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 630);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1862, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1241, 22);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -804,16 +801,16 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1862, 1055);
+            this.ClientSize = new System.Drawing.Size(1241, 686);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.mainSchedulerControl);
             this.Controls.Add(this.mainMenu);
             this.Controls.Add(this.panBottom);
             this.Controls.Add(this.ribbonControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMain";
             this.Text = "ЗОВ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
