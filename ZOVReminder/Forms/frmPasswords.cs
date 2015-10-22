@@ -20,11 +20,6 @@ namespace ZOVReminder
             InitializeComponent();
         }
 
-        public frmPasswords(int i)
-        {
-            InitializeComponent();
-        }
-
         private void frmPasswords_Load(object sender, EventArgs e)
         {
             FillComboBox();

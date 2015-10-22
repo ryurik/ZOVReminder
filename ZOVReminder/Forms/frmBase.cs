@@ -16,11 +16,6 @@ namespace ZOVReminder.Forms
             InitializeComponent();
         }
 
-        public frmBase(int i)
-        {
-            InitializeComponent();
-        }
-
         private void frmBase_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)

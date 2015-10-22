@@ -9,18 +9,11 @@ using System.Windows.Forms;
 
 namespace ZOVReminder.Forms
 {
-    public partial class frmGroups : frmBase
+    public partial class frmGroupsAndUsers : frmBase
     {
-        public frmGroups()
+        public frmGroupsAndUsers()
         {
             InitializeComponent();
-        }
-
-        private void frmGroups_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'globalbaseDataSet.ZOVReminderGroups' table. You can move, or remove it, as needed.
-            this.zOVReminderGroupsTableAdapter.Fill(this.globalbaseDataSet.ZOVReminderGroups);
-            zOVReminderGroupsBindingSource.Filter = "ZOVReminderGroupsID > 1";
         }
 
         private void simpleButtonApply_Click(object sender, EventArgs e)

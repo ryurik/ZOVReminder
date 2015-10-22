@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
-            this.zOVReminderUsersBindingSource = new System.Windows.Forms.BindingSource();
+            this.zOVReminderUsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.globalbaseDataSet = new ZOVReminder.GlobalbaseDataSet();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colZOVReminderUsersID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,11 +56,14 @@
             this.gridControl.DataSource = this.zOVReminderUsersBindingSource;
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl.EmbeddedNavigator.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.zOVReminderUsersBindingSource, "ZOVReminderUsersID", true));
+            this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl.Location = new System.Drawing.Point(0, 0);
             this.gridControl.MainView = this.gridView;
+            this.gridControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(628, 243);
+            this.gridControl.Size = new System.Drawing.Size(942, 374);
             this.gridControl.TabIndex = 2;
+            this.gridControl.UseEmbeddedNavigator = true;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
             // 
@@ -152,17 +156,19 @@
             this.panelControlBottom.Controls.Add(this.simpleButtonApply);
             this.panelControlBottom.Controls.Add(this.btnClose);
             this.panelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 243);
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 374);
+            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelControlBottom.Name = "panelControlBottom";
-            this.panelControlBottom.Size = new System.Drawing.Size(628, 33);
+            this.panelControlBottom.Size = new System.Drawing.Size(942, 51);
             this.panelControlBottom.TabIndex = 3;
             // 
             // simpleButtonApply
             // 
             this.simpleButtonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButtonApply.Location = new System.Drawing.Point(352, 5);
+            this.simpleButtonApply.Location = new System.Drawing.Point(528, 8);
+            this.simpleButtonApply.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.simpleButtonApply.Name = "simpleButtonApply";
-            this.simpleButtonApply.Size = new System.Drawing.Size(129, 23);
+            this.simpleButtonApply.Size = new System.Drawing.Size(194, 35);
             this.simpleButtonApply.TabIndex = 0;
             this.simpleButtonApply.Text = "Применить";
             this.simpleButtonApply.Click += new System.EventHandler(this.simpleButtonApply_Click);
@@ -170,9 +176,10 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(487, 5);
+            this.btnClose.Location = new System.Drawing.Point(730, 8);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(129, 23);
+            this.btnClose.Size = new System.Drawing.Size(194, 35);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Закрыть";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -183,11 +190,12 @@
             // 
             // frmUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 276);
+            this.ClientSize = new System.Drawing.Size(942, 425);
             this.Controls.Add(this.gridControl);
             this.Controls.Add(this.panelControlBottom);
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "frmUsers";
             this.Text = "Пользователи";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGroups_FormClosing);

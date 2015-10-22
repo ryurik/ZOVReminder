@@ -77,15 +77,18 @@ namespace ZOVReminder.Forms
             }
 
 
-            Type[] types = new Type[1];
-            types[0] = typeof(int);
+            Type[] types = new Type[0];
+            //types[0] = typeof(int);
+            //types[0] = null;
             // Get the public instance constructor that takes an integer parameter.
             ConstructorInfo constructorInfoObj = frmType.GetConstructor(
                 BindingFlags.Instance | BindingFlags.Public, null,
                 CallingConventions.HasThis, types, null);
             if (constructorInfoObj != null)
             {
-                object[] i = new object[1];
+                //object[] i = new object[1];
+                object[] i = new object[0];
+                //var f = constructorInfoObj.Invoke(i);
                 var f = constructorInfoObj.Invoke(i);
                 if (f is Form)
                 {
@@ -94,6 +97,7 @@ namespace ZOVReminder.Forms
                     {
                         (f as Form).WindowState = formWindowState;
                     }
+                    (f as Form).Text = caption;
                     (f as Form).Show();
                 }
             }
@@ -108,12 +112,7 @@ namespace ZOVReminder.Forms
 
         private void mToolStripMenuItemPasswords_Click(object sender, EventArgs e)
         {
-            
             OpenChildForms(typeof(frmPasswords), "Пароли", FormWindowState.Normal);
-
-            //frmPasswords frmPasswords = new frmPasswords();
-            //frmPasswords.MdiParent = this;
-            //frmPasswords.Show();
         }
 
 
@@ -201,6 +200,11 @@ namespace ZOVReminder.Forms
         private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenChildForms(typeof(frmUsers), "Пользователи");
+        }
+
+        private void группыИПользователиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForms(typeof(frmGroupsAndUsers), "Группы и пользователи");
         }
 
     }

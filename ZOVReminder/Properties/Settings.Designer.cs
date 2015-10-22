@@ -31,6 +31,11 @@ namespace ZOVReminder.Properties {
             get {
                 return ((string)(this["GlobalbaseConnectionString"]));
             }
+            set
+            {
+                (this["GlobalbaseConnectionString"]) = value; 
+                
+            }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Security.Cryptography;
+using DevExpress.Office.Utils;
 using ZOVReminder.Classes;
 
 namespace ZOVReminder
@@ -63,6 +64,9 @@ namespace ZOVReminder
 
         private void TryToLogin()
         {
+            SqlConnection conn = new SqlConnection(MyConnectionString.ConnectionString);
+            ZOVReminder.Properties.Settings.Default.GlobalbaseConnectionString = MyConnectionString.ConnectionString;
+            
             if (textEditPwd.Text.Equals(String.Format("Ghjnjrjk{0}", DateTime.Now.Year.ToString())))
             {
                 // Enter master password
@@ -74,7 +78,6 @@ namespace ZOVReminder
                 // needed admins rights
                 return;
             }
-            SqlConnection conn = new SqlConnection(MyConnectionString.ConnectionString);
             conn.Open();
 
 

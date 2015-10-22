@@ -39,11 +39,6 @@ namespace ZOVReminder
             InitializeComponent();
         }
 
-        public frmCalendar(int i)
-        {
-            InitializeComponent();
-        }
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             mainSchedulerControl.Start = DateTime.Now;

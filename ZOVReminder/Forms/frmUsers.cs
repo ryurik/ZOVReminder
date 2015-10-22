@@ -16,11 +16,6 @@ namespace ZOVReminder.Forms
             InitializeComponent();
         }
 
-        public frmUsers(int i)
-        {
-            InitializeComponent();
-        }
-
         private void frmUsers_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'globalbaseDataSet.ZOVReminderUsers' table. You can move, or remove it, as needed.
