@@ -220,22 +220,28 @@
     <Compile Include="Classes\MyConnectionString.cs" />
     <Compile Include="Classes\Security.cs" />
     <Compile Include="Classes\WorkWithHashes.cs" />
-    <Compile Include="frmLogin.cs">
+    <Compile Include="Forms\frmMainMDI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="Forms\frmMainMDI.Designer.cs">
+      <DependentUpon>frmMainMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPasswords.cs">
+    <Compile Include="Forms\frmPasswords.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPasswords.Designer.cs">
+    <Compile Include="Forms\frmPasswords.Designer.cs">
       <DependentUpon>frmPasswords.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalbaseDataSet.Designer.cs">
@@ -245,13 +251,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="Forms\frmMainMDI.resx">
+      <DependentUpon>frmMainMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPasswords.resx">
+    <EmbeddedResource Include="Forms\frmPasswords.resx">
       <DependentUpon>frmPasswords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -318,6 +327,7 @@
   <ItemGroup>
     <Content Include="zow.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -7,12 +7,20 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraPrinting.Native;
+using ZOVReminder.Classes;
 
 namespace ZOVReminder
 {
     public partial class frmPasswords : Form
     {
+
         public frmPasswords()
+        {
+            InitializeComponent();
+        }
+
+        public frmPasswords(int i)
         {
             InitializeComponent();
         }
@@ -24,7 +32,7 @@ namespace ZOVReminder
 
         private void FillComboBox()
         {
-            SqlConnection conn = new SqlConnection(String.Format("Server={0};Initial catalog={1};uid=getauthdata;pwd=zow", Properties.Settings.Default.Server, Properties.Settings.Default.Database));
+            SqlConnection conn = new SqlConnection(MyConnectionString.ConnectionString);
             try
             {
                 conn.Open();
@@ -64,7 +72,7 @@ namespace ZOVReminder
                 MessageBox.Show("Выберите пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            SqlConnection conn = new SqlConnection(String.Format("Server={0};Initial catalog={1};uid=getauthdata;pwd=zow", Properties.Settings.Default.Server, Properties.Settings.Default.Database));
+            SqlConnection conn = new SqlConnection(MyConnectionString.ConnectionString);
             try
             {
                 conn.Open();
@@ -100,5 +108,67 @@ namespace ZOVReminder
             }
         }
 
+        private void textEditPassConfirm_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    ApplyPassword();
+                    break;
+                case Keys.Escape:
+                    textEditPassConfirm.Text = "";
+                    break;
+            }
+        }
+
+        private void textEditPassConfirm_EditValueChanged(object sender, EventArgs e)
+        {
+            if (textEditPassConfirm.Text == "")
+            {
+                textEditPassConfirm.BackColor = Color.White;
+                return;
+            }
+            textEditPassConfirm.BackColor = textEditPassConfirm.Text.Equals(textEditPwd.Text) ? Color.White : Color.Tomato;
+            btnApply.Enabled = textEditPassConfirm.Text.Equals(textEditPwd.Text) && !textEditPassConfirm.Text.IsEmpty();
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            ApplyPassword();
+        }
+
+        private void ApplyPassword()
+        {
+            if (!textEditPwd.Text.Equals(textEditPassConfirm.Text))
+            {
+                return;
+            }
+
+            SqlConnection conn = new SqlConnection(MyConnectionString.ConnectionString);
+            try
+            {
+                conn.Open();
+                SqlCommand comm =
+                    new SqlCommand(
+                        String.Format(
+                            "UPDATE ZOVRU " +
+                            "  SET PasswordMD5 = '{1}'" +
+                            "  FROM ZOVReminderUsers ZOVRU " +
+                            "  WHERE (UserName LIKE '{0}')",
+                            comboBoxUsers.Text, Classes.WorkWithHashes.GetHashString(textEditPwd.Text)), conn);
+                
+                comm.ExecuteScalar();
+
+                textEditPwd.Text = "";
+                textEditPassConfirm.Text = "";
+
+                MessageBox.Show(String.Format("Пароль для'{0}' был успешно обнволен", comboBoxUsers.Text), "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show(String.Format("Ошибка: {0}", E.Message), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
     }
 }

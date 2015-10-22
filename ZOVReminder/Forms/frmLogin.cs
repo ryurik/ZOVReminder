@@ -12,11 +12,11 @@ using ZOVReminder.Classes;
 
 namespace ZOVReminder
 {
-    public partial class FrmLogin : Form
+    public partial class frmLogin : Form
     {
         private int _tryAmount = 3;
         private bool bAllowToClose = false;
-        public FrmLogin()
+        public frmLogin()
         {
             InitializeComponent();
             FillComboBox();
@@ -120,13 +120,14 @@ namespace ZOVReminder
 
         private void textEditPwd_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            switch (e.KeyCode)
             {
-                TryToLogin();                
-            }
-            else if (e.KeyCode == Keys.Escape)
-            {
-                textEditPwd.Text = "";
+                case Keys.Enter:
+                    TryToLogin();
+                    break;
+                case Keys.Escape:
+                    textEditPwd.Text = "";
+                    break;
             }
         }
     }

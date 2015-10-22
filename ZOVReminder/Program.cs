@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZOVReminder.Classes;
+using ZOVReminder.Forms;
 
 namespace ZOVReminder
 {
@@ -20,8 +21,9 @@ namespace ZOVReminder
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 #if DEBUG
-            Application.Run(new FrmLogin());
-            Application.Run(new frmMain());
+            Application.Run(new frmLogin());
+            Application.Run(new frmMainMDI());
+            //Application.Run(new frmMain());
 #else
             Application.Run(new frmMain());
 #endif
