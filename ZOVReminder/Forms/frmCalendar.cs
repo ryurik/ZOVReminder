@@ -10,15 +10,16 @@ using System.Windows.Forms;
 using DevExpress.Office.Utils;
 using DevExpress.XtraScheduler;
 using DevExpress.XtraScheduler.Commands;
+using ZOVReminder.Forms;
 
 namespace ZOVReminder
 {
-    public partial class frmMain : Form
+    public partial class frmCalendar : frmBase
     {
         private object locker = new object();
         private GlobalbaseDataSet newDs = new GlobalbaseDataSet();
         private DateTime lastEditDate = DateTime.MinValue;
-        private bool exitApplicaton = false;
+
 
         private DateTime lastApdateDateTime
         {
@@ -33,7 +34,12 @@ namespace ZOVReminder
             }
         }
 
-        public frmMain()
+        public frmCalendar()
+        {
+            InitializeComponent();
+        }
+
+        public frmCalendar(int i)
         {
             InitializeComponent();
         }
@@ -58,7 +64,6 @@ namespace ZOVReminder
             lastEditDate = lastApdateDateTime;
             timerMain.Start();
 
-            toolStripStatusLabelUserName.Text = Program.Security.UserName;
             ribbonPageSettings.Visible = Program.Security.IsAdmin;
         }
 
@@ -102,8 +107,11 @@ namespace ZOVReminder
                 {
                     string s = c.Subject + Environment.NewLine + c.Subject + Environment.NewLine + c.Description +
                         Environment.NewLine + c.StartDate.ToShortTimeString();
-                    notifyIcon.BalloonTipText = s;
-                    notifyIcon.ShowBalloonTip(1000);
+                    if ((MdiParent != null) && (MdiParent is frmMainMDI))
+                    {
+                        var frmMainMdi = MdiParent as frmMainMDI;
+                        if (frmMainMdi != null) frmMainMdi.ShowToolTip(s, 1000);
+                    }
                 }
                 //lastEditDate = globalbaseDataSet.ZOVAppointments.Select(x => x.LastEditTime).Max();
                 lastEditDate = lastApdateDateTime;
@@ -114,48 +122,6 @@ namespace ZOVReminder
         private void mainSchedulerControl_EditAppointmentFormShowing(object sender, AppointmentFormEventArgs e)
         {
             timerMain.Stop();
-        }
-
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-#if !DEBUG
-            e.Cancel = !exitApplicaton;
-            if (e.Cancel)
-            {
-                WindowState = FormWindowState.Minimized;
-                ShowInTaskbar = false;
-                Visible = false;
-                notifyIcon.BalloonTipText = "Напоминалка";
-                notifyIcon.ShowBalloonTip(500);
-            }
-#endif
-        }
-
-        private void notifyIcon_DoubleClick(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Normal;
-            ShowInTaskbar = true;
-            Visible = true;
-//            notifyIcon.BalloonTipText = "Напоминалка";
-//            notifyIcon.ShowBalloonTip(500);
-        }
-
-        private void mainContextMenuStrip_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void mContextClose_Click(object sender, EventArgs e)
-        {
-            exitApplicaton = true;
-            Application.Exit();
-        }
-
-        private void mContextOpen_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Normal;
-            ShowInTaskbar = true;
-            Visible = true;
         }
 
         private void barButtonItemPasswords_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

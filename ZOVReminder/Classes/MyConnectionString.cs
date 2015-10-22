@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
@@ -17,6 +18,26 @@ namespace ZOVReminder.Classes
             get
             {
                 return String.Format("Server={0};Initial catalog={1};uid={2};pwd={3}", _Server, _InitialCatalog, _uid, _pwd);
+            }
+        }
+
+
+        public static string ExecuteScalarQuery(string commandText)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(ConnectionString);
+                conn.Open();
+
+
+                SqlCommand comm = new SqlCommand(commandText, conn);
+
+                comm.ExecuteScalar();
+                return "";
+            }
+            catch (Exception E)
+            {
+                return E.Message;
             }
         }
     }

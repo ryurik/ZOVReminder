@@ -8,11 +8,14 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraReports.Native;
+using ZOVReminder.Classes;
 
 namespace ZOVReminder.Forms
 {
     public partial class frmMainMDI : Form
     {
+        private bool exitApplicaton = false;
 
         [DllImport("user32.dll")]
         static extern int GetWindowLong(IntPtr hWnd, int nIndex);
@@ -24,7 +27,7 @@ namespace ZOVReminder.Forms
         {
             InitializeComponent();
         }
-
+/*
         protected override void WndProc(ref Message m)
         {
             const int WM_SYSCOMMAND = 0x0112;
@@ -47,29 +50,22 @@ namespace ZOVReminder.Forms
                     if ((iii & (WS_HSCROLL | WS_VSCROLL)) != 0)
                     {
                         SetWindowLong(Handle, GWL_STYLE,
-                            (int) (GetWindowLong(Handle, GWL_STYLE) & !(WS_HSCROLL | WS_VSCROLL)));
+                            (int) (GetWindowLong(Handle, GWL_STYLE) & (WS_HSCROLL | WS_VSCROLL)));
                     }
                     break;
             }
             base.WndProc(ref m);
         }
-
-        private void mToolStripMenuItemExit_Click(object sender, EventArgs e)
+--*/
+        private void frmMainMDI_Load(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            toolStripStatusLabelUserName.Text = Program.Security.UserName;
+            mToolStripMenuItemSettings.Visible = Program.Security.IsAdmin;
+
         }
 
-        private void mToolStripMenuItemPasswords_Click(object sender, EventArgs e)
-        {
-            
-            OpenChildForms(typeof(frmPasswords), "Пароли");
 
-            //frmPasswords frmPasswords = new frmPasswords();
-            //frmPasswords.MdiParent = this;
-            //frmPasswords.Show();
-        }
-
-        private void OpenChildForms(Type frmType, String caption)
+        private void OpenChildForms(Type frmType, String caption, FormWindowState formWindowState = FormWindowState.Minimized)
         {
             foreach (Form c in MdiChildren)
             {
@@ -94,10 +90,118 @@ namespace ZOVReminder.Forms
                 if (f is Form)
                 {
                     (f as Form).MdiParent = this;
+                    if (formWindowState != FormWindowState.Minimized)
+                    {
+                        (f as Form).WindowState = formWindowState;
+                    }
                     (f as Form).Show();
                 }
             }
 
         }
+
+        private void mToolStripMenuItemExit_Click(object sender, EventArgs e)
+        {
+            exitApplicaton = true;
+            CloseForm();
+        }
+
+        private void mToolStripMenuItemPasswords_Click(object sender, EventArgs e)
+        {
+            
+            OpenChildForms(typeof(frmPasswords), "Пароли", FormWindowState.Normal);
+
+            //frmPasswords frmPasswords = new frmPasswords();
+            //frmPasswords.MdiParent = this;
+            //frmPasswords.Show();
+        }
+
+
+        private void mToolStripMenuItemCalendar_Click(object sender, EventArgs e)
+        {
+            OpenChildForms(typeof(frmCalendar), "Напоминание");
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+#if !DEBUG
+            e.Cancel = !exitApplicaton;
+            if (e.Cancel)
+            {
+                WindowState = FormWindowState.Minimized;
+                ShowInTaskbar = false;
+                Visible = false;
+                notifyIcon.BalloonTipText = "Напоминалка";
+                notifyIcon.ShowBalloonTip(500);
+            }
+            else
+            {
+                FillLastLogon();
+                notifyIcon.Dispose();
+            }
+#else
+            FillLastLogon();
+            notifyIcon.Dispose();
+#endif
+        }
+
+        private void FillLastLogon()
+        {
+            if (Program.Security.ZOVReminderUsersID == 0)
+                return;
+
+            MyConnectionString.ExecuteScalarQuery(String.Format(
+                                "UPDATE ZOVRU " +
+                                "  SET LastLogOff = CONVERT(datetime, '{1}', 103)" +
+                                "  FROM ZOVReminderUsers ZOVRU " +
+                                "  WHERE (UserName LIKE '{0}')",
+                                Program.Security.UserName, DateTime.Now));
+        }
+
+        private void notifyIcon_DoubleClick(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Normal;
+            ShowInTaskbar = true;
+            Visible = true;
+        }
+
+
+        public void ShowToolTip(string message, int timeDuration)
+        {
+            notifyIcon.BalloonTipText = message;
+            notifyIcon.ShowBalloonTip(timeDuration);
+
+        }
+
+        private void mContextOpen_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Normal;
+            ShowInTaskbar = true;
+            Visible = true;
+        }
+
+        private void mContextClose_Click(object sender, EventArgs e)
+        {
+            exitApplicaton = true;
+            CloseForm();
+        }
+
+        private void группыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForms(typeof(frmGroups), "Группы");
+        }
+
+        private void CloseForm()
+        {
+            Close();
+            //            Application.Exit();
+            //Environment.Exit(0);
+        }
+
+        private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForms(typeof(frmUsers), "Пользователи");
+        }
+
     }
 }

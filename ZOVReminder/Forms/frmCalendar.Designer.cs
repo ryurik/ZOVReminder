@@ -1,6 +1,6 @@
 ﻿namespace ZOVReminder
 {
-    partial class frmMain
+    partial class frmCalendar
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
             DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
             DevExpress.XtraScheduler.TimeRuler timeRuler3 = new DevExpress.XtraScheduler.TimeRuler();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalendar));
             DevExpress.XtraBars.Ribbon.ReduceOperation reduceOperation1 = new DevExpress.XtraBars.Ribbon.ReduceOperation();
             this.panBottom = new System.Windows.Forms.Panel();
             this.mainSchedulerStorage = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
@@ -40,17 +40,9 @@
             this.globalbaseDataSet = new ZOVReminder.GlobalbaseDataSet();
             this.zOVResourcesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.timerMain = new System.Windows.Forms.Timer(this.components);
-            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.mainContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mContextOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mContextClose = new System.Windows.Forms.ToolStripMenuItem();
             this.globalbaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.zOVResourcesTableAdapter = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVResourcesTableAdapter();
             this.zOVAppointmentsTableAdapter = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVAppointmentsTableAdapter();
-            this.mainMenu = new System.Windows.Forms.MenuStrip();
-            this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainSchedulerControl = new DevExpress.XtraScheduler.SchedulerControl();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.openScheduleItem1 = new DevExpress.XtraScheduler.UI.OpenScheduleItem();
@@ -96,7 +88,7 @@
             this.changeAppointmentReminderItem1 = new DevExpress.XtraScheduler.UI.ChangeAppointmentReminderItem();
             this.repositoryItemDuration1 = new DevExpress.XtraScheduler.UI.RepositoryItemDuration();
             this.barButtonItemPasswords = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonMiniToolbar1 = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
+            this.ribbonMiniToolbar = new DevExpress.XtraBars.Ribbon.RibbonMiniToolbar(this.components);
             this.calendarToolsRibbonPageCategory1 = new DevExpress.XtraScheduler.UI.CalendarToolsRibbonPageCategory();
             this.appointmentRibbonPage1 = new DevExpress.XtraScheduler.UI.AppointmentRibbonPage();
             this.actionsRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.ActionsRibbonPageGroup();
@@ -115,31 +107,25 @@
             this.activeViewRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.ActiveViewRibbonPageGroup();
             this.timeScaleRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.TimeScaleRibbonPageGroup();
             this.layoutRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.LayoutRibbonPageGroup();
-            this.schedulerBarController1 = new DevExpress.XtraScheduler.UI.SchedulerBarController();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabelUserName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.schedulerBarController = new DevExpress.XtraScheduler.UI.SchedulerBarController();
             ((System.ComponentModel.ISupportInitialize)(this.mainSchedulerStorage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zOVAppointmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zOVResourcesBindingSource)).BeginInit();
-            this.mainContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSetBindingSource)).BeginInit();
-            this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSchedulerControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).BeginInit();
-            this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController)).BeginInit();
             this.SuspendLayout();
             // 
             // panBottom
             // 
             this.panBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panBottom.Location = new System.Drawing.Point(0, 1003);
-            this.panBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panBottom.Location = new System.Drawing.Point(0, 652);
             this.panBottom.Name = "panBottom";
-            this.panBottom.Size = new System.Drawing.Size(1862, 52);
+            this.panBottom.Size = new System.Drawing.Size(1241, 34);
             this.panBottom.TabIndex = 0;
             this.panBottom.Visible = false;
             // 
@@ -191,43 +177,6 @@
             this.timerMain.Interval = 5000;
             this.timerMain.Tick += new System.EventHandler(this.timerMain_Tick);
             // 
-            // notifyIcon
-            // 
-            this.notifyIcon.ContextMenuStrip = this.mainContextMenuStrip;
-            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "Напоминалка";
-            this.notifyIcon.Visible = true;
-            this.notifyIcon.DoubleClick += new System.EventHandler(this.notifyIcon_DoubleClick);
-            // 
-            // mainContextMenuStrip
-            // 
-            this.mainContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mContextOpen,
-            this.toolStripSeparator1,
-            this.mContextClose});
-            this.mainContextMenuStrip.Name = "mainContextMenuStrip";
-            this.mainContextMenuStrip.Size = new System.Drawing.Size(254, 70);
-            this.mainContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.mainContextMenuStrip_Opening);
-            // 
-            // mContextOpen
-            // 
-            this.mContextOpen.Name = "mContextOpen";
-            this.mContextOpen.Size = new System.Drawing.Size(253, 30);
-            this.mContextOpen.Text = "Открыть программу";
-            this.mContextOpen.Click += new System.EventHandler(this.mContextOpen_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(250, 6);
-            // 
-            // mContextClose
-            // 
-            this.mContextClose.Name = "mContextClose";
-            this.mContextClose.Size = new System.Drawing.Size(253, 30);
-            this.mContextClose.Text = "Выход";
-            this.mContextClose.Click += new System.EventHandler(this.mContextClose_Click);
-            // 
             // zOVResourcesTableAdapter
             // 
             this.zOVResourcesTableAdapter.ClearBeforeFill = true;
@@ -236,42 +185,13 @@
             // 
             this.zOVAppointmentsTableAdapter.ClearBeforeFill = true;
             // 
-            // mainMenu
-            // 
-            this.mainMenu.ContextMenuStrip = this.mainContextMenuStrip;
-            this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem});
-            this.mainMenu.Location = new System.Drawing.Point(0, 181);
-            this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.mainMenu.Size = new System.Drawing.Size(1862, 35);
-            this.mainMenu.TabIndex = 2;
-            this.mainMenu.Text = "menuStrip1";
-            // 
-            // ToolStripMenuItem
-            // 
-            this.ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.выходToolStripMenuItem});
-            this.ToolStripMenuItem.Name = "ToolStripMenuItem";
-            this.ToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
-            this.ToolStripMenuItem.Text = "Файл";
-            // 
-            // выходToolStripMenuItem
-            // 
-            this.выходToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
-            this.выходToolStripMenuItem.Text = "Выход";
-            this.выходToolStripMenuItem.Click += new System.EventHandler(this.mContextClose_Click);
-            // 
             // mainSchedulerControl
             // 
             this.mainSchedulerControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainSchedulerControl.Location = new System.Drawing.Point(0, 216);
-            this.mainSchedulerControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mainSchedulerControl.Location = new System.Drawing.Point(0, 141);
             this.mainSchedulerControl.MenuManager = this.ribbonControl;
             this.mainSchedulerControl.Name = "mainSchedulerControl";
-            this.mainSchedulerControl.Size = new System.Drawing.Size(1862, 787);
+            this.mainSchedulerControl.Size = new System.Drawing.Size(1241, 511);
             this.mainSchedulerControl.Start = new System.DateTime(2015, 10, 1, 0, 0, 0, 0);
             this.mainSchedulerControl.Storage = this.mainSchedulerStorage;
             this.mainSchedulerControl.TabIndex = 3;
@@ -329,9 +249,8 @@
             this.changeAppointmentReminderItem1,
             this.barButtonItemPasswords});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonControl.MaxItemId = 3;
-            this.ribbonControl.MiniToolbars.Add(this.ribbonMiniToolbar1);
+            this.ribbonControl.MiniToolbars.Add(this.ribbonMiniToolbar);
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.calendarToolsRibbonPageCategory1});
@@ -343,7 +262,7 @@
             this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1,
             this.repositoryItemDuration1});
-            this.ribbonControl.Size = new System.Drawing.Size(1862, 181);
+            this.ribbonControl.Size = new System.Drawing.Size(1241, 141);
             // 
             // openScheduleItem1
             // 
@@ -743,98 +662,72 @@
             this.layoutRibbonPageGroup1.ItemLinks.Add(this.changeSnapToCellsUIItem1);
             this.layoutRibbonPageGroup1.Name = "layoutRibbonPageGroup1";
             // 
-            // schedulerBarController1
+            // schedulerBarController
             // 
-            this.schedulerBarController1.BarItems.Add(this.openScheduleItem1);
-            this.schedulerBarController1.BarItems.Add(this.saveScheduleItem1);
-            this.schedulerBarController1.BarItems.Add(this.printPreviewItem1);
-            this.schedulerBarController1.BarItems.Add(this.printItem1);
-            this.schedulerBarController1.BarItems.Add(this.printPageSetupItem1);
-            this.schedulerBarController1.BarItems.Add(this.newAppointmentItem1);
-            this.schedulerBarController1.BarItems.Add(this.newRecurringAppointmentItem1);
-            this.schedulerBarController1.BarItems.Add(this.navigateViewBackwardItem1);
-            this.schedulerBarController1.BarItems.Add(this.navigateViewForwardItem1);
-            this.schedulerBarController1.BarItems.Add(this.gotoTodayItem1);
-            this.schedulerBarController1.BarItems.Add(this.viewZoomInItem1);
-            this.schedulerBarController1.BarItems.Add(this.viewZoomOutItem1);
-            this.schedulerBarController1.BarItems.Add(this.switchToDayViewItem1);
-            this.schedulerBarController1.BarItems.Add(this.switchToWorkWeekViewItem1);
-            this.schedulerBarController1.BarItems.Add(this.switchToWeekViewItem1);
-            this.schedulerBarController1.BarItems.Add(this.switchToFullWeekViewItem1);
-            this.schedulerBarController1.BarItems.Add(this.switchToMonthViewItem1);
-            this.schedulerBarController1.BarItems.Add(this.switchToTimelineViewItem1);
-            this.schedulerBarController1.BarItems.Add(this.switchToGanttViewItem1);
-            this.schedulerBarController1.BarItems.Add(this.groupByNoneItem1);
-            this.schedulerBarController1.BarItems.Add(this.groupByDateItem1);
-            this.schedulerBarController1.BarItems.Add(this.groupByResourceItem1);
-            this.schedulerBarController1.BarItems.Add(this.switchTimeScalesItem1);
-            this.schedulerBarController1.BarItems.Add(this.changeScaleWidthItem1);
-            this.schedulerBarController1.BarItems.Add(this.switchTimeScalesCaptionItem1);
-            this.schedulerBarController1.BarItems.Add(this.switchCompressWeekendItem1);
-            this.schedulerBarController1.BarItems.Add(this.switchShowWorkTimeOnlyItem1);
-            this.schedulerBarController1.BarItems.Add(this.switchCellsAutoHeightItem1);
-            this.schedulerBarController1.BarItems.Add(this.changeSnapToCellsUIItem1);
-            this.schedulerBarController1.BarItems.Add(this.editAppointmentQueryItem1);
-            this.schedulerBarController1.BarItems.Add(this.editOccurrenceUICommandItem1);
-            this.schedulerBarController1.BarItems.Add(this.editSeriesUICommandItem1);
-            this.schedulerBarController1.BarItems.Add(this.deleteAppointmentsItem1);
-            this.schedulerBarController1.BarItems.Add(this.deleteOccurrenceItem1);
-            this.schedulerBarController1.BarItems.Add(this.deleteSeriesItem1);
-            this.schedulerBarController1.BarItems.Add(this.splitAppointmentItem1);
-            this.schedulerBarController1.BarItems.Add(this.changeAppointmentStatusItem1);
-            this.schedulerBarController1.BarItems.Add(this.changeAppointmentLabelItem1);
-            this.schedulerBarController1.BarItems.Add(this.toggleRecurrenceItem1);
-            this.schedulerBarController1.BarItems.Add(this.changeAppointmentReminderItem1);
-            this.schedulerBarController1.Control = this.mainSchedulerControl;
+            this.schedulerBarController.BarItems.Add(this.openScheduleItem1);
+            this.schedulerBarController.BarItems.Add(this.saveScheduleItem1);
+            this.schedulerBarController.BarItems.Add(this.printPreviewItem1);
+            this.schedulerBarController.BarItems.Add(this.printItem1);
+            this.schedulerBarController.BarItems.Add(this.printPageSetupItem1);
+            this.schedulerBarController.BarItems.Add(this.newAppointmentItem1);
+            this.schedulerBarController.BarItems.Add(this.newRecurringAppointmentItem1);
+            this.schedulerBarController.BarItems.Add(this.navigateViewBackwardItem1);
+            this.schedulerBarController.BarItems.Add(this.navigateViewForwardItem1);
+            this.schedulerBarController.BarItems.Add(this.gotoTodayItem1);
+            this.schedulerBarController.BarItems.Add(this.viewZoomInItem1);
+            this.schedulerBarController.BarItems.Add(this.viewZoomOutItem1);
+            this.schedulerBarController.BarItems.Add(this.switchToDayViewItem1);
+            this.schedulerBarController.BarItems.Add(this.switchToWorkWeekViewItem1);
+            this.schedulerBarController.BarItems.Add(this.switchToWeekViewItem1);
+            this.schedulerBarController.BarItems.Add(this.switchToFullWeekViewItem1);
+            this.schedulerBarController.BarItems.Add(this.switchToMonthViewItem1);
+            this.schedulerBarController.BarItems.Add(this.switchToTimelineViewItem1);
+            this.schedulerBarController.BarItems.Add(this.switchToGanttViewItem1);
+            this.schedulerBarController.BarItems.Add(this.groupByNoneItem1);
+            this.schedulerBarController.BarItems.Add(this.groupByDateItem1);
+            this.schedulerBarController.BarItems.Add(this.groupByResourceItem1);
+            this.schedulerBarController.BarItems.Add(this.switchTimeScalesItem1);
+            this.schedulerBarController.BarItems.Add(this.changeScaleWidthItem1);
+            this.schedulerBarController.BarItems.Add(this.switchTimeScalesCaptionItem1);
+            this.schedulerBarController.BarItems.Add(this.switchCompressWeekendItem1);
+            this.schedulerBarController.BarItems.Add(this.switchShowWorkTimeOnlyItem1);
+            this.schedulerBarController.BarItems.Add(this.switchCellsAutoHeightItem1);
+            this.schedulerBarController.BarItems.Add(this.changeSnapToCellsUIItem1);
+            this.schedulerBarController.BarItems.Add(this.editAppointmentQueryItem1);
+            this.schedulerBarController.BarItems.Add(this.editOccurrenceUICommandItem1);
+            this.schedulerBarController.BarItems.Add(this.editSeriesUICommandItem1);
+            this.schedulerBarController.BarItems.Add(this.deleteAppointmentsItem1);
+            this.schedulerBarController.BarItems.Add(this.deleteOccurrenceItem1);
+            this.schedulerBarController.BarItems.Add(this.deleteSeriesItem1);
+            this.schedulerBarController.BarItems.Add(this.splitAppointmentItem1);
+            this.schedulerBarController.BarItems.Add(this.changeAppointmentStatusItem1);
+            this.schedulerBarController.BarItems.Add(this.changeAppointmentLabelItem1);
+            this.schedulerBarController.BarItems.Add(this.toggleRecurrenceItem1);
+            this.schedulerBarController.BarItems.Add(this.changeAppointmentReminderItem1);
+            this.schedulerBarController.Control = this.mainSchedulerControl;
             // 
-            // statusStrip1
+            // frmCalendar
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabelUserName});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 981);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 14, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1862, 22);
-            this.statusStrip1.TabIndex = 5;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabelUserName
-            // 
-            this.toolStripStatusLabelUserName.Name = "toolStripStatusLabelUserName";
-            this.toolStripStatusLabelUserName.Size = new System.Drawing.Size(0, 17);
-            // 
-            // frmMain
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1862, 1055);
-            this.Controls.Add(this.statusStrip1);
+            this.ClientSize = new System.Drawing.Size(1241, 686);
             this.Controls.Add(this.mainSchedulerControl);
-            this.Controls.Add(this.mainMenu);
             this.Controls.Add(this.panBottom);
             this.Controls.Add(this.ribbonControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.mainMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmMain";
+            this.Name = "frmCalendar";
             this.Text = "ЗОВ";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainSchedulerStorage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zOVAppointmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zOVResourcesBindingSource)).EndInit();
-            this.mainContextMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSetBindingSource)).EndInit();
-            this.mainMenu.ResumeLayout(false);
-            this.mainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSchedulerControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -851,14 +744,6 @@
         private System.Windows.Forms.BindingSource zOVAppointmentsBindingSource;
         private GlobalbaseDataSetTableAdapters.ZOVAppointmentsTableAdapter zOVAppointmentsTableAdapter;
         private System.Windows.Forms.Timer timerMain;
-        private System.Windows.Forms.NotifyIcon notifyIcon;
-        private System.Windows.Forms.ContextMenuStrip mainContextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem mContextOpen;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem mContextClose;
-        private System.Windows.Forms.MenuStrip mainMenu;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private DevExpress.XtraScheduler.SchedulerControl mainSchedulerControl;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
         private DevExpress.XtraScheduler.UI.OpenScheduleItem openScheduleItem1;
@@ -919,13 +804,11 @@
         private DevExpress.XtraScheduler.UI.ActiveViewRibbonPageGroup activeViewRibbonPageGroup1;
         private DevExpress.XtraScheduler.UI.TimeScaleRibbonPageGroup timeScaleRibbonPageGroup1;
         private DevExpress.XtraScheduler.UI.LayoutRibbonPageGroup layoutRibbonPageGroup1;
-        private DevExpress.XtraScheduler.UI.SchedulerBarController schedulerBarController1;
-        private DevExpress.XtraBars.Ribbon.RibbonMiniToolbar ribbonMiniToolbar1;
+        private DevExpress.XtraScheduler.UI.SchedulerBarController schedulerBarController;
+        private DevExpress.XtraBars.Ribbon.RibbonMiniToolbar ribbonMiniToolbar;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageSettings;
         private DevExpress.XtraBars.BarButtonItem barButtonItemPasswords;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupSettings;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelUserName;
     }
 }
 

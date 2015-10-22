@@ -87,7 +87,7 @@ namespace ZOVReminder
                 {
                     while (dataReader.Read())
                     {
-                        if (dataReader.GetString(0) == Classes.WorkWithHashes.GetHashString(textEditPwd.Text))
+                        if (dataReader.GetString(2) == Classes.WorkWithHashes.GetHashString(textEditPwd.Text))
                         {
                             MessageBox.Show("Ок", "Инфо", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -147,22 +147,23 @@ namespace ZOVReminder
             SqlConnection conn = new SqlConnection(MyConnectionString.ConnectionString);
             try
             {
-                conn.Open();
-                SqlCommand comm =
-                    new SqlCommand(
-                        String.Format(
-                            "UPDATE ZOVRU " +
-                            "  SET PasswordMD5 = '{1}'" +
-                            "  FROM ZOVReminderUsers ZOVRU " +
-                            "  WHERE (UserName LIKE '{0}')",
-                            comboBoxUsers.Text, Classes.WorkWithHashes.GetHashString(textEditPwd.Text)), conn);
-                
-                comm.ExecuteScalar();
+                string s = MyConnectionString.ExecuteScalarQuery(String.Format(
+                    "UPDATE ZOVRU " +
+                    "  SET PasswordMD5 = '{1}'" +
+                    "  FROM ZOVReminderUsers ZOVRU " +
+                    "  WHERE (UserName LIKE '{0}')",
+                    comboBoxUsers.Text, Classes.WorkWithHashes.GetHashString(textEditPwd.Text)));
+                if (s != "")
+                {
+                    MessageBox.Show(String.Format("Ошибка: {0}", s), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else
+                {
+                    textEditPwd.Text = "";
+                    textEditPassConfirm.Text = "";
 
-                textEditPwd.Text = "";
-                textEditPassConfirm.Text = "";
-
-                MessageBox.Show(String.Format("Пароль для'{0}' был успешно обнволен", comboBoxUsers.Text), "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(String.Format("Пароль для'{0}' был успешно обнволен", comboBoxUsers.Text), "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
             }
             catch (Exception E)
@@ -170,5 +171,9 @@ namespace ZOVReminder
                 MessageBox.Show(String.Format("Ошибка: {0}", E.Message), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();}
     }
 }

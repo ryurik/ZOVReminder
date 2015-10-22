@@ -25,7 +25,8 @@ namespace ZOVReminder
             Application.Run(new frmMainMDI());
             //Application.Run(new frmMain());
 #else
-            Application.Run(new frmMain());
+            Application.Run(new frmLogin());
+            Application.Run(new frmMainMDI());
 #endif
 
         }

@@ -16,6 +16,7 @@ namespace ZOVReminder
     {
         private int _tryAmount = 3;
         private bool bAllowToClose = false;
+        
         public frmLogin()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace ZOVReminder
 
         private void FillComboBox()
         {
-            SqlConnection conn = new SqlConnection(String.Format("Server={0};Initial catalog={1};uid=getauthdata;pwd=zow", Properties.Settings.Default.Server, Properties.Settings.Default.Database));
+            SqlConnection conn = new SqlConnection(MyConnectionString.ConnectionString);
             try
             {
                 conn.Open();
@@ -43,6 +44,14 @@ namespace ZOVReminder
                     MessageBox.Show("Отсутсвуют пользователи", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ExitApp();
                 }
+                if (Properties.Settings.Default.UserName != "")
+                {
+                    if (comboBoxUsers.Properties.Items.Contains(Properties.Settings.Default.UserName))
+                    {
+                        comboBoxUsers.Text = Properties.Settings.Default.UserName;
+                    }
+                }
+
             }
             catch (Exception)
             {
@@ -54,7 +63,7 @@ namespace ZOVReminder
 
         private void TryToLogin()
         {
-            if (textEditPwd.Text == "Ghjnjrjk" + DateTime.Now.Year.ToString() && comboBoxUsers.SelectedIndex <= 0)
+            if (textEditPwd.Text.Equals(String.Format("Ghjnjrjk{0}", DateTime.Now.Year.ToString())))
             {
                 // Enter master password
                 bAllowToClose = true;
@@ -89,6 +98,34 @@ namespace ZOVReminder
                     return;
                 }
             }
+            else
+            {
+                dataReader.Read();
+
+                Program.Security.ZOVReminderUsersID = dataReader.GetInt32(0);
+                Program.Security.UserName = dataReader.GetString(1);
+                Program.Security.IsAdmin = false;
+                dataReader.Close();
+
+                try
+                {
+                    comm.CommandText = String.Format(
+                                "UPDATE ZOVRU " +
+                                "  SET LastLogon = CONVERT(datetime, '{1}', 103)" +
+                                "  FROM ZOVReminderUsers ZOVRU " +
+                                "  WHERE (UserName LIKE '{0}')",
+                                comboBoxUsers.Text, DateTime.Now);
+
+                    comm.ExecuteScalar();
+                }
+                catch (Exception E)
+                {
+                    MessageBox.Show(E.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                Properties.Settings.Default.UserName = comboBoxUsers.Text;
+                Properties.Settings.Default.Save();
+            }
+
             bAllowToClose = true;
             Close();
             
