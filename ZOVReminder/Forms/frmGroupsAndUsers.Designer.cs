@@ -32,18 +32,14 @@
             this.simpleButtonApply = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).BeginInit();
-            this.panelControlBottom.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControlBottom
             // 
-            this.panelControlBottom.Controls.Add(this.simpleButtonApply);
-            this.panelControlBottom.Controls.Add(this.btnClose);
             this.panelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 461);
-            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 300);
             this.panelControlBottom.Name = "panelControlBottom";
-            this.panelControlBottom.Size = new System.Drawing.Size(947, 51);
+            this.panelControlBottom.Size = new System.Drawing.Size(924, 33);
             this.panelControlBottom.TabIndex = 2;
             // 
             // simpleButtonApply
@@ -70,15 +66,16 @@
             // 
             // frmGroupsAndUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 512);
+            this.ClientSize = new System.Drawing.Size(924, 333);
             this.Controls.Add(this.panelControlBottom);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmGroupsAndUsers";
             this.Text = "Группы и пользователи";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGroups_FormClosing);
+            this.Controls.SetChildIndex(this.panelControlBottom, 0);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).EndInit();
-            this.panelControlBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

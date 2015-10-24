@@ -29,19 +29,19 @@ namespace ZOVReminder.Forms
 
         private void CheckForChanges()
         {
-            var dt = globalbaseDataSet.ZOVReminderGroups.GetChanges();
-            if ((dt != null) && (dt.Rows.Count > 0))
-            {
-                if (MessageBox.Show("Данные были изменены. Сохранить?", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    UpdateData();
-                }
-            }
+            //var dt = globalbaseDataSet.ZOVReminderGroups.GetChanges();
+            //if ((dt != null) && (dt.Rows.Count > 0))
+            //{
+            //    if (MessageBox.Show("Данные были изменены. Сохранить?", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //    {
+            //        UpdateData();
+            //    }
+            //}
         }
 
         private void UpdateData()
         {
-            zOVReminderGroupsTableAdapter.Update(globalbaseDataSet);
+            //zOVReminderGroupsTableAdapter.Update(globalbaseDataSet);
         }
 
         private void frmGroups_FormClosing(object sender, FormClosingEventArgs e)

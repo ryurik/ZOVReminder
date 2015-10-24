@@ -40,5 +40,10 @@ namespace ZOVReminder.Forms
             this.Width = MdiParent.Width;
             this.Height = MdiParent.Height;
         }
+
+        private void simpleButtonApply_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

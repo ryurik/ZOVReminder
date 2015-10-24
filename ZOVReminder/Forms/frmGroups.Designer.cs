@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.zOVReminderGroupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.globalbaseDataSet = new ZOVReminder.GlobalbaseDataSet();
-            this.panelControlBottom = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonApply = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.zOVReminderGroupsTableAdapter = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVReminderGroupsTableAdapter();
@@ -43,10 +42,7 @@
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             ((System.ComponentModel.ISupportInitialize)(this.zOVReminderGroupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).BeginInit();
-            this.panelControlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
-            this.panelControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             this.SuspendLayout();
@@ -61,17 +57,6 @@
             // 
             this.globalbaseDataSet.DataSetName = "GlobalbaseDataSet";
             this.globalbaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // panelControlBottom
-            // 
-            this.panelControlBottom.Controls.Add(this.simpleButtonApply);
-            this.panelControlBottom.Controls.Add(this.btnClose);
-            this.panelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 415);
-            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panelControlBottom.Name = "panelControlBottom";
-            this.panelControlBottom.Size = new System.Drawing.Size(1178, 51);
-            this.panelControlBottom.TabIndex = 1;
             // 
             // simpleButtonApply
             // 
@@ -101,12 +86,13 @@
             // 
             // panelControlMain
             // 
-            this.panelControlMain.Controls.Add(this.gridControl);
             this.panelControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlMain.Location = new System.Drawing.Point(0, 0);
+            this.panelControlMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelControlMain.Name = "panelControlMain";
-            this.panelControlMain.Size = new System.Drawing.Size(1178, 415);
+            this.panelControlMain.Size = new System.Drawing.Size(785, 270);
             this.panelControlMain.TabIndex = 2;
+            this.panelControlMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControlMain_Paint);
             // 
             // gridView
             // 
@@ -146,12 +132,10 @@
             // 
             this.gridControl.DataSource = this.zOVReminderGroupsBindingSource;
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl.Location = new System.Drawing.Point(2, 2);
             this.gridControl.MainView = this.gridView;
-            this.gridControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(1174, 411);
+            this.gridControl.Size = new System.Drawing.Size(781, 233);
             this.gridControl.TabIndex = 1;
             this.gridControl.UseEmbeddedNavigator = true;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -159,22 +143,19 @@
             // 
             // frmGroups
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 466);
+            this.ClientSize = new System.Drawing.Size(785, 303);
             this.Controls.Add(this.panelControlMain);
-            this.Controls.Add(this.panelControlBottom);
-            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmGroups";
             this.Text = "Группы";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGroups_FormClosing);
             this.Load += new System.EventHandler(this.frmGroups_Load);
+            this.Controls.SetChildIndex(this.panelControlMain, 0);
             ((System.ComponentModel.ISupportInitialize)(this.zOVReminderGroupsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).EndInit();
-            this.panelControlBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).EndInit();
-            this.panelControlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             this.ResumeLayout(false);
@@ -183,17 +164,16 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.PanelControl panelControlBottom;
         private GlobalbaseDataSet globalbaseDataSet;
         private System.Windows.Forms.BindingSource zOVReminderGroupsBindingSource;
         private GlobalbaseDataSetTableAdapters.ZOVReminderGroupsTableAdapter zOVReminderGroupsTableAdapter;
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SimpleButton simpleButtonApply;
         private DevExpress.XtraEditors.PanelControl panelControlMain;
-        private DevExpress.XtraGrid.GridControl gridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private DevExpress.XtraGrid.Columns.GridColumn colZOVReminderGroupsID;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colNote;
+        private DevExpress.XtraGrid.GridControl gridControl;
     }
 }

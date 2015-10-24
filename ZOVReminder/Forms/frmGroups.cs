@@ -20,7 +20,7 @@ namespace ZOVReminder.Forms
         {
             // TODO: This line of code loads data into the 'globalbaseDataSet.ZOVReminderGroups' table. You can move, or remove it, as needed.
             this.zOVReminderGroupsTableAdapter.Fill(this.globalbaseDataSet.ZOVReminderGroups);
-            zOVReminderGroupsBindingSource.Filter = "ZOVReminderGroupsID > 1";
+            zOVReminderGroupsBindingSource.Filter = "ZOVReminderGroupsID > 5";
         }
 
         private void simpleButtonApply_Click(object sender, EventArgs e)
@@ -54,6 +54,11 @@ namespace ZOVReminder.Forms
         private void frmGroups_FormClosing(object sender, FormClosingEventArgs e)
         {
             CheckForChanges();
+        }
+
+        private void panelControlMain_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
