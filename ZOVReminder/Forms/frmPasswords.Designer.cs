@@ -132,7 +132,7 @@
             // comboBoxUsers
             // 
             this.comboBoxUsers.Location = new System.Drawing.Point(102, 12);
-            this.comboBoxUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxUsers.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxUsers.Name = "comboBoxUsers";
             this.comboBoxUsers.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
