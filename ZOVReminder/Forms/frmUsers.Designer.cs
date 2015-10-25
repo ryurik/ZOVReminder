@@ -39,9 +39,6 @@
             this.colPermissions = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLastLogon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLastLogOff = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.panelControlBottom = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButtonApply = new DevExpress.XtraEditors.SimpleButton();
-            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.zOVReminderUsersTableAdapter = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVReminderUsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zOVReminderUsersBindingSource)).BeginInit();
@@ -149,51 +146,23 @@
             this.colLastLogOff.Visible = true;
             this.colLastLogOff.VisibleIndex = 3;
             // 
-            // panelControlBottom
-            // 
-            this.panelControlBottom.Controls.Add(this.simpleButtonApply);
-            this.panelControlBottom.Controls.Add(this.btnClose);
-            this.panelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 243);
-            this.panelControlBottom.Name = "panelControlBottom";
-            this.panelControlBottom.Size = new System.Drawing.Size(628, 33);
-            this.panelControlBottom.TabIndex = 3;
-            // 
-            // simpleButtonApply
-            // 
-            this.simpleButtonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButtonApply.Location = new System.Drawing.Point(352, 5);
-            this.simpleButtonApply.Name = "simpleButtonApply";
-            this.simpleButtonApply.Size = new System.Drawing.Size(129, 23);
-            this.simpleButtonApply.TabIndex = 0;
-            this.simpleButtonApply.Text = "Применить";
-            this.simpleButtonApply.Click += new System.EventHandler(this.simpleButtonApply_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(487, 5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(129, 23);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "Закрыть";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // zOVReminderUsersTableAdapter
             // 
             this.zOVReminderUsersTableAdapter.ClearBeforeFill = true;
+            // 
+            // panelControlMain
+            // 
+            this.panelControlMain.Controls.Add(this.gridControl);
             // 
             // frmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 276);
-            this.Controls.Add(this.gridControl);
             this.Controls.Add(this.panelControlBottom);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmUsers";
             this.Text = "Пользователи";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGroups_FormClosing);
             this.Load += new System.EventHandler(this.frmUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zOVReminderUsersBindingSource)).EndInit();
@@ -209,9 +178,6 @@
 
         private DevExpress.XtraGrid.GridControl gridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
-        private DevExpress.XtraEditors.PanelControl panelControlBottom;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonApply;
-        private DevExpress.XtraEditors.SimpleButton btnClose;
         private GlobalbaseDataSet globalbaseDataSet;
         private System.Windows.Forms.BindingSource zOVReminderUsersBindingSource;
         private GlobalbaseDataSetTableAdapters.ZOVReminderUsersTableAdapter zOVReminderUsersTableAdapter;

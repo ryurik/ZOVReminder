@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ZOVReminder.GlobalbaseDataSetTableAdapters;
 
 namespace ZOVReminder.Forms
 {
@@ -16,18 +17,7 @@ namespace ZOVReminder.Forms
             InitializeComponent();
         }
 
-        private void simpleButtonApply_Click(object sender, EventArgs e)
-        {
-            UpdateData();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            CheckForChanges();
-            Close();
-        }
-
-        private void CheckForChanges()
+        public override void CheckForChanges()
         {
             //var dt = globalbaseDataSet.ZOVReminderGroups.GetChanges();
             //if ((dt != null) && (dt.Rows.Count > 0))
@@ -39,14 +29,33 @@ namespace ZOVReminder.Forms
             //}
         }
 
-        private void UpdateData()
+        public override void UpdateData()
         {
             //zOVReminderGroupsTableAdapter.Update(globalbaseDataSet);
         }
 
-        private void frmGroups_FormClosing(object sender, FormClosingEventArgs e)
+        private void frmGroupsAndUsers_Resize(object sender, EventArgs e)
         {
-            CheckForChanges();
+            gridControlLeftUsers.Width = (ClientSize.Width - panelMiddle.Width)/2;
         }
+
+        private void frmGroupsAndUsers_Load(object sender, EventArgs e)
+        {
+            GlobalbaseDataSetTableAdapters.ZOVReminderGroupsTableAdapter zovReminderGroupsTableAdapter = new ZOVReminderGroupsTableAdapter();
+            GlobalbaseDataSet globalbaseDataSet = new GlobalbaseDataSet();
+
+            zovReminderGroupsTableAdapter.Fill(globalbaseDataSet.ZOVReminderGroups);
+            
+            foreach (var groupName in globalbaseDataSet.ZOVReminderGroups)
+            {
+                comboBoxGroups.Properties.Items.Add(groupName.Name);
+            }
+        }
+
+        private void comboBoxGroups_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

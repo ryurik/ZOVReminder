@@ -33,7 +33,7 @@ namespace ZOVReminder.Forms
             Close();
         }
 
-        private void CheckForChanges()
+        public override void CheckForChanges()
         {
             var dt = globalbaseDataSet.ZOVReminderGroups.GetChanges();
             if ((dt != null) && (dt.Rows.Count > 0))
@@ -45,14 +45,10 @@ namespace ZOVReminder.Forms
             }
         }
 
-        private void UpdateData()
+        public override void UpdateData()
         {
             zOVReminderUsersTableAdapter.Update(globalbaseDataSet);
         }
 
-        private void frmGroups_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            CheckForChanges();
-        }
     }
 }

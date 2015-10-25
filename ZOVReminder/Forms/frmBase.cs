@@ -35,15 +35,37 @@ namespace ZOVReminder.Forms
         {
             if (MdiParent == null)
                 return;
-            this.Top = 0;
-            this.Left = 0;
-            this.Width = MdiParent.Width;
-            this.Height = MdiParent.Height;
+            Top = 0;
+            Left = 0;
+
+            Width = MdiParent.ClientSize.Width;
+            Height = MdiParent.ClientSize.Height;
         }
 
         private void simpleButtonApply_Click(object sender, EventArgs e)
         {
-
+            UpdateData();
         }
+
+        private void frmBase_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CheckForChanges();
+        }
+
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            CheckForChanges();
+            Close();
+        }
+
+        public virtual void CheckForChanges()
+        {
+        }
+
+        public virtual void UpdateData()
+        {
+        }
+
     }
 }
