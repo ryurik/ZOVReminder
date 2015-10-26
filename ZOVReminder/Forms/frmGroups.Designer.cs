@@ -54,16 +54,16 @@
             // 
             // simpleButtonApply
             // 
-            this.simpleButtonApply.Location = new System.Drawing.Point(763, 8);
+            this.simpleButtonApply.Location = new System.Drawing.Point(765, 8);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(971, 8);
+            this.btnClose.Location = new System.Drawing.Point(974, 8);
             // 
             // panelControlMain
             // 
             this.panelControlMain.Controls.Add(this.gridControl);
-            this.panelControlMain.Size = new System.Drawing.Size(1178, 466);
+            this.panelControlMain.Size = new System.Drawing.Size(1178, 415);
             // 
             // zOVReminderGroupsBindingSource
             // 
@@ -87,7 +87,7 @@
             this.gridControl.Location = new System.Drawing.Point(2, 2);
             this.gridControl.MainView = this.gridView;
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(1174, 462);
+            this.gridControl.Size = new System.Drawing.Size(1174, 411);
             this.gridControl.TabIndex = 1;
             this.gridControl.UseEmbeddedNavigator = true;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {

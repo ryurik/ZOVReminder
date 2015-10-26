@@ -414,6 +414,8 @@ namespace ZOVReminder {
             
             private global::System.Data.DataColumn columnSubject;
             
+            private global::System.Data.DataColumn columnZOVReminderUsersID;
+            
             private global::System.Data.DataColumn columnLastEditTime;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -571,6 +573,14 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ZOVReminderUsersIDColumn {
+                get {
+                    return this.columnZOVReminderUsersID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn LastEditTimeColumn {
                 get {
                     return this.columnLastEditTime;
@@ -614,7 +624,23 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ZOVAppointmentsRow AddZOVAppointmentsRow(int Type, System.DateTime StartDate, System.DateTime EndDate, bool AllDay, string CustomField1, string RecurrenceInfo, string ReminderInfo, string ResourceIDs, int ResourceID, int Label, int Status, string Description, string Location, string Subject, System.DateTime LastEditTime) {
+            public ZOVAppointmentsRow AddZOVAppointmentsRow(
+                        int Type, 
+                        System.DateTime StartDate, 
+                        System.DateTime EndDate, 
+                        bool AllDay, 
+                        string CustomField1, 
+                        string RecurrenceInfo, 
+                        string ReminderInfo, 
+                        string ResourceIDs, 
+                        int ResourceID, 
+                        int Label, 
+                        int Status, 
+                        string Description, 
+                        string Location, 
+                        string Subject, 
+                        int ZOVReminderUsersID, 
+                        System.DateTime LastEditTime) {
                 ZOVAppointmentsRow rowZOVAppointmentsRow = ((ZOVAppointmentsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -632,6 +658,7 @@ namespace ZOVReminder {
                         Description,
                         Location,
                         Subject,
+                        ZOVReminderUsersID,
                         LastEditTime};
                 rowZOVAppointmentsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowZOVAppointmentsRow);
@@ -677,6 +704,7 @@ namespace ZOVReminder {
                 this.columnDescription = base.Columns["Description"];
                 this.columnLocation = base.Columns["Location"];
                 this.columnSubject = base.Columns["Subject"];
+                this.columnZOVReminderUsersID = base.Columns["ZOVReminderUsersID"];
                 this.columnLastEditTime = base.Columns["LastEditTime"];
             }
             
@@ -713,6 +741,8 @@ namespace ZOVReminder {
                 base.Columns.Add(this.columnLocation);
                 this.columnSubject = new global::System.Data.DataColumn("Subject", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSubject);
+                this.columnZOVReminderUsersID = new global::System.Data.DataColumn("ZOVReminderUsersID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnZOVReminderUsersID);
                 this.columnLastEditTime = new global::System.Data.DataColumn("LastEditTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLastEditTime);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -2069,6 +2099,22 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ZOVReminderUsersID {
+                get {
+                    try {
+                        return ((int)(this[this.tableZOVAppointments.ZOVReminderUsersIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ZOVReminderUsersID\' in table \'ZOVAppointments\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableZOVAppointments.ZOVReminderUsersIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime LastEditTime {
                 get {
                     try {
@@ -2249,6 +2295,18 @@ namespace ZOVReminder {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSubjectNull() {
                 this[this.tableZOVAppointments.SubjectColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsZOVReminderUsersIDNull() {
+                return this.IsNull(this.tableZOVAppointments.ZOVReminderUsersIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetZOVReminderUsersIDNull() {
+                this[this.tableZOVAppointments.ZOVReminderUsersIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2920,11 +2978,12 @@ namespace ZOVReminder.GlobalbaseDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Description", "Description");
             tableMapping.ColumnMappings.Add("Location", "Location");
             tableMapping.ColumnMappings.Add("Subject", "Subject");
+            tableMapping.ColumnMappings.Add("ZOVReminderUsersID", "ZOVReminderUsersID");
             tableMapping.ColumnMappings.Add("LastEditTime", "LastEditTime");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [ZOVAppointments] WHERE (([UniqueID] = @Original_UniqueID) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS NULL) OR ([StartDate] = @Original_StartDate)) AND ((@IsNull_EndDate = 1 AND [EndDate] IS NULL) OR ([EndDate] = @Original_EndDate)) AND ((@IsNull_AllDay = 1 AND [AllDay] IS NULL) OR ([AllDay] = @Original_AllDay)) AND ((@IsNull_ResourceID = 1 AND [ResourceID] IS NULL) OR ([ResourceID] = @Original_ResourceID)) AND ((@IsNull_Label = 1 AND [Label] IS NULL) OR ([Label] = @Original_Label)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_Location = 1 AND [Location] IS NULL) OR ([Location] = @Original_Location)) AND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subject)) AND ((@IsNull_LastEditTime = 1 AND [LastEditTime] IS NULL) OR ([LastEditTime] = @Original_LastEditTime)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [ZOVAppointments] WHERE (([UniqueID] = @Original_UniqueID) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS NULL) OR ([StartDate] = @Original_StartDate)) AND ((@IsNull_EndDate = 1 AND [EndDate] IS NULL) OR ([EndDate] = @Original_EndDate)) AND ((@IsNull_AllDay = 1 AND [AllDay] IS NULL) OR ([AllDay] = @Original_AllDay)) AND ((@IsNull_ResourceID = 1 AND [ResourceID] IS NULL) OR ([ResourceID] = @Original_ResourceID)) AND ((@IsNull_Label = 1 AND [Label] IS NULL) OR ([Label] = @Original_Label)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_Location = 1 AND [Location] IS NULL) OR ([Location] = @Original_Location)) AND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subject)) AND ((@IsNull_ZOVReminderUsersID = 1 AND [ZOVReminderUsersID] IS NULL) OR ([ZOVReminderUsersID] = @Original_ZOVReminderUsersID)) AND ((@IsNull_LastEditTime = 1 AND [LastEditTime] IS NULL) OR ([LastEditTime] = @Original_LastEditTime)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UniqueID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UniqueID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -2945,90 +3004,96 @@ namespace ZOVReminder.GlobalbaseDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Location", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Subject", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Subject", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastEditTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastEditTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastEditTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastEditTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ZOVAppointments
-                      (Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo, ReminderInfo, ResourceIDs, ResourceID, Label, Status, Description, Location, Subject)
-VALUES     (@Type,@StartDate,@EndDate,@AllDay,@CustomField1,@RecurrenceInfo,@ReminderInfo,@ResourceIDs,@ResourceID,@Label,@Status,@Description,@Location,@Subject); 
-SELECT UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo, ReminderInfo, ResourceIDs, ResourceID, Label, Status, Description, Location, Subject, LastEditTime FROM ZOVAppointments WHERE (UniqueID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [ZOVAppointments] ([Type], [StartDate], [EndDate], [AllDay], [CustomField1], [RecurrenceInfo], [ReminderInfo], [ResourceIDs], [ResourceID], [Label], [Status], [Description], [Location], [Subject], [ZOVReminderUsersID], [LastEditTime]) VALUES (@Type, @StartDate, @EndDate, @AllDay, @CustomField1, @RecurrenceInfo, @ReminderInfo, @ResourceIDs, @ResourceID, @Label, @Status, @Description, @Location, @Subject, @ZOVReminderUsersID, @LastEditTime);
+SELECT UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo, ReminderInfo, ResourceIDs, ResourceID, Label, Status, Description, Location, Subject, ZOVReminderUsersID, LastEditTime FROM ZOVAppointments WHERE (UniqueID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartDate", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EndDate", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EndDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AllDay", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "AllDay", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomField1", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "CustomField1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RecurrenceInfo", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "RecurrenceInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReminderInfo", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ReminderInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ResourceIDs", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ResourceIDs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ResourceID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ResourceID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Label", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Label", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Location", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EndDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EndDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AllDay", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AllDay", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomField1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomField1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RecurrenceInfo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RecurrenceInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReminderInfo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReminderInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ResourceIDs", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ResourceIDs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ResourceID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ResourceID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Label", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Label", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Location", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastEditTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastEditTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE    ZOVAppointments\r\nSET              Type = @Type, StartDate = @StartDate," +
-                " EndDate = @EndDate, AllDay = @AllDay, CustomField1 = @CustomField1, RecurrenceI" +
-                "nfo = @RecurrenceInfo, \r\n                      ReminderInfo = @ReminderInfo, Res" +
-                "ourceIDs = @ResourceIDs, ResourceID = @ResourceID, Label = @Label, Status = @Sta" +
-                "tus, Description = @Description, \r\n                      Location = @Location, S" +
-                "ubject = @Subject\r\nWHERE     (UniqueID = @Original_UniqueID) AND (@IsNull_Type =" +
-                " 1 AND Type IS NULL OR\r\n                      Type = @Original_Type) AND (@IsNul" +
-                "l_StartDate = 1 AND StartDate IS NULL OR\r\n                      StartDate = @Ori" +
-                "ginal_StartDate) AND (@IsNull_EndDate = 1 AND EndDate IS NULL OR\r\n              " +
-                "        EndDate = @Original_EndDate) AND (@IsNull_AllDay = 1 AND AllDay IS NULL " +
-                "OR\r\n                      AllDay = @Original_AllDay) AND (@IsNull_ResourceID = 1" +
-                " AND ResourceID IS NULL OR\r\n                      ResourceID = @Original_Resourc" +
-                "eID) AND (@IsNull_Label = 1 AND Label IS NULL OR\r\n                      Label = " +
-                "@Original_Label) AND (@IsNull_Status = 1 AND Status IS NULL OR\r\n                " +
-                "      Status = @Original_Status) AND (@IsNull_Location = 1 AND Location IS NULL " +
-                "OR\r\n                      Location = @Original_Location) AND (@IsNull_Subject = " +
-                "1 AND Subject IS NULL OR\r\n                      Subject = @Original_Subject) AND" +
-                " (@IsNull_LastEditTime = 1 AND LastEditTime IS NULL OR\r\n                      La" +
-                "stEditTime = @Original_LastEditTime); \r\nSELECT UniqueID, Type, StartDate, EndDat" +
-                "e, AllDay, CustomField1, RecurrenceInfo, ReminderInfo, ResourceIDs, ResourceID, " +
-                "Label, Status, Description, Location, Subject, LastEditTime FROM ZOVAppointments" +
-                " WHERE (UniqueID = @UniqueID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [ZOVAppointments] SET [Type] = @Type, [StartDate] = @StartDate, [EndDate] " +
+                "= @EndDate, [AllDay] = @AllDay, [CustomField1] = @CustomField1, [RecurrenceInfo]" +
+                " = @RecurrenceInfo, [ReminderInfo] = @ReminderInfo, [ResourceIDs] = @ResourceIDs" +
+                ", [ResourceID] = @ResourceID, [Label] = @Label, [Status] = @Status, [Description" +
+                "] = @Description, [Location] = @Location, [Subject] = @Subject, [ZOVReminderUser" +
+                "sID] = @ZOVReminderUsersID, [LastEditTime] = @LastEditTime WHERE (([UniqueID] = " +
+                "@Original_UniqueID) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR ([Type] = @Ori" +
+                "ginal_Type)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS NULL) OR ([StartDate" +
+                "] = @Original_StartDate)) AND ((@IsNull_EndDate = 1 AND [EndDate] IS NULL) OR ([" +
+                "EndDate] = @Original_EndDate)) AND ((@IsNull_AllDay = 1 AND [AllDay] IS NULL) OR" +
+                " ([AllDay] = @Original_AllDay)) AND ((@IsNull_ResourceID = 1 AND [ResourceID] IS" +
+                " NULL) OR ([ResourceID] = @Original_ResourceID)) AND ((@IsNull_Label = 1 AND [La" +
+                "bel] IS NULL) OR ([Label] = @Original_Label)) AND ((@IsNull_Status = 1 AND [Stat" +
+                "us] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_Location = 1 AND [L" +
+                "ocation] IS NULL) OR ([Location] = @Original_Location)) AND ((@IsNull_Subject = " +
+                "1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subject)) AND ((@IsNull_ZOVRe" +
+                "minderUsersID = 1 AND [ZOVReminderUsersID] IS NULL) OR ([ZOVReminderUsersID] = @" +
+                "Original_ZOVReminderUsersID)) AND ((@IsNull_LastEditTime = 1 AND [LastEditTime] " +
+                "IS NULL) OR ([LastEditTime] = @Original_LastEditTime)));\r\nSELECT UniqueID, Type," +
+                " StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo, ReminderInfo, Resourc" +
+                "eIDs, ResourceID, Label, Status, Description, Location, Subject, ZOVReminderUser" +
+                "sID, LastEditTime FROM ZOVAppointments WHERE (UniqueID = @UniqueID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartDate", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EndDate", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EndDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AllDay", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "AllDay", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomField1", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "CustomField1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RecurrenceInfo", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "RecurrenceInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReminderInfo", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ReminderInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ResourceIDs", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ResourceIDs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ResourceID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ResourceID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Label", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Label", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Location", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UniqueID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UniqueID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EndDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EndDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AllDay", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AllDay", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomField1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomField1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RecurrenceInfo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RecurrenceInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReminderInfo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReminderInfo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ResourceIDs", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ResourceIDs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ResourceID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ResourceID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Label", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Label", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Location", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Subject", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastEditTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastEditTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UniqueID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UniqueID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_StartDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StartDate", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StartDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EndDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EndDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EndDate", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EndDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EndDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EndDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AllDay", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AllDay", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AllDay", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "AllDay", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AllDay", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AllDay", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ResourceID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ResourceID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ResourceID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ResourceID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ResourceID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ResourceID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Label", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Label", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Label", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Label", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Label", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Label", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Location", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Location", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Location", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Location", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Subject", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Subject", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Subject", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Subject", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastEditTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastEditTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastEditTime", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "LastEditTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UniqueID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UniqueID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastEditTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastEditTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UniqueID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UniqueID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3044,9 +3109,9 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo,
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT     UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceIn" +
-                "fo, ReminderInfo, ResourceIDs, ResourceID, Label, Status, Description, Location," +
-                " Subject, \r\n                      LastEditTime\r\nFROM         ZOVAppointments";
+            this._commandCollection[0].CommandText = "SELECT UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo, " +
+                "ReminderInfo, ResourceIDs, ResourceID, Label, Status, Description, Location, Sub" +
+                "ject, ZOVReminderUsersID, LastEditTime\r\nFROM   ZOVAppointments";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3107,7 +3172,7 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_UniqueID, global::System.Nullable<int> Original_Type, global::System.Nullable<global::System.DateTime> Original_StartDate, global::System.Nullable<global::System.DateTime> Original_EndDate, global::System.Nullable<bool> Original_AllDay, global::System.Nullable<int> Original_ResourceID, global::System.Nullable<int> Original_Label, global::System.Nullable<int> Original_Status, string Original_Location, string Original_Subject, global::System.Nullable<global::System.DateTime> Original_LastEditTime) {
+        public virtual int Delete(int Original_UniqueID, global::System.Nullable<int> Original_Type, global::System.Nullable<global::System.DateTime> Original_StartDate, global::System.Nullable<global::System.DateTime> Original_EndDate, global::System.Nullable<bool> Original_AllDay, global::System.Nullable<int> Original_ResourceID, global::System.Nullable<int> Original_Label, global::System.Nullable<int> Original_Status, string Original_Location, string Original_Subject, global::System.Nullable<int> Original_ZOVReminderUsersID, global::System.Nullable<global::System.DateTime> Original_LastEditTime) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_UniqueID));
             if ((Original_Type.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -3181,13 +3246,21 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo,
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Subject));
             }
-            if ((Original_LastEditTime.HasValue == true)) {
+            if ((Original_ZOVReminderUsersID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((System.DateTime)(Original_LastEditTime.Value));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((int)(Original_ZOVReminderUsersID.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LastEditTime.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((System.DateTime)(Original_LastEditTime.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3209,7 +3282,23 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> Type, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate, global::System.Nullable<bool> AllDay, string CustomField1, string RecurrenceInfo, string ReminderInfo, string ResourceIDs, global::System.Nullable<int> ResourceID, global::System.Nullable<int> Label, global::System.Nullable<int> Status, string Description, string Location, string Subject) {
+        public virtual int Insert(
+                    global::System.Nullable<int> Type, 
+                    global::System.Nullable<global::System.DateTime> StartDate, 
+                    global::System.Nullable<global::System.DateTime> EndDate, 
+                    global::System.Nullable<bool> AllDay, 
+                    string CustomField1, 
+                    string RecurrenceInfo, 
+                    string ReminderInfo, 
+                    string ResourceIDs, 
+                    global::System.Nullable<int> ResourceID, 
+                    global::System.Nullable<int> Label, 
+                    global::System.Nullable<int> Status, 
+                    string Description, 
+                    string Location, 
+                    string Subject, 
+                    global::System.Nullable<int> ZOVReminderUsersID, 
+                    global::System.Nullable<global::System.DateTime> LastEditTime) {
             if ((Type.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Type.Value));
             }
@@ -3294,6 +3383,18 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo,
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = ((string)(Subject));
             }
+            if ((ZOVReminderUsersID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((int)(ZOVReminderUsersID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((LastEditTime.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((System.DateTime)(LastEditTime.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3329,6 +3430,8 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo,
                     string Description, 
                     string Location, 
                     string Subject, 
+                    global::System.Nullable<int> ZOVReminderUsersID, 
+                    global::System.Nullable<global::System.DateTime> LastEditTime, 
                     int Original_UniqueID, 
                     global::System.Nullable<int> Original_Type, 
                     global::System.Nullable<global::System.DateTime> Original_StartDate, 
@@ -3339,6 +3442,7 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo,
                     global::System.Nullable<int> Original_Status, 
                     string Original_Location, 
                     string Original_Subject, 
+                    global::System.Nullable<int> Original_ZOVReminderUsersID, 
                     global::System.Nullable<global::System.DateTime> Original_LastEditTime, 
                     int UniqueID) {
             if ((Type.HasValue == true)) {
@@ -3425,88 +3529,108 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo,
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Subject));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_UniqueID));
-            if ((Original_Type.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Type.Value));
+            if ((ZOVReminderUsersID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(ZOVReminderUsersID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_StartDate.HasValue == true)) {
+            if ((LastEditTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(LastEditTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_UniqueID));
+            if ((Original_Type.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_StartDate.Value));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_Type.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Original_EndDate.HasValue == true)) {
+            if ((Original_StartDate.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_EndDate.Value));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_StartDate.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((Original_AllDay.HasValue == true)) {
+            if ((Original_EndDate.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((bool)(Original_AllDay.Value));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_EndDate.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((Original_ResourceID.HasValue == true)) {
+            if ((Original_AllDay.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_ResourceID.Value));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((bool)(Original_AllDay.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            if ((Original_Label.HasValue == true)) {
+            if ((Original_ResourceID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_Label.Value));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_ResourceID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            if ((Original_Status.HasValue == true)) {
+            if ((Original_Label.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_Status.Value));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_Label.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
-            if ((Original_Location == null)) {
+            if ((Original_Status.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_Status.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_Location));
-            }
-            if ((Original_Subject == null)) {
+            if ((Original_Location == null)) {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_Subject));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_Location));
             }
-            if ((Original_LastEditTime.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((System.DateTime)(Original_LastEditTime.Value));
-            }
-            else {
+            if ((Original_Subject == null)) {
                 this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(UniqueID));
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_Subject));
+            }
+            if ((Original_ZOVReminderUsersID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_ZOVReminderUsersID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LastEditTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTime)(Original_LastEditTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(UniqueID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3521,6 +3645,42 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo,
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    global::System.Nullable<int> Type, 
+                    global::System.Nullable<global::System.DateTime> StartDate, 
+                    global::System.Nullable<global::System.DateTime> EndDate, 
+                    global::System.Nullable<bool> AllDay, 
+                    string CustomField1, 
+                    string RecurrenceInfo, 
+                    string ReminderInfo, 
+                    string ResourceIDs, 
+                    global::System.Nullable<int> ResourceID, 
+                    global::System.Nullable<int> Label, 
+                    global::System.Nullable<int> Status, 
+                    string Description, 
+                    string Location, 
+                    string Subject, 
+                    global::System.Nullable<int> ZOVReminderUsersID, 
+                    global::System.Nullable<global::System.DateTime> LastEditTime, 
+                    int Original_UniqueID, 
+                    global::System.Nullable<int> Original_Type, 
+                    global::System.Nullable<global::System.DateTime> Original_StartDate, 
+                    global::System.Nullable<global::System.DateTime> Original_EndDate, 
+                    global::System.Nullable<bool> Original_AllDay, 
+                    global::System.Nullable<int> Original_ResourceID, 
+                    global::System.Nullable<int> Original_Label, 
+                    global::System.Nullable<int> Original_Status, 
+                    string Original_Location, 
+                    string Original_Subject, 
+                    global::System.Nullable<int> Original_ZOVReminderUsersID, 
+                    global::System.Nullable<global::System.DateTime> Original_LastEditTime) {
+            return this.Update(Type, StartDate, EndDate, AllDay, CustomField1, RecurrenceInfo, ReminderInfo, ResourceIDs, ResourceID, Label, Status, Description, Location, Subject, ZOVReminderUsersID, LastEditTime, Original_UniqueID, Original_Type, Original_StartDate, Original_EndDate, Original_AllDay, Original_ResourceID, Original_Label, Original_Status, Original_Location, Original_Subject, Original_ZOVReminderUsersID, Original_LastEditTime, Original_UniqueID);
         }
     }
     

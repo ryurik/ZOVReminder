@@ -79,8 +79,13 @@ namespace ZOVReminder
             newDs.ZOVAppointments.Clear();
             newDs.ZOVAppointments.AcceptChanges();
             //OnAppointmentChangedInsertedDeleted(null, null);
-            if (globalbaseDataSet.ZOVAppointments.GetChanges() != null)
+            var dt = globalbaseDataSet.ZOVAppointments.GetChanges();
+            if ((dt != null) && (dt.Rows.Count > 0))
             {
+                foreach (DataRow changesRow in dt.Rows)
+                {
+                    changesRow["ZOVReminderUsersID"] = Program.Security.ZOVReminderUsersID;
+                }
                 zOVAppointmentsTableAdapter.Update(globalbaseDataSet.ZOVAppointments.GetChanges() as GlobalbaseDataSet.ZOVAppointmentsDataTable);
             }
             zOVAppointmentsTableAdapter.Fill(newDs.ZOVAppointments);
