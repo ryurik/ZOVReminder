@@ -23,21 +23,6 @@ namespace ZOVReminder.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ZSDB\\MAIN;Initial Catalog=Globalbase;Integrated Security=True")]
-        public string GlobalbaseConnectionString {
-            get {
-                return ((string)(this["GlobalbaseConnectionString"]));
-            }
-            set
-            {
-                (this["GlobalbaseConnectionString"]) = value; 
-                
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("ZSDB\\Main")]
@@ -52,7 +37,7 @@ namespace ZOVReminder.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("GlobalBase")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Reminder")]
         public string Database {
             get {
                 return ((string)(this["Database"]));
@@ -72,6 +57,18 @@ namespace ZOVReminder.Properties {
             set {
                 this["UserName"] = value;
             }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ZSDB\\MAIN;Initial Catalog=Reminder;uid=getauthdata;pwd=zow;Integrated" +
+            " Security=false")]
+        public string GlobalbaseConnectionString {
+            get {
+                return ((string)(this["GlobalbaseConnectionString"]));
+            }
+            set { this["GlobalbaseConnectionString"] = value; }
         }
     }
 }
