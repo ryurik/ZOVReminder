@@ -50,7 +50,8 @@ namespace ZOVReminder.Forms
             toolStripStatusLabelUserName.Text = Program.Security.UserName;
             mToolStripMenuItemSettings.Visible = Program.Security.IsAdmin;
             if (Program.Security.ZOVReminderUsersID > 0)
-            mToolStripMenuItemCalendar_Click(sender, e);
+                mToolStripMenuItemCalendar_Click(sender, e);
+            toolStripStatusLabelConnectionString.Text = MyConnectionString.ConnectionString;
         }
 
 

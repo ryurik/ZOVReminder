@@ -26,7 +26,7 @@ namespace ZOVReminder
             get
             {
                 if ((globalbaseDataSet != null) && (globalbaseDataSet.ZOVAppointments != null) &&
-                    (globalbaseDataSet.ZOVAppointments.Select(x => x.LastEditTime).Count() > 0))
+                    (globalbaseDataSet.ZOVAppointments.Select(x => x.LastEditTime).Any()))
                 {
                     return globalbaseDataSet.ZOVAppointments.Select(x => x.LastEditTime).Max();
                 }

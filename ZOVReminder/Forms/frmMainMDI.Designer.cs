@@ -39,16 +39,17 @@
             this.mToolStripMenuItemPasswords = new System.Windows.Forms.ToolStripMenuItem();
             this.группыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.группыИПользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.applicationMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelUserName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelConnectionString = new System.Windows.Forms.ToolStripStatusLabel();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.mainContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mContextOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mContextClose = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.группыИПользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu)).BeginInit();
             this.statusStrip.SuspendLayout();
@@ -112,23 +113,35 @@
             // mToolStripMenuItemPasswords
             // 
             this.mToolStripMenuItemPasswords.Name = "mToolStripMenuItemPasswords";
-            this.mToolStripMenuItemPasswords.Size = new System.Drawing.Size(199, 30);
+            this.mToolStripMenuItemPasswords.Size = new System.Drawing.Size(277, 30);
             this.mToolStripMenuItemPasswords.Text = "Пароли";
             this.mToolStripMenuItemPasswords.Click += new System.EventHandler(this.mToolStripMenuItemPasswords_Click);
             // 
             // группыToolStripMenuItem
             // 
             this.группыToolStripMenuItem.Name = "группыToolStripMenuItem";
-            this.группыToolStripMenuItem.Size = new System.Drawing.Size(199, 30);
+            this.группыToolStripMenuItem.Size = new System.Drawing.Size(277, 30);
             this.группыToolStripMenuItem.Text = "Группы";
             this.группыToolStripMenuItem.Click += new System.EventHandler(this.группыToolStripMenuItem_Click);
             // 
             // пользователиToolStripMenuItem
             // 
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(199, 30);
+            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(277, 30);
             this.пользователиToolStripMenuItem.Text = "Пользователи";
             this.пользователиToolStripMenuItem.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(274, 6);
+            // 
+            // группыИПользователиToolStripMenuItem
+            // 
+            this.группыИПользователиToolStripMenuItem.Name = "группыИПользователиToolStripMenuItem";
+            this.группыИПользователиToolStripMenuItem.Size = new System.Drawing.Size(277, 30);
+            this.группыИПользователиToolStripMenuItem.Text = "Группы и пользователи";
+            this.группыИПользователиToolStripMenuItem.Click += new System.EventHandler(this.группыИПользователиToolStripMenuItem_Click);
             // 
             // applicationMenu
             // 
@@ -138,17 +151,25 @@
             // 
             this.statusStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabelUserName});
-            this.statusStrip.Location = new System.Drawing.Point(0, 778);
+            this.toolStripStatusLabelUserName,
+            this.toolStripStatusLabelConnectionString});
+            this.statusStrip.Location = new System.Drawing.Point(0, 770);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(2, 0, 14, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1448, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1448, 30);
             this.statusStrip.TabIndex = 6;
             // 
             // toolStripStatusLabelUserName
             // 
             this.toolStripStatusLabelUserName.Name = "toolStripStatusLabelUserName";
-            this.toolStripStatusLabelUserName.Size = new System.Drawing.Size(0, 17);
+            this.toolStripStatusLabelUserName.Size = new System.Drawing.Size(94, 25);
+            this.toolStripStatusLabelUserName.Text = "UserName";
+            // 
+            // toolStripStatusLabelConnectionString
+            // 
+            this.toolStripStatusLabelConnectionString.Name = "toolStripStatusLabelConnectionString";
+            this.toolStripStatusLabelConnectionString.Size = new System.Drawing.Size(149, 25);
+            this.toolStripStatusLabelConnectionString.Text = "ConnectionString";
             // 
             // notifyIcon
             // 
@@ -185,18 +206,6 @@
             this.mContextClose.Size = new System.Drawing.Size(253, 30);
             this.mContextClose.Text = "Выход";
             this.mContextClose.Click += new System.EventHandler(this.mContextClose_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(274, 6);
-            // 
-            // группыИПользователиToolStripMenuItem
-            // 
-            this.группыИПользователиToolStripMenuItem.Name = "группыИПользователиToolStripMenuItem";
-            this.группыИПользователиToolStripMenuItem.Size = new System.Drawing.Size(277, 30);
-            this.группыИПользователиToolStripMenuItem.Text = "Группы и пользователи";
-            this.группыИПользователиToolStripMenuItem.Click += new System.EventHandler(this.группыИПользователиToolStripMenuItem_Click);
             // 
             // frmMainMDI
             // 
@@ -247,5 +256,6 @@
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem группыИПользователиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelConnectionString;
     }
 }
