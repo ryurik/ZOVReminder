@@ -75,8 +75,6 @@ namespace ZOVReminder
 
         private void timerMain_Tick(object sender, EventArgs e)
         {
-            globalbaseDataSet.ZOVAppointments.
-
             timerMain.Enabled = false;
             newDs.ZOVAppointments.Clear();
             newDs.ZOVAppointments.AcceptChanges();
@@ -88,7 +86,9 @@ namespace ZOVReminder
                 {
                     changesRow["ZOVReminderUsersID"] = Program.Security.ZOVReminderUsersID;
                 }
-                zOVAppointmentsTableAdapter.Update(globalbaseDataSet.ZOVAppointments.GetChanges() as GlobalbaseDataSet.ZOVAppointmentsDataTable);
+                dt.AcceptChanges();
+                //zOVAppointmentsTableAdapter.Update(globalbaseDataSet.ZOVAppointments.GetChanges() as GlobalbaseDataSet.ZOVAppointmentsDataTable);
+                zOVAppointmentsTableAdapter.Update(dt as GlobalbaseDataSet.ZOVAppointmentsDataTable);
             }
             zOVAppointmentsTableAdapter.Fill(newDs.ZOVAppointments);
             lock (locker)
@@ -124,17 +124,24 @@ namespace ZOVReminder
         private void mainSchedulerControl_EditAppointmentFormShowing(object sender, AppointmentFormEventArgs e)
         {
             timerMain.Stop();
+            SchedulerControl scheduler = ((SchedulerControl)(sender));
+            frmCustomAppointmentForm form = new frmCustomAppointmentForm(scheduler, e.Appointment, e.OpenRecurrenceForm);
+            try
+            {
+                e.DialogResult = form.ShowDialog();
+                e.Handled = true;
+            }
+            finally
+            {
+                timerMain.Start();
+                form.Dispose();
+            }
         }
 
         private void barButtonItemPasswords_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var frmPass = new frmPasswords();
             frmPass.ShowDialog();
-        }
-
-        private void mainSchedulerControl_AppointmentViewInfoCustomizing(object sender, AppointmentViewInfoCustomizingEventArgs e)
-        {
-
         }
 
     }

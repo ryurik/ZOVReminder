@@ -220,6 +220,12 @@
     <Compile Include="Classes\MyConnectionString.cs" />
     <Compile Include="Classes\Security.cs" />
     <Compile Include="Classes\WorkWithHashes.cs" />
+    <Compile Include="Forms\frmCustomAppointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCustomAppointmentForm.Designer.cs">
+      <DependentUpon>frmCustomAppointmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmCustomAppointmentForm.resx">
+      <DependentUpon>frmCustomAppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmBase.resx">
       <DependentUpon>frmBase.cs</DependentUpon>
     </EmbeddedResource>

@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCalendar));
-            DevExpress.XtraScheduler.TimeRuler timeRuler4 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler5 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler6 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraBars.Ribbon.ReduceOperation reduceOperation2 = new DevExpress.XtraBars.Ribbon.ReduceOperation();
+            DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler3 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraBars.Ribbon.ReduceOperation reduceOperation1 = new DevExpress.XtraBars.Ribbon.ReduceOperation();
             this.mainSchedulerStorage = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
             this.zOVAppointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.globalbaseDataSet = new ZOVReminder.GlobalbaseDataSet();
@@ -125,26 +125,26 @@
             // 
             // panelControlBottom
             // 
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 653);
-            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(2);
-            this.panelControlBottom.Size = new System.Drawing.Size(1241, 33);
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 1004);
+            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(3);
+            this.panelControlBottom.Size = new System.Drawing.Size(1862, 51);
             // 
             // simpleButtonApply
             // 
-            this.simpleButtonApply.Location = new System.Drawing.Point(2504, 6);
-            this.simpleButtonApply.Margin = new System.Windows.Forms.Padding(2);
+            this.simpleButtonApply.Location = new System.Drawing.Point(6318, 9);
+            this.simpleButtonApply.Margin = new System.Windows.Forms.Padding(3);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(2646, 6);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Location = new System.Drawing.Point(6531, 9);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3);
             // 
             // panelControlMain
             // 
             this.panelControlMain.Controls.Add(this.mainSchedulerControl);
-            this.panelControlMain.Location = new System.Drawing.Point(0, 141);
-            this.panelControlMain.Margin = new System.Windows.Forms.Padding(1);
-            this.panelControlMain.Size = new System.Drawing.Size(1241, 512);
+            this.panelControlMain.Location = new System.Drawing.Point(0, 181);
+            this.panelControlMain.Margin = new System.Windows.Forms.Padding(2);
+            this.panelControlMain.Size = new System.Drawing.Size(1862, 823);
             // 
             // mainSchedulerStorage
             // 
@@ -249,6 +249,7 @@
             this.changeAppointmentReminderItem1,
             this.barButtonItemPasswords});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonControl.MaxItemId = 3;
             this.ribbonControl.MiniToolbars.Add(this.ribbonMiniToolbar);
             this.ribbonControl.Name = "ribbonControl";
@@ -262,7 +263,7 @@
             this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1,
             this.repositoryItemDuration1});
-            this.ribbonControl.Size = new System.Drawing.Size(1241, 141);
+            this.ribbonControl.Size = new System.Drawing.Size(1862, 181);
             // 
             // openScheduleItem1
             // 
@@ -528,18 +529,18 @@
             // 
             this.mainSchedulerControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainSchedulerControl.Location = new System.Drawing.Point(2, 2);
+            this.mainSchedulerControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mainSchedulerControl.MenuManager = this.ribbonControl;
             this.mainSchedulerControl.Name = "mainSchedulerControl";
-            this.mainSchedulerControl.Size = new System.Drawing.Size(1237, 508);
+            this.mainSchedulerControl.Size = new System.Drawing.Size(1858, 819);
             this.mainSchedulerControl.Start = new System.DateTime(2015, 10, 1, 0, 0, 0, 0);
             this.mainSchedulerControl.Storage = this.mainSchedulerStorage;
             this.mainSchedulerControl.TabIndex = 4;
             this.mainSchedulerControl.Text = "mainShedulerControl";
-            this.mainSchedulerControl.Views.DayView.TimeRulers.Add(timeRuler4);
+            this.mainSchedulerControl.Views.DayView.TimeRulers.Add(timeRuler1);
             this.mainSchedulerControl.Views.FullWeekView.Enabled = true;
-            this.mainSchedulerControl.Views.FullWeekView.TimeRulers.Add(timeRuler5);
-            this.mainSchedulerControl.Views.WorkWeekView.TimeRulers.Add(timeRuler6);
-            this.mainSchedulerControl.AppointmentViewInfoCustomizing += new DevExpress.XtraScheduler.AppointmentViewInfoCustomizingEventHandler(this.mainSchedulerControl_AppointmentViewInfoCustomizing);
+            this.mainSchedulerControl.Views.FullWeekView.TimeRulers.Add(timeRuler2);
+            this.mainSchedulerControl.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
             this.mainSchedulerControl.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.mainSchedulerControl_EditAppointmentFormShowing);
             // 
             // appointmentRibbonPage1
@@ -571,12 +572,12 @@
             this.commonRibbonPageGroup1,
             this.printRibbonPageGroup1});
             this.fileRibbonPage1.Name = "fileRibbonPage1";
-            reduceOperation2.Behavior = DevExpress.XtraBars.Ribbon.ReduceOperationBehavior.Single;
-            reduceOperation2.Group = null;
-            reduceOperation2.ItemLinkIndex = 0;
-            reduceOperation2.ItemLinksCount = 0;
-            reduceOperation2.Operation = DevExpress.XtraBars.Ribbon.ReduceOperationType.LargeButtons;
-            this.fileRibbonPage1.ReduceOperations.Add(reduceOperation2);
+            reduceOperation1.Behavior = DevExpress.XtraBars.Ribbon.ReduceOperationBehavior.Single;
+            reduceOperation1.Group = null;
+            reduceOperation1.ItemLinkIndex = 0;
+            reduceOperation1.ItemLinksCount = 0;
+            reduceOperation1.Operation = DevExpress.XtraBars.Ribbon.ReduceOperationType.LargeButtons;
+            this.fileRibbonPage1.ReduceOperations.Add(reduceOperation1);
             // 
             // commonRibbonPageGroup1
             // 
@@ -726,12 +727,12 @@
             // 
             // frmCalendar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 686);
+            this.ClientSize = new System.Drawing.Size(1862, 1055);
             this.Controls.Add(this.ribbonControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "frmCalendar";
             this.Text = "ЗОВ";
             this.Load += new System.EventHandler(this.frmMain_Load);
