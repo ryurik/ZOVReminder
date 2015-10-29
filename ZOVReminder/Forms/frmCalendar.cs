@@ -75,6 +75,8 @@ namespace ZOVReminder
 
         private void timerMain_Tick(object sender, EventArgs e)
         {
+            globalbaseDataSet.ZOVAppointments.
+
             timerMain.Enabled = false;
             newDs.ZOVAppointments.Clear();
             newDs.ZOVAppointments.AcceptChanges();
@@ -128,6 +130,11 @@ namespace ZOVReminder
         {
             var frmPass = new frmPasswords();
             frmPass.ShowDialog();
+        }
+
+        private void mainSchedulerControl_AppointmentViewInfoCustomizing(object sender, AppointmentViewInfoCustomizingEventArgs e)
+        {
+
         }
 
     }
