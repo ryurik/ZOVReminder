@@ -14,7 +14,7 @@ using ZOVReminder.Forms;
 
 namespace ZOVReminder
 {
-    public partial class frmCalendar : frmBase
+    public partial class frmCalendar : FrmBase
     {
         private object locker = new object();
         private GlobalbaseDataSet newDs = new GlobalbaseDataSet();
@@ -109,9 +109,9 @@ namespace ZOVReminder
                 {
                     string s = c.Subject + Environment.NewLine + c.Subject + Environment.NewLine + c.Description +
                         Environment.NewLine + c.StartDate.ToShortTimeString();
-                    if ((MdiParent != null) && (MdiParent is frmMainMDI))
+                    if ((MdiParent != null) && (MdiParent is FrmMainMDI))
                     {
-                        var frmMainMdi = MdiParent as frmMainMDI;
+                        var frmMainMdi = MdiParent as FrmMainMDI;
                         if (frmMainMdi != null) frmMainMdi.ShowToolTip(s, 1000);
                     }
                 }
@@ -125,7 +125,7 @@ namespace ZOVReminder
         {
             timerMain.Stop();
             SchedulerControl scheduler = ((SchedulerControl)(sender));
-            frmCustomAppointmentForm form = new frmCustomAppointmentForm(scheduler, e.Appointment, e.OpenRecurrenceForm);
+            FrmCustomAppointmentForm form = new FrmCustomAppointmentForm(scheduler, e.Appointment, e.OpenRecurrenceForm);
             try
             {
                 e.DialogResult = form.ShowDialog();

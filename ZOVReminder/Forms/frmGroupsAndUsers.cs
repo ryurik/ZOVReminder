@@ -10,11 +10,12 @@ using ZOVReminder.GlobalbaseDataSetTableAdapters;
 
 namespace ZOVReminder.Forms
 {
-    public partial class frmGroupsAndUsers : frmBase
+    public partial class FrmGroupsAndUsers : FrmBase
     {
-        public frmGroupsAndUsers()
+        public FrmGroupsAndUsers()
         {
             InitializeComponent();
+            frmGroupsAndUsers_Resize(this, null);
         }
 
         public override void CheckForChanges()
@@ -36,23 +37,55 @@ namespace ZOVReminder.Forms
 
         private void frmGroupsAndUsers_Resize(object sender, EventArgs e)
         {
-            gridControlLeftUsers.Width = (ClientSize.Width - panelMiddle.Width)/2;
+            panelControlRight.Width = (ClientSize.Width - panelMiddle.Width)/2;
+            simpleButtonFromLeftToRight.Top = panelMiddle.Height/2 - simpleButtonFromLeftToRight.Height - 5;
+            simpleButtonFromRightToLeft.Top = panelMiddle.Height / 2 + 5;
         }
 
         private void frmGroupsAndUsers_Load(object sender, EventArgs e)
         {
-            GlobalbaseDataSetTableAdapters.ZOVReminderGroupsTableAdapter zovReminderGroupsTableAdapter = new ZOVReminderGroupsTableAdapter();
-            GlobalbaseDataSet globalbaseDataSet = new GlobalbaseDataSet();
+            // TODO: This line of code loads data into the 'globalbaseDataSet.ZOVReminderGroups' table. You can move, or remove it, as needed.
+            this.zOVReminderGroupsTableAdapter.FillBy(this.globalbaseDataSet.ZOVReminderGroups);
+            // TODO: This line of code loads data into the 'globalbaseDataSet.ZOVReminderUsers' table. You can move, or remove it, as needed.
+            this.taUsers.Fill(this.globalbaseDataSet.ZOVReminderUsers);
+            // TODO: This line of code loads data into the 'globalbaseDataSet.ZOVReminderUsersAndGroups' table. You can move, or remove it, as needed.
+            this.taUsersAndGroups.Fill(this.globalbaseDataSet.ZOVReminderUsersAndGroups);
 
-            zovReminderGroupsTableAdapter.Fill(globalbaseDataSet.ZOVReminderGroups);
-            
-            foreach (var groupName in globalbaseDataSet.ZOVReminderGroups)
-            {
-                comboBoxGroups.Properties.Items.Add(groupName.Name);
-            }
         }
 
         private void comboBoxGroups_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // bindingSourceUsersAndGroups.Filter = 
+             int groupId = 0;
+            if (zOVReminderGroupsBindingSource.Current != null)
+            {
+                 groupId = (int)((DataRowView)zOVReminderGroupsBindingSource.Current)["ZOVReminderGroupsID"];
+            }
+            else
+            {
+                return;
+            }
+
+            bsUserAndGroupsNotInGroup.Filter = "ZOVReminderGroupsID <> " + groupId.ToString();
+            bsUserAndGroups.Filter = "ZOVReminderGroupsID = " + groupId.ToString();
+
+            taUsersForGroup.Fill(globalbaseDataSet.ZOVReminderUsersForGroups, groupId);
+        }
+
+        private void FrmGroupsAndUsers_Activated(object sender, EventArgs e)
+        {
+            frmGroupsAndUsers_Resize(sender, e);
+        }
+
+        private void zOVReminderUsersAndGroupsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.bsUserAndGroups.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.globalbaseDataSet);
+
+        }
+
+        private void zOVReminderUsersAndGroupsGridControl_Click(object sender, EventArgs e)
         {
 
         }

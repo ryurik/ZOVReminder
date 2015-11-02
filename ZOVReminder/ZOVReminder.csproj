@@ -220,59 +220,59 @@
     <Compile Include="Classes\MyConnectionString.cs" />
     <Compile Include="Classes\Security.cs" />
     <Compile Include="Classes\WorkWithHashes.cs" />
-    <Compile Include="Forms\frmCustomAppointmentForm.cs">
+    <Compile Include="Forms\FrmCustomAppointmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmCustomAppointmentForm.Designer.cs">
-      <DependentUpon>frmCustomAppointmentForm.cs</DependentUpon>
+    <Compile Include="Forms\FrmCustomAppointmentForm.Designer.cs">
+      <DependentUpon>FrmCustomAppointmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmBase.cs">
+    <Compile Include="Forms\FrmBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmBase.Designer.cs">
-      <DependentUpon>frmBase.cs</DependentUpon>
+    <Compile Include="Forms\FrmBase.Designer.cs">
+      <DependentUpon>FrmBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmGroups.cs">
+    <Compile Include="Forms\FrmGroups.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmGroups.Designer.cs">
-      <DependentUpon>frmGroups.cs</DependentUpon>
+    <Compile Include="Forms\FrmGroups.Designer.cs">
+      <DependentUpon>FrmGroups.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmGroupsAndUsers.cs">
+    <Compile Include="Forms\FrmGroupsAndUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmGroupsAndUsers.Designer.cs">
-      <DependentUpon>frmGroupsAndUsers.cs</DependentUpon>
+    <Compile Include="Forms\FrmGroupsAndUsers.Designer.cs">
+      <DependentUpon>FrmGroupsAndUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmMainMDI.cs">
+    <Compile Include="Forms\FrmMainMDI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmMainMDI.Designer.cs">
-      <DependentUpon>frmMainMDI.cs</DependentUpon>
+    <Compile Include="Forms\FrmMainMDI.Designer.cs">
+      <DependentUpon>FrmMainMDI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmLogin.cs">
+    <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="Forms\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmCalendar.cs">
+    <Compile Include="Forms\FrmCalendar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmCalendar.Designer.cs">
-      <DependentUpon>frmCalendar.cs</DependentUpon>
+    <Compile Include="Forms\FrmCalendar.Designer.cs">
+      <DependentUpon>FrmCalendar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmPasswords.cs">
+    <Compile Include="Forms\FrmPasswords.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmPasswords.Designer.cs">
-      <DependentUpon>frmPasswords.cs</DependentUpon>
+    <Compile Include="Forms\FrmPasswords.Designer.cs">
+      <DependentUpon>FrmPasswords.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmUsers.cs">
+    <Compile Include="Forms\FrmUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmUsers.Designer.cs">
-      <DependentUpon>frmUsers.cs</DependentUpon>
+    <Compile Include="Forms\FrmUsers.Designer.cs">
+      <DependentUpon>FrmUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalbaseDataSet.cs">
       <DependentUpon>GlobalbaseDataSet.xsd</DependentUpon>
@@ -285,33 +285,33 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\frmCustomAppointmentForm.resx">
-      <DependentUpon>frmCustomAppointmentForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmCustomAppointmentForm.resx">
+      <DependentUpon>FrmCustomAppointmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmBase.resx">
-      <DependentUpon>frmBase.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmBase.resx">
+      <DependentUpon>FrmBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmGroups.resx">
-      <DependentUpon>frmGroups.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmGroups.resx">
+      <DependentUpon>FrmGroups.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmGroupsAndUsers.resx">
-      <DependentUpon>frmGroupsAndUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmGroupsAndUsers.resx">
+      <DependentUpon>FrmGroupsAndUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmMainMDI.resx">
-      <DependentUpon>frmMainMDI.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmMainMDI.resx">
+      <DependentUpon>FrmMainMDI.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmCalendar.resx">
-      <DependentUpon>frmCalendar.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmCalendar.resx">
+      <DependentUpon>FrmCalendar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmPasswords.resx">
-      <DependentUpon>frmPasswords.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmPasswords.resx">
+      <DependentUpon>FrmPasswords.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmUsers.resx">
-      <DependentUpon>frmUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmUsers.resx">
+      <DependentUpon>FrmUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

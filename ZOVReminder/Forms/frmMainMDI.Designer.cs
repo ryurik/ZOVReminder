@@ -1,6 +1,6 @@
 ﻿namespace ZOVReminder.Forms
 {
-    partial class frmMainMDI
+    partial class FrmMainMDI
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMDI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainMDI));
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.mToolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mToolStripMenuItemCalendar = new System.Windows.Forms.ToolStripMenuItem();

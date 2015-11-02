@@ -13,7 +13,7 @@ using ZOVReminder.Classes;
 
 namespace ZOVReminder.Forms
 {
-    public partial class frmMainMDI : Form
+    public partial class FrmMainMDI : Form
     {
         private bool exitApplicaton = false;
 
@@ -23,7 +23,7 @@ namespace ZOVReminder.Forms
         [DllImport("user32.dll")]
         static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
 
-        public frmMainMDI()
+        public FrmMainMDI()
         {
             InitializeComponent();
         }
@@ -51,6 +51,8 @@ namespace ZOVReminder.Forms
             mToolStripMenuItemSettings.Visible = Program.Security.IsAdmin;
             if (Program.Security.ZOVReminderUsersID > 0)
                 mToolStripMenuItemCalendar_Click(sender, e);
+            else
+                группыИПользователиToolStripMenuItem_Click(sender, e);
             toolStripStatusLabelConnectionString.Text = MyConnectionString.ConnectionString;
         }
 
@@ -177,7 +179,7 @@ namespace ZOVReminder.Forms
 
         private void группыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForms(typeof(frmGroups), "Группы");
+            OpenChildForms(typeof(FrmGroups), "Группы");
         }
 
         private void CloseForm()
@@ -189,12 +191,12 @@ namespace ZOVReminder.Forms
 
         private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForms(typeof(frmUsers), "Пользователи");
+            OpenChildForms(typeof(FrmUsers), "Пользователи");
         }
 
         private void группыИПользователиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForms(typeof(frmGroupsAndUsers), "Группы и пользователи");
+            OpenChildForms(typeof(FrmGroupsAndUsers), "Группы и пользователи");
         }
 
     }

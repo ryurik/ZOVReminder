@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace ZOVReminder.Forms
 {
-    public partial class frmGroups : frmBase
+    public partial class FrmGroups : FrmBase
     {
-        public frmGroups()
+        public FrmGroups()
         {
             InitializeComponent();
         }

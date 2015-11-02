@@ -1,6 +1,6 @@
 ﻿namespace ZOVReminder.Forms
 {
-    partial class frmBase
+    partial class FrmBase
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace ZOVReminder.Forms
 {
-    partial class frmUsers
+    partial class FrmUsers
     {
         /// <summary>
         /// Required designer variable.
@@ -40,23 +40,43 @@
             this.colLastLogon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLastLogOff = new DevExpress.XtraGrid.Columns.GridColumn();
             this.zOVReminderUsersTableAdapter = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVReminderUsersTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).BeginInit();
+            this.panelControlBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
+            this.panelControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zOVReminderUsersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).BeginInit();
-            this.panelControlBottom.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panelControlBottom
+            // 
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 243);
+            this.panelControlBottom.Size = new System.Drawing.Size(628, 33);
+            // 
+            // simpleButtonApply
+            // 
+            this.simpleButtonApply.Location = new System.Drawing.Point(162, 5);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(301, 5);
+            // 
+            // panelControlMain
+            // 
+            this.panelControlMain.Controls.Add(this.gridControl);
+            this.panelControlMain.Size = new System.Drawing.Size(628, 243);
             // 
             // gridControl
             // 
             this.gridControl.DataSource = this.zOVReminderUsersBindingSource;
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl.EmbeddedNavigator.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.zOVReminderUsersBindingSource, "ZOVReminderUsersID", true));
-            this.gridControl.Location = new System.Drawing.Point(0, 0);
+            this.gridControl.Location = new System.Drawing.Point(2, 2);
             this.gridControl.MainView = this.gridView;
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(628, 243);
+            this.gridControl.Size = new System.Drawing.Size(624, 239);
             this.gridControl.TabIndex = 2;
             this.gridControl.UseEmbeddedNavigator = true;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -150,26 +170,23 @@
             // 
             this.zOVReminderUsersTableAdapter.ClearBeforeFill = true;
             // 
-            // panelControlMain
-            // 
-            this.panelControlMain.Controls.Add(this.gridControl);
-            // 
-            // frmUsers
+            // FrmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 276);
-            this.Controls.Add(this.panelControlBottom);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmUsers";
+            this.Name = "FrmUsers";
             this.Text = "Пользователи";
             this.Load += new System.EventHandler(this.frmUsers_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).EndInit();
+            this.panelControlBottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).EndInit();
+            this.panelControlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zOVReminderUsersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).EndInit();
-            this.panelControlBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

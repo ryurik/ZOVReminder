@@ -25,19 +25,19 @@ using DevExpress.XtraScheduler;
 
 namespace ZOVReminder.Forms
 {
-    public partial class frmCustomAppointmentForm : DevExpress.XtraScheduler.UI.AppointmentForm
+    public partial class FrmCustomAppointmentForm : DevExpress.XtraScheduler.UI.AppointmentForm
     {
         private int _zovReminderUsersID;
-        public frmCustomAppointmentForm()
+        public FrmCustomAppointmentForm()
         {
             InitializeComponent();
         }
-        public frmCustomAppointmentForm(DevExpress.XtraScheduler.SchedulerControl control, DevExpress.XtraScheduler.Appointment apt)
+        public FrmCustomAppointmentForm(DevExpress.XtraScheduler.SchedulerControl control, DevExpress.XtraScheduler.Appointment apt)
             : base(control, apt)
         {
             InitializeComponent();
         }
-        public frmCustomAppointmentForm(DevExpress.XtraScheduler.SchedulerControl control, DevExpress.XtraScheduler.Appointment apt, bool openRecurrenceForm)
+        public FrmCustomAppointmentForm(DevExpress.XtraScheduler.SchedulerControl control, DevExpress.XtraScheduler.Appointment apt, bool openRecurrenceForm)
             : base(control, apt, openRecurrenceForm)
         {
             InitializeComponent();

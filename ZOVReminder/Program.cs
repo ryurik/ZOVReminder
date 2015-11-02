@@ -22,7 +22,7 @@ namespace ZOVReminder
             Application.SetCompatibleTextRenderingDefault(false);
 #if DEBUG
             Application.Run(new frmLogin());
-            Application.Run(new frmMainMDI());
+            Application.Run(new FrmMainMDI());
             //Application.Run(new frmMain());
 #else
             Application.Run(new frmLogin());
