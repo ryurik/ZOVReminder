@@ -92,21 +92,21 @@
             // 
             // panelControlBottom
             // 
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 300);
-            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(2);
-            this.panelControlBottom.Size = new System.Drawing.Size(1289, 33);
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 569);
+            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(3);
+            this.panelControlBottom.Size = new System.Drawing.Size(1322, 51);
             // 
             // simpleButtonApply
             // 
-            this.simpleButtonApply.Location = new System.Drawing.Point(2891, 5);
-            this.simpleButtonApply.Margin = new System.Windows.Forms.Padding(2);
-            this.simpleButtonApply.Size = new System.Drawing.Size(131, 23);
+            this.simpleButtonApply.Location = new System.Drawing.Point(1003, 8);
+            this.simpleButtonApply.Margin = new System.Windows.Forms.Padding(3);
+            this.simpleButtonApply.Size = new System.Drawing.Size(196, 35);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(3031, 5);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClose.Size = new System.Drawing.Size(131, 23);
+            this.btnClose.Location = new System.Drawing.Point(1209, 8);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3);
+            this.btnClose.Size = new System.Drawing.Size(196, 35);
             // 
             // panelControlMain
             // 
@@ -114,8 +114,8 @@
             this.panelControlMain.Controls.Add(this.panelMiddle);
             this.panelControlMain.Controls.Add(this.panelControlRight);
             this.panelControlMain.Controls.Add(this.panelTop);
-            this.panelControlMain.Margin = new System.Windows.Forms.Padding(1);
-            this.panelControlMain.Size = new System.Drawing.Size(1289, 300);
+            this.panelControlMain.Margin = new System.Windows.Forms.Padding(2);
+            this.panelControlMain.Size = new System.Drawing.Size(1322, 569);
             // 
             // panelTop
             // 
@@ -123,9 +123,8 @@
             this.panelTop.Controls.Add(this.labelControlGroupName);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(2, 2);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(2);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1285, 32);
+            this.panelTop.Size = new System.Drawing.Size(1318, 49);
             this.panelTop.TabIndex = 0;
             // 
             // comboBoxGroups
@@ -133,9 +132,10 @@
             this.comboBoxGroups.DataSource = this.zOVReminderGroupsBindingSource;
             this.comboBoxGroups.DisplayMember = "Name";
             this.comboBoxGroups.FormattingEnabled = true;
-            this.comboBoxGroups.Location = new System.Drawing.Point(56, 10);
+            this.comboBoxGroups.Location = new System.Drawing.Point(84, 15);
+            this.comboBoxGroups.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxGroups.Name = "comboBoxGroups";
-            this.comboBoxGroups.Size = new System.Drawing.Size(210, 21);
+            this.comboBoxGroups.Size = new System.Drawing.Size(313, 27);
             this.comboBoxGroups.TabIndex = 15;
             this.comboBoxGroups.ValueMember = "ZOVReminderGroupsID";
             this.comboBoxGroups.SelectedIndexChanged += new System.EventHandler(this.comboBoxGroups_SelectedIndexChanged);
@@ -152,9 +152,10 @@
             // 
             // labelControlGroupName
             // 
-            this.labelControlGroupName.Location = new System.Drawing.Point(13, 10);
+            this.labelControlGroupName.Location = new System.Drawing.Point(20, 15);
+            this.labelControlGroupName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControlGroupName.Name = "labelControlGroupName";
-            this.labelControlGroupName.Size = new System.Drawing.Size(36, 13);
+            this.labelControlGroupName.Size = new System.Drawing.Size(51, 19);
             this.labelControlGroupName.TabIndex = 14;
             this.labelControlGroupName.Text = "Группа";
             // 
@@ -162,22 +163,23 @@
             // 
             this.panelControlRight.Controls.Add(this.zOVReminderUsersAndGroupsGridControl);
             this.panelControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControlRight.Location = new System.Drawing.Point(632, 34);
-            this.panelControlRight.Margin = new System.Windows.Forms.Padding(2);
+            this.panelControlRight.Location = new System.Drawing.Point(699, 51);
             this.panelControlRight.Name = "panelControlRight";
-            this.panelControlRight.Size = new System.Drawing.Size(655, 264);
+            this.panelControlRight.Size = new System.Drawing.Size(621, 516);
             this.panelControlRight.TabIndex = 7;
             // 
             // zOVReminderUsersAndGroupsGridControl
             // 
             this.zOVReminderUsersAndGroupsGridControl.DataSource = this.bsUserAndGroups;
             this.zOVReminderUsersAndGroupsGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zOVReminderUsersAndGroupsGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.zOVReminderUsersAndGroupsGridControl.Location = new System.Drawing.Point(2, 2);
             this.zOVReminderUsersAndGroupsGridControl.MainView = this.gridViewUsersAndGroup;
+            this.zOVReminderUsersAndGroupsGridControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.zOVReminderUsersAndGroupsGridControl.Name = "zOVReminderUsersAndGroupsGridControl";
             this.zOVReminderUsersAndGroupsGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit1});
-            this.zOVReminderUsersAndGroupsGridControl.Size = new System.Drawing.Size(651, 260);
+            this.zOVReminderUsersAndGroupsGridControl.Size = new System.Drawing.Size(617, 512);
             this.zOVReminderUsersAndGroupsGridControl.TabIndex = 0;
             this.zOVReminderUsersAndGroupsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewUsersAndGroup,
@@ -245,27 +247,24 @@
             this.panelMiddle.Controls.Add(this.simpleButtonFromRightToLeft);
             this.panelMiddle.Controls.Add(this.simpleButtonFromLeftToRight);
             this.panelMiddle.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelMiddle.Location = new System.Drawing.Point(565, 34);
-            this.panelMiddle.Margin = new System.Windows.Forms.Padding(2);
+            this.panelMiddle.Location = new System.Drawing.Point(599, 51);
             this.panelMiddle.Name = "panelMiddle";
-            this.panelMiddle.Size = new System.Drawing.Size(67, 264);
+            this.panelMiddle.Size = new System.Drawing.Size(100, 516);
             this.panelMiddle.TabIndex = 6;
             // 
             // simpleButtonFromRightToLeft
             // 
-            this.simpleButtonFromRightToLeft.Location = new System.Drawing.Point(13, 138);
-            this.simpleButtonFromRightToLeft.Margin = new System.Windows.Forms.Padding(2);
+            this.simpleButtonFromRightToLeft.Location = new System.Drawing.Point(20, 274);
             this.simpleButtonFromRightToLeft.Name = "simpleButtonFromRightToLeft";
-            this.simpleButtonFromRightToLeft.Size = new System.Drawing.Size(40, 15);
+            this.simpleButtonFromRightToLeft.Size = new System.Drawing.Size(60, 23);
             this.simpleButtonFromRightToLeft.TabIndex = 3;
             this.simpleButtonFromRightToLeft.Text = "<<";
             // 
             // simpleButtonFromLeftToRight
             // 
-            this.simpleButtonFromLeftToRight.Location = new System.Drawing.Point(13, 111);
-            this.simpleButtonFromLeftToRight.Margin = new System.Windows.Forms.Padding(2);
+            this.simpleButtonFromLeftToRight.Location = new System.Drawing.Point(20, 242);
             this.simpleButtonFromLeftToRight.Name = "simpleButtonFromLeftToRight";
-            this.simpleButtonFromLeftToRight.Size = new System.Drawing.Size(40, 15);
+            this.simpleButtonFromLeftToRight.Size = new System.Drawing.Size(60, 23);
             this.simpleButtonFromLeftToRight.TabIndex = 4;
             this.simpleButtonFromLeftToRight.Text = ">>";
             // 
@@ -273,22 +272,23 @@
             // 
             this.panelControl2.Controls.Add(this.gridControlAllUsers);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(2, 34);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(2);
+            this.panelControl2.Location = new System.Drawing.Point(2, 51);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(563, 264);
+            this.panelControl2.Size = new System.Drawing.Size(597, 516);
             this.panelControl2.TabIndex = 5;
             // 
             // gridControlAllUsers
             // 
             this.gridControlAllUsers.DataSource = this.bsUsersForGroup;
             this.gridControlAllUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlAllUsers.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControlAllUsers.Location = new System.Drawing.Point(2, 2);
             this.gridControlAllUsers.MainView = this.gridViewAllUsers;
+            this.gridControlAllUsers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControlAllUsers.Name = "gridControlAllUsers";
             this.gridControlAllUsers.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit2});
-            this.gridControlAllUsers.Size = new System.Drawing.Size(559, 260);
+            this.gridControlAllUsers.Size = new System.Drawing.Size(593, 512);
             this.gridControlAllUsers.TabIndex = 1;
             this.gridControlAllUsers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewAllUsers,
@@ -377,10 +377,10 @@
             // 
             // FrmGroupsAndUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1289, 333);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.ClientSize = new System.Drawing.Size(1322, 620);
+            this.Margin = new System.Windows.Forms.Padding(3);
             this.Name = "FrmGroupsAndUsers";
             this.Text = "Группы и пользователи";
             this.Activated += new System.EventHandler(this.FrmGroupsAndUsers_Activated);

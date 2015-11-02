@@ -6322,7 +6322,7 @@ SELECT ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID FROM
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT     ZOVReminderUsersID, UserName, Permissions
 FROM         ZOVReminderUsers AS U
-WHERE     (ZOVReminderUsersID IN
+WHERE     (ZOVReminderUsersID NOT IN
                           (SELECT     ZOVReminderUsersID
                             FROM          ZOVReminderUsersAndGroups
                             WHERE      (ZOVReminderGroupsID = @GroupID)))";

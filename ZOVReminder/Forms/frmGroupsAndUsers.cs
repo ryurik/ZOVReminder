@@ -56,7 +56,7 @@ namespace ZOVReminder.Forms
         private void comboBoxGroups_SelectedIndexChanged(object sender, EventArgs e)
         {
             // bindingSourceUsersAndGroups.Filter = 
-             int groupId = 0;
+            int groupId = 0;
             if (zOVReminderGroupsBindingSource.Current != null)
             {
                  groupId = (int)((DataRowView)zOVReminderGroupsBindingSource.Current)["ZOVReminderGroupsID"];
