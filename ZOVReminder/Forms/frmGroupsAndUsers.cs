@@ -6,16 +6,29 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ZOVReminder.Classes;
 using ZOVReminder.GlobalbaseDataSetTableAdapters;
 
 namespace ZOVReminder.Forms
 {
     public partial class FrmGroupsAndUsers : FrmBase
     {
+        private int _groupId;
+
         public FrmGroupsAndUsers()
         {
             InitializeComponent();
             frmGroupsAndUsers_Resize(this, null);
+        }
+
+        public int GroupId
+        {
+            get { return _groupId; }
+            set
+            {
+                _groupId = value;
+                RefreshDsForGroup();
+            }
         }
 
         public override void CheckForChanges()
@@ -38,38 +51,41 @@ namespace ZOVReminder.Forms
         private void frmGroupsAndUsers_Resize(object sender, EventArgs e)
         {
             panelControlRight.Width = (ClientSize.Width - panelMiddle.Width)/2;
-            simpleButtonFromLeftToRight.Top = panelMiddle.Height/2 - simpleButtonFromLeftToRight.Height - 5;
-            simpleButtonFromRightToLeft.Top = panelMiddle.Height / 2 + 5;
+            simpleButtonFromLeftToRight.Top = panelMiddle.Size.Height / 2 - simpleButtonFromLeftToRight.Height - 5;
+            simpleButtonFromRightToLeft.Top = panelMiddle.Size.Height / 2 + 5;
         }
 
         private void frmGroupsAndUsers_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'globalbaseDataSet.ZOVReminderGroups' table. You can move, or remove it, as needed.
-            this.zOVReminderGroupsTableAdapter.FillBy(this.globalbaseDataSet.ZOVReminderGroups);
+            this.taReminderGroups.FillBy(this.globalbaseDataSet.ZOVReminderGroups);
             // TODO: This line of code loads data into the 'globalbaseDataSet.ZOVReminderUsers' table. You can move, or remove it, as needed.
             this.taUsers.Fill(this.globalbaseDataSet.ZOVReminderUsers);
             // TODO: This line of code loads data into the 'globalbaseDataSet.ZOVReminderUsersAndGroups' table. You can move, or remove it, as needed.
             this.taUsersAndGroups.Fill(this.globalbaseDataSet.ZOVReminderUsersAndGroups);
-
+            if (comboBoxGroups.SelectedValue != null)
+            {
+                GroupId = (int)comboBoxGroups.SelectedValue;
+            }
         }
 
         private void comboBoxGroups_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // bindingSourceUsersAndGroups.Filter = 
-            int groupId = 0;
-            if (zOVReminderGroupsBindingSource.Current != null)
+            if (comboBoxGroups.SelectedValue != null)
             {
-                 groupId = (int)((DataRowView)zOVReminderGroupsBindingSource.Current)["ZOVReminderGroupsID"];
+                GroupId = (int)comboBoxGroups.SelectedValue;
             }
             else
             {
                 return;
             }
+        }
 
-            bsUserAndGroupsNotInGroup.Filter = "ZOVReminderGroupsID <> " + groupId.ToString();
-            bsUserAndGroups.Filter = "ZOVReminderGroupsID = " + groupId.ToString();
+        private void RefreshDsForGroup()
+        {
+            bsUserAndGroups.Filter = String.Format("ZOVReminderGroupsID = {0}", _groupId);
 
-            taUsersForGroup.Fill(globalbaseDataSet.ZOVReminderUsersForGroups, groupId);
+            taUsersForGroup.Fill(globalbaseDataSet.ZOVReminderUsersForGroups, _groupId);
         }
 
         private void FrmGroupsAndUsers_Activated(object sender, EventArgs e)
@@ -77,18 +93,72 @@ namespace ZOVReminder.Forms
             frmGroupsAndUsers_Resize(sender, e);
         }
 
-        private void zOVReminderUsersAndGroupsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void simpleButtonFromLeftToRight_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.bsUserAndGroups.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.globalbaseDataSet);
-
+            AddSelectedUsersToGroup();
         }
 
-        private void zOVReminderUsersAndGroupsGridControl_Click(object sender, EventArgs e)
+        private void AddSelectedUsersToGroup()
+        {
+            for (int i = 0; i < gridViewAllUsers.SelectedRowsCount; i++)
+            {
+                if (gridViewAllUsers.GetSelectedRows()[i] >= 0)
+                {
+                    AddUserToGroup((int)(gridViewAllUsers.GetDataRow(gridViewAllUsers.GetSelectedRows()[i]))["ZOVReminderUsersID"]);
+                }
+            }
+            RefreshDsForGroup();
+        }
+
+        private void AddUserToGroup(int userID)
         {
 
+            if ((GroupId != 0) && (userID != 0))
+            {
+                globalbaseDataSet.ZOVReminderUsersAndGroups.AddZOVReminderUsersAndGroupsRow(GroupId, userID);
+                taUsersAndGroups.Update(globalbaseDataSet.ZOVReminderUsersAndGroups);
+/*
+                MyConnectionString.ExecuteScalarQuery(
+                    String.Format(
+                        "INSERT INTO ZOVReminderUsersAndGroups (ZOVReminderGroupsID, ZOVReminderUsersID) VALUES ({0},{1})",
+                        GroupId, userID));
+ //*/
+            }
         }
+
+        private void gridControlAllUsers_DoubleClick(object sender, EventArgs e)
+        {
+            AddSelectedUsersToGroup();
+        }
+
+        private void simpleButtonFromRightToLeft_Click(object sender, EventArgs e)
+        {
+            RemoveSelectedUsersFromGroup();
+        }
+
+        private void RemoveSelectedUsersFromGroup()
+        {
+            for (int i = 0; i < gridViewUsersAndGroup.SelectedRowsCount; i++)
+            {
+                if (gridViewUsersAndGroup.GetSelectedRows()[i] >= 0)
+                {
+                    DeleteUserFromGroupById((int)(gridViewUsersAndGroup.GetDataRow(gridViewUsersAndGroup.GetSelectedRows()[i]))["ZOVReminderUsersAndGroupsID"]);
+                }
+            }
+            taUsersAndGroups.Fill(globalbaseDataSet.ZOVReminderUsersAndGroups);
+            RefreshDsForGroup();
+        }
+
+        private void DeleteUserFromGroupById(int zovReminderUsersAndGroupsID)
+        {
+            taUsersAndGroups.DeleteByID(zovReminderUsersAndGroupsID);
+        }
+
+        private void zOVReminderUsersAndGroupsGridControl_DoubleClick(object sender, EventArgs e)
+        {
+            RemoveSelectedUsersFromGroup();
+        }
+
 
     }
 }

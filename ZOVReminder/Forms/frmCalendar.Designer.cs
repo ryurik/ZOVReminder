@@ -125,18 +125,18 @@
             // 
             // panelControlBottom
             // 
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 653);
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 451);
             this.panelControlBottom.Margin = new System.Windows.Forms.Padding(2);
-            this.panelControlBottom.Size = new System.Drawing.Size(1241, 33);
+            this.panelControlBottom.Size = new System.Drawing.Size(820, 33);
             // 
-            // simpleButtonApply
+            // btnApply
             // 
-            this.simpleButtonApply.Location = new System.Drawing.Point(5331, 6);
-            this.simpleButtonApply.Margin = new System.Windows.Forms.Padding(2);
+            this.btnApply.Location = new System.Drawing.Point(532, 6);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(2);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(5473, 6);
+            this.btnClose.Location = new System.Drawing.Point(681, 6);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             // 
             // panelControlMain
@@ -144,7 +144,7 @@
             this.panelControlMain.Controls.Add(this.mainSchedulerControl);
             this.panelControlMain.Location = new System.Drawing.Point(0, 141);
             this.panelControlMain.Margin = new System.Windows.Forms.Padding(1);
-            this.panelControlMain.Size = new System.Drawing.Size(1241, 512);
+            this.panelControlMain.Size = new System.Drawing.Size(820, 310);
             // 
             // mainSchedulerStorage
             // 
@@ -263,7 +263,7 @@
             this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1,
             this.repositoryItemDuration1});
-            this.ribbonControl.Size = new System.Drawing.Size(1241, 141);
+            this.ribbonControl.Size = new System.Drawing.Size(820, 141);
             // 
             // openScheduleItem1
             // 
@@ -531,7 +531,7 @@
             this.mainSchedulerControl.Location = new System.Drawing.Point(2, 2);
             this.mainSchedulerControl.MenuManager = this.ribbonControl;
             this.mainSchedulerControl.Name = "mainSchedulerControl";
-            this.mainSchedulerControl.Size = new System.Drawing.Size(1237, 508);
+            this.mainSchedulerControl.Size = new System.Drawing.Size(816, 306);
             this.mainSchedulerControl.Start = new System.DateTime(2015, 10, 1, 0, 0, 0, 0);
             this.mainSchedulerControl.Storage = this.mainSchedulerStorage;
             this.mainSchedulerControl.TabIndex = 4;
@@ -728,13 +728,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 686);
+            this.ClientSize = new System.Drawing.Size(820, 484);
             this.Controls.Add(this.ribbonControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmCalendar";
             this.Text = "ЗОВ";
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.Resize += new System.EventHandler(this.frmCalendar_Resize);
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.panelControlBottom, 0);
             this.Controls.SetChildIndex(this.panelControlMain, 0);

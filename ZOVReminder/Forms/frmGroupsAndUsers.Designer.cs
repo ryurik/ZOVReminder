@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.panelTop = new DevExpress.XtraEditors.PanelControl();
             this.comboBoxGroups = new System.Windows.Forms.ComboBox();
-            this.zOVReminderGroupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bsReminderGroups = new System.Windows.Forms.BindingSource(this.components);
             this.globalbaseDataSet = new ZOVReminder.GlobalbaseDataSet();
             this.labelControlGroupName = new DevExpress.XtraEditors.LabelControl();
             this.panelControlRight = new DevExpress.XtraEditors.PanelControl();
@@ -43,7 +43,6 @@
             this.colZOVReminderUsersID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.bsUsers = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelMiddle = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonFromRightToLeft = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonFromLeftToRight = new DevExpress.XtraEditors.SimpleButton();
@@ -53,14 +52,12 @@
             this.gridViewAllUsers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcZOVReminderUsersID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.bsUserAndGroupsNotInGroup = new System.Windows.Forms.BindingSource(this.components);
             this.taUsersAndGroups = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVReminderUsersAndGroupsTableAdapter();
             this.tableAdapterManager = new ZOVReminder.GlobalbaseDataSetTableAdapters.TableAdapterManager();
             this.taUsers = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVReminderUsersTableAdapter();
-            this.zOVReminderGroupsTableAdapter = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVReminderGroupsTableAdapter();
+            this.taReminderGroups = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVReminderGroupsTableAdapter();
             this.taUsersForGroup = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVReminderUsersForGroupsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).BeginInit();
             this.panelControlBottom.SuspendLayout();
@@ -68,7 +65,7 @@
             this.panelControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelTop)).BeginInit();
             this.panelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.zOVReminderGroupsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsReminderGroups)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlRight)).BeginInit();
             this.panelControlRight.SuspendLayout();
@@ -77,7 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewUsersAndGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsUsers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelMiddle)).BeginInit();
             this.panelMiddle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -86,27 +82,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsUsersForGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewAllUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsUserAndGroupsNotInGroup)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControlBottom
             // 
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 569);
-            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(3);
-            this.panelControlBottom.Size = new System.Drawing.Size(1322, 51);
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 359);
+            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(2);
+            this.panelControlBottom.Size = new System.Drawing.Size(860, 33);
             // 
-            // simpleButtonApply
+            // btnApply
             // 
-            this.simpleButtonApply.Location = new System.Drawing.Point(1003, 8);
-            this.simpleButtonApply.Margin = new System.Windows.Forms.Padding(3);
-            this.simpleButtonApply.Size = new System.Drawing.Size(196, 35);
+            this.btnApply.Location = new System.Drawing.Point(566, 5);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(2);
+            this.btnApply.Size = new System.Drawing.Size(131, 23);
+            this.btnApply.Visible = false;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(1209, 8);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3);
-            this.btnClose.Size = new System.Drawing.Size(196, 35);
+            this.btnClose.Location = new System.Drawing.Point(717, 5);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Size = new System.Drawing.Size(131, 23);
             // 
             // panelControlMain
             // 
@@ -114,8 +109,8 @@
             this.panelControlMain.Controls.Add(this.panelMiddle);
             this.panelControlMain.Controls.Add(this.panelControlRight);
             this.panelControlMain.Controls.Add(this.panelTop);
-            this.panelControlMain.Margin = new System.Windows.Forms.Padding(2);
-            this.panelControlMain.Size = new System.Drawing.Size(1322, 569);
+            this.panelControlMain.Margin = new System.Windows.Forms.Padding(1);
+            this.panelControlMain.Size = new System.Drawing.Size(860, 359);
             // 
             // panelTop
             // 
@@ -123,27 +118,27 @@
             this.panelTop.Controls.Add(this.labelControlGroupName);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(2, 2);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(2);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1318, 49);
+            this.panelTop.Size = new System.Drawing.Size(856, 32);
             this.panelTop.TabIndex = 0;
             // 
             // comboBoxGroups
             // 
-            this.comboBoxGroups.DataSource = this.zOVReminderGroupsBindingSource;
+            this.comboBoxGroups.DataSource = this.bsReminderGroups;
             this.comboBoxGroups.DisplayMember = "Name";
             this.comboBoxGroups.FormattingEnabled = true;
-            this.comboBoxGroups.Location = new System.Drawing.Point(84, 15);
-            this.comboBoxGroups.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBoxGroups.Location = new System.Drawing.Point(56, 10);
             this.comboBoxGroups.Name = "comboBoxGroups";
-            this.comboBoxGroups.Size = new System.Drawing.Size(313, 27);
+            this.comboBoxGroups.Size = new System.Drawing.Size(210, 21);
             this.comboBoxGroups.TabIndex = 15;
             this.comboBoxGroups.ValueMember = "ZOVReminderGroupsID";
             this.comboBoxGroups.SelectedIndexChanged += new System.EventHandler(this.comboBoxGroups_SelectedIndexChanged);
             // 
-            // zOVReminderGroupsBindingSource
+            // bsReminderGroups
             // 
-            this.zOVReminderGroupsBindingSource.DataMember = "ZOVReminderGroups";
-            this.zOVReminderGroupsBindingSource.DataSource = this.globalbaseDataSet;
+            this.bsReminderGroups.DataMember = "ZOVReminderGroups";
+            this.bsReminderGroups.DataSource = this.globalbaseDataSet;
             // 
             // globalbaseDataSet
             // 
@@ -152,10 +147,9 @@
             // 
             // labelControlGroupName
             // 
-            this.labelControlGroupName.Location = new System.Drawing.Point(20, 15);
-            this.labelControlGroupName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelControlGroupName.Location = new System.Drawing.Point(13, 10);
             this.labelControlGroupName.Name = "labelControlGroupName";
-            this.labelControlGroupName.Size = new System.Drawing.Size(51, 19);
+            this.labelControlGroupName.Size = new System.Drawing.Size(36, 13);
             this.labelControlGroupName.TabIndex = 14;
             this.labelControlGroupName.Text = "Группа";
             // 
@@ -163,28 +157,26 @@
             // 
             this.panelControlRight.Controls.Add(this.zOVReminderUsersAndGroupsGridControl);
             this.panelControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControlRight.Location = new System.Drawing.Point(699, 51);
+            this.panelControlRight.Location = new System.Drawing.Point(444, 34);
+            this.panelControlRight.Margin = new System.Windows.Forms.Padding(2);
             this.panelControlRight.Name = "panelControlRight";
-            this.panelControlRight.Size = new System.Drawing.Size(621, 516);
+            this.panelControlRight.Size = new System.Drawing.Size(414, 323);
             this.panelControlRight.TabIndex = 7;
             // 
             // zOVReminderUsersAndGroupsGridControl
             // 
             this.zOVReminderUsersAndGroupsGridControl.DataSource = this.bsUserAndGroups;
             this.zOVReminderUsersAndGroupsGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zOVReminderUsersAndGroupsGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.zOVReminderUsersAndGroupsGridControl.Location = new System.Drawing.Point(2, 2);
             this.zOVReminderUsersAndGroupsGridControl.MainView = this.gridViewUsersAndGroup;
-            this.zOVReminderUsersAndGroupsGridControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.zOVReminderUsersAndGroupsGridControl.Name = "zOVReminderUsersAndGroupsGridControl";
             this.zOVReminderUsersAndGroupsGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit1});
-            this.zOVReminderUsersAndGroupsGridControl.Size = new System.Drawing.Size(617, 512);
+            this.zOVReminderUsersAndGroupsGridControl.Size = new System.Drawing.Size(410, 319);
             this.zOVReminderUsersAndGroupsGridControl.TabIndex = 0;
             this.zOVReminderUsersAndGroupsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewUsersAndGroup,
-            this.gridView1});
-            this.zOVReminderUsersAndGroupsGridControl.Click += new System.EventHandler(this.zOVReminderUsersAndGroupsGridControl_Click);
+            this.gridViewUsersAndGroup});
+            this.zOVReminderUsersAndGroupsGridControl.DoubleClick += new System.EventHandler(this.zOVReminderUsersAndGroupsGridControl_DoubleClick);
             // 
             // bsUserAndGroups
             // 
@@ -199,6 +191,12 @@
             this.colZOVReminderUsersID});
             this.gridViewUsersAndGroup.GridControl = this.zOVReminderUsersAndGroupsGridControl;
             this.gridViewUsersAndGroup.Name = "gridViewUsersAndGroup";
+            this.gridViewUsersAndGroup.OptionsBehavior.ReadOnly = true;
+            this.gridViewUsersAndGroup.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
+            this.gridViewUsersAndGroup.OptionsSelection.EnableAppearanceHideSelection = false;
+            this.gridViewUsersAndGroup.OptionsSelection.MultiSelect = true;
+            this.gridViewUsersAndGroup.OptionsView.ShowGroupPanel = false;
+            this.gridViewUsersAndGroup.OptionsView.ShowIndicator = false;
             // 
             // colZOVReminderUsersAndGroupsID
             // 
@@ -222,12 +220,15 @@
             // 
             // repositoryItemLookUpEdit1
             // 
+            this.repositoryItemLookUpEdit1.AllowDropDownWhenReadOnly = DevExpress.Utils.DefaultBoolean.False;
+            this.repositoryItemLookUpEdit1.AllowMouseWheel = false;
             this.repositoryItemLookUpEdit1.AutoHeight = false;
             this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEdit1.DataSource = this.bsUsers;
             this.repositoryItemLookUpEdit1.DisplayMember = "UserName";
             this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
+            this.repositoryItemLookUpEdit1.ReadOnly = true;
             this.repositoryItemLookUpEdit1.ValueMember = "ZOVReminderUsersID";
             // 
             // bsUsers
@@ -235,64 +236,62 @@
             this.bsUsers.DataMember = "ZOVReminderUsers";
             this.bsUsers.DataSource = this.globalbaseDataSet;
             // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.zOVReminderUsersAndGroupsGridControl;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.PreviewFieldName = "ZOVReminderUsersID";
-            // 
             // panelMiddle
             // 
             this.panelMiddle.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.panelMiddle.Controls.Add(this.simpleButtonFromRightToLeft);
             this.panelMiddle.Controls.Add(this.simpleButtonFromLeftToRight);
             this.panelMiddle.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelMiddle.Location = new System.Drawing.Point(599, 51);
+            this.panelMiddle.Location = new System.Drawing.Point(377, 34);
+            this.panelMiddle.Margin = new System.Windows.Forms.Padding(2);
             this.panelMiddle.Name = "panelMiddle";
-            this.panelMiddle.Size = new System.Drawing.Size(100, 516);
+            this.panelMiddle.Size = new System.Drawing.Size(67, 323);
             this.panelMiddle.TabIndex = 6;
             // 
             // simpleButtonFromRightToLeft
             // 
-            this.simpleButtonFromRightToLeft.Location = new System.Drawing.Point(20, 274);
+            this.simpleButtonFromRightToLeft.Location = new System.Drawing.Point(13, 178);
+            this.simpleButtonFromRightToLeft.Margin = new System.Windows.Forms.Padding(2);
             this.simpleButtonFromRightToLeft.Name = "simpleButtonFromRightToLeft";
-            this.simpleButtonFromRightToLeft.Size = new System.Drawing.Size(60, 23);
+            this.simpleButtonFromRightToLeft.Size = new System.Drawing.Size(40, 15);
             this.simpleButtonFromRightToLeft.TabIndex = 3;
             this.simpleButtonFromRightToLeft.Text = "<<";
+            this.simpleButtonFromRightToLeft.Click += new System.EventHandler(this.simpleButtonFromRightToLeft_Click);
             // 
             // simpleButtonFromLeftToRight
             // 
-            this.simpleButtonFromLeftToRight.Location = new System.Drawing.Point(20, 242);
+            this.simpleButtonFromLeftToRight.Location = new System.Drawing.Point(13, 157);
+            this.simpleButtonFromLeftToRight.Margin = new System.Windows.Forms.Padding(2);
             this.simpleButtonFromLeftToRight.Name = "simpleButtonFromLeftToRight";
-            this.simpleButtonFromLeftToRight.Size = new System.Drawing.Size(60, 23);
+            this.simpleButtonFromLeftToRight.Size = new System.Drawing.Size(40, 15);
             this.simpleButtonFromLeftToRight.TabIndex = 4;
             this.simpleButtonFromLeftToRight.Text = ">>";
+            this.simpleButtonFromLeftToRight.Click += new System.EventHandler(this.simpleButtonFromLeftToRight_Click);
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.gridControlAllUsers);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(2, 51);
+            this.panelControl2.Location = new System.Drawing.Point(2, 34);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(597, 516);
+            this.panelControl2.Size = new System.Drawing.Size(375, 323);
             this.panelControl2.TabIndex = 5;
             // 
             // gridControlAllUsers
             // 
             this.gridControlAllUsers.DataSource = this.bsUsersForGroup;
             this.gridControlAllUsers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlAllUsers.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControlAllUsers.Location = new System.Drawing.Point(2, 2);
             this.gridControlAllUsers.MainView = this.gridViewAllUsers;
-            this.gridControlAllUsers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControlAllUsers.Name = "gridControlAllUsers";
             this.gridControlAllUsers.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit2});
-            this.gridControlAllUsers.Size = new System.Drawing.Size(593, 512);
+            this.gridControlAllUsers.Size = new System.Drawing.Size(371, 319);
             this.gridControlAllUsers.TabIndex = 1;
             this.gridControlAllUsers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewAllUsers,
-            this.gridView3});
+            this.gridViewAllUsers});
+            this.gridControlAllUsers.DoubleClick += new System.EventHandler(this.gridControlAllUsers_DoubleClick);
             // 
             // bsUsersForGroup
             // 
@@ -304,9 +303,18 @@
             this.gridViewAllUsers.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
-            this.gridColumn3});
+            this.gcZOVReminderUsersID});
             this.gridViewAllUsers.GridControl = this.gridControlAllUsers;
             this.gridViewAllUsers.Name = "gridViewAllUsers";
+            this.gridViewAllUsers.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridViewAllUsers.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridViewAllUsers.OptionsBehavior.ReadOnly = true;
+            this.gridViewAllUsers.OptionsCustomization.AllowGroup = false;
+            this.gridViewAllUsers.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
+            this.gridViewAllUsers.OptionsSelection.EnableAppearanceHideSelection = false;
+            this.gridViewAllUsers.OptionsSelection.MultiSelect = true;
+            this.gridViewAllUsers.OptionsView.ShowGroupPanel = false;
+            this.gridViewAllUsers.OptionsView.ShowIndicator = false;
             // 
             // gridColumn1
             // 
@@ -318,15 +326,18 @@
             this.gridColumn2.FieldName = "ZOVReminderGroupsID";
             this.gridColumn2.Name = "gridColumn2";
             // 
-            // gridColumn3
+            // gcZOVReminderUsersID
             // 
-            this.gridColumn3.Caption = "Пользователи";
-            this.gridColumn3.ColumnEdit = this.repositoryItemLookUpEdit2;
-            this.gridColumn3.FieldName = "ZOVReminderUsersID";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.ReadOnly = true;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
+            this.gcZOVReminderUsersID.Caption = "Пользователи";
+            this.gcZOVReminderUsersID.ColumnEdit = this.repositoryItemLookUpEdit2;
+            this.gcZOVReminderUsersID.FieldName = "ZOVReminderUsersID";
+            this.gcZOVReminderUsersID.Name = "gcZOVReminderUsersID";
+            this.gcZOVReminderUsersID.OptionsColumn.AllowEdit = false;
+            this.gcZOVReminderUsersID.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gcZOVReminderUsersID.OptionsColumn.AllowMove = false;
+            this.gcZOVReminderUsersID.OptionsColumn.ReadOnly = true;
+            this.gcZOVReminderUsersID.Visible = true;
+            this.gcZOVReminderUsersID.VisibleIndex = 0;
             // 
             // repositoryItemLookUpEdit2
             // 
@@ -337,17 +348,6 @@
             this.repositoryItemLookUpEdit2.DisplayMember = "UserName";
             this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
             this.repositoryItemLookUpEdit2.ValueMember = "ZOVReminderUsersID";
-            // 
-            // gridView3
-            // 
-            this.gridView3.GridControl = this.gridControlAllUsers;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.PreviewFieldName = "ZOVReminderUsersID";
-            // 
-            // bsUserAndGroupsNotInGroup
-            // 
-            this.bsUserAndGroupsNotInGroup.DataMember = "ZOVReminderUsersAndGroups";
-            this.bsUserAndGroupsNotInGroup.DataSource = this.globalbaseDataSet;
             // 
             // taUsersAndGroups
             // 
@@ -367,9 +367,9 @@
             // 
             this.taUsers.ClearBeforeFill = true;
             // 
-            // zOVReminderGroupsTableAdapter
+            // taReminderGroups
             // 
-            this.zOVReminderGroupsTableAdapter.ClearBeforeFill = true;
+            this.taReminderGroups.ClearBeforeFill = true;
             // 
             // taUsersForGroup
             // 
@@ -377,10 +377,10 @@
             // 
             // FrmGroupsAndUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1322, 620);
-            this.Margin = new System.Windows.Forms.Padding(3);
+            this.ClientSize = new System.Drawing.Size(860, 392);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmGroupsAndUsers";
             this.Text = "Группы и пользователи";
             this.Activated += new System.EventHandler(this.FrmGroupsAndUsers_Activated);
@@ -393,7 +393,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelTop)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.zOVReminderGroupsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsReminderGroups)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlRight)).EndInit();
             this.panelControlRight.ResumeLayout(false);
@@ -402,7 +402,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewUsersAndGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsUsers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelMiddle)).EndInit();
             this.panelMiddle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -411,8 +410,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsUsersForGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewAllUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsUserAndGroupsNotInGroup)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -436,20 +433,17 @@
         private DevExpress.XtraGrid.Columns.GridColumn colZOVReminderGroupsID;
         private DevExpress.XtraGrid.Columns.GridColumn colZOVReminderUsersID;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.BindingSource bsUsers;
         private GlobalbaseDataSetTableAdapters.ZOVReminderUsersTableAdapter taUsers;
         private System.Windows.Forms.ComboBox comboBoxGroups;
-        private System.Windows.Forms.BindingSource zOVReminderGroupsBindingSource;
-        private GlobalbaseDataSetTableAdapters.ZOVReminderGroupsTableAdapter zOVReminderGroupsTableAdapter;
+        private System.Windows.Forms.BindingSource bsReminderGroups;
+        private GlobalbaseDataSetTableAdapters.ZOVReminderGroupsTableAdapter taReminderGroups;
         private DevExpress.XtraGrid.GridControl gridControlAllUsers;
-        private System.Windows.Forms.BindingSource bsUserAndGroupsNotInGroup;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewAllUsers;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gcZOVReminderUsersID;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private System.Windows.Forms.BindingSource bsUsersForGroup;
         private GlobalbaseDataSetTableAdapters.ZOVReminderUsersForGroupsTableAdapter taUsersForGroup;
 

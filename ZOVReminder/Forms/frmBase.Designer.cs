@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panelControlBottom = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButtonApply = new DevExpress.XtraEditors.SimpleButton();
+            this.btnApply = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.panelControlMain = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).BeginInit();
@@ -40,33 +40,30 @@
             // panelControlBottom
             // 
             this.panelControlBottom.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.panelControlBottom.Controls.Add(this.simpleButtonApply);
+            this.panelControlBottom.Controls.Add(this.btnApply);
             this.panelControlBottom.Controls.Add(this.btnClose);
             this.panelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 369);
-            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 240);
             this.panelControlBottom.Name = "panelControlBottom";
-            this.panelControlBottom.Size = new System.Drawing.Size(1227, 51);
+            this.panelControlBottom.Size = new System.Drawing.Size(818, 33);
             this.panelControlBottom.TabIndex = 3;
             // 
-            // simpleButtonApply
+            // btnApply
             // 
-            this.simpleButtonApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButtonApply.Location = new System.Drawing.Point(813, 8);
-            this.simpleButtonApply.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.simpleButtonApply.Name = "simpleButtonApply";
-            this.simpleButtonApply.Size = new System.Drawing.Size(194, 35);
-            this.simpleButtonApply.TabIndex = 0;
-            this.simpleButtonApply.Text = "Применить";
-            this.simpleButtonApply.Click += new System.EventHandler(this.simpleButtonApply_Click);
+            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnApply.Location = new System.Drawing.Point(542, 5);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(129, 23);
+            this.btnApply.TabIndex = 0;
+            this.btnApply.Text = "Применить";
+            this.btnApply.Click += new System.EventHandler(this.simpleButtonApply_Click);
             // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(1021, 8);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Location = new System.Drawing.Point(681, 5);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(194, 35);
+            this.btnClose.Size = new System.Drawing.Size(129, 23);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Закрыть";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -76,25 +73,26 @@
             this.panelControlMain.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.panelControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlMain.Location = new System.Drawing.Point(0, 0);
+            this.panelControlMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelControlMain.Name = "panelControlMain";
-            this.panelControlMain.Size = new System.Drawing.Size(1227, 369);
+            this.panelControlMain.Size = new System.Drawing.Size(818, 240);
             this.panelControlMain.TabIndex = 4;
             // 
-            // frmBase
+            // FrmBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 420);
+            this.ClientSize = new System.Drawing.Size(818, 273);
             this.Controls.Add(this.panelControlMain);
             this.Controls.Add(this.panelControlBottom);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmBase";
+            this.Name = "FrmBase";
             this.ShowIcon = false;
             this.Text = "frmBase";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBase_FormClosing);
             this.Load += new System.EventHandler(this.frmBase_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmBase_KeyDown);
+            this.Resize += new System.EventHandler(this.FrmBase_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).EndInit();
             this.panelControlBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).EndInit();
@@ -105,7 +103,7 @@
         #endregion
 
         public DevExpress.XtraEditors.PanelControl panelControlBottom;
-        public DevExpress.XtraEditors.SimpleButton simpleButtonApply;
+        public DevExpress.XtraEditors.SimpleButton btnApply;
         public DevExpress.XtraEditors.SimpleButton btnClose;
         public DevExpress.XtraEditors.PanelControl panelControlMain;
     }

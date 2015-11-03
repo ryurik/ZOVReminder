@@ -29,6 +29,7 @@ namespace ZOVReminder.Forms
         private void frmBase_Load(object sender, EventArgs e)
         {
             MaxFormSize();
+            OnResize(e);
         }
 
         public void MaxFormSize()
@@ -65,6 +66,12 @@ namespace ZOVReminder.Forms
 
         public virtual void UpdateData()
         {
+        }
+
+        private void FrmBase_Resize(object sender, EventArgs e)
+        {
+            btnClose.Left = this.Size.Width - btnClose.Width - 10;
+            btnApply.Left = btnClose.Left - btnApply.Width - 20;
         }
 
     }

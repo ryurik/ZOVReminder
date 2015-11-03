@@ -54,7 +54,7 @@
             // 
             // simpleButtonApply
             // 
-            this.simpleButtonApply.Location = new System.Drawing.Point(765, 8);
+            this.btnApply.Location = new System.Drawing.Point(765, 8);
             // 
             // btnClose
             // 

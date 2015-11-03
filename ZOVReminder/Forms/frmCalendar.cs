@@ -144,5 +144,11 @@ namespace ZOVReminder
             frmPass.ShowDialog();
         }
 
+        private void frmCalendar_Resize(object sender, EventArgs e)
+        {
+            btnClose.Left = this.Width - btnClose.Width - 20;
+            btnApply.Left = btnClose.Left - btnApply.Width - 20;
+        }
+
     }
 }
