@@ -33,13 +33,20 @@
             this.zOVReminderUsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.globalbaseDataSet = new ZOVReminder.GlobalbaseDataSet();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.zOVReminderUsersTableAdapter = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVReminderUsersTableAdapter();
             this.colZOVReminderUsersID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Пользователь = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Пароль = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUserName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPasswordMD5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPermissions = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLastLogon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLastLogOff = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.zOVReminderUsersTableAdapter = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVReminderUsersTableAdapter();
+            this.colUserNameChange = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPasswordChange = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPermissionsChange = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUserCreated = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLastEditTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colReadOnly = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSendToAll = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).BeginInit();
             this.panelControlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
@@ -52,31 +59,37 @@
             // 
             // panelControlBottom
             // 
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 243);
-            this.panelControlBottom.Size = new System.Drawing.Size(628, 33);
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 386);
+            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.panelControlBottom.Size = new System.Drawing.Size(1042, 51);
             // 
-            // simpleButtonApply
+            // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(162, 5);
+            this.btnApply.Location = new System.Drawing.Point(619, 8);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(301, 5);
+            this.btnClose.Location = new System.Drawing.Point(833, 8);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             // 
             // panelControlMain
             // 
             this.panelControlMain.Controls.Add(this.gridControl);
-            this.panelControlMain.Size = new System.Drawing.Size(628, 243);
+            this.panelControlMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelControlMain.Size = new System.Drawing.Size(1042, 386);
             // 
             // gridControl
             // 
             this.gridControl.DataSource = this.zOVReminderUsersBindingSource;
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl.EmbeddedNavigator.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.zOVReminderUsersBindingSource, "ZOVReminderUsersID", true));
+            this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl.Location = new System.Drawing.Point(2, 2);
             this.gridControl.MainView = this.gridView;
+            this.gridControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(624, 239);
+            this.gridControl.Size = new System.Drawing.Size(1038, 382);
             this.gridControl.TabIndex = 2;
             this.gridControl.UseEmbeddedNavigator = true;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -97,11 +110,18 @@
             this.gridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
             this.gridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colZOVReminderUsersID,
-            this.Пользователь,
-            this.Пароль,
+            this.colUserName,
+            this.colPasswordMD5,
             this.colPermissions,
             this.colLastLogon,
-            this.colLastLogOff});
+            this.colLastLogOff,
+            this.colUserNameChange,
+            this.colPasswordChange,
+            this.colPermissionsChange,
+            this.colUserCreated,
+            this.colLastEditTime,
+            this.colReadOnly,
+            this.colSendToAll});
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
@@ -112,30 +132,30 @@
             this.gridView.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             // 
+            // zOVReminderUsersTableAdapter
+            // 
+            this.zOVReminderUsersTableAdapter.ClearBeforeFill = true;
+            // 
             // colZOVReminderUsersID
             // 
-            this.colZOVReminderUsersID.Caption = "ID";
             this.colZOVReminderUsersID.FieldName = "ZOVReminderUsersID";
             this.colZOVReminderUsersID.Name = "colZOVReminderUsersID";
             // 
-            // Пользователь
+            // colUserName
             // 
-            this.Пользователь.Caption = "Пользователь";
-            this.Пользователь.FieldName = "UserName";
-            this.Пользователь.Name = "Пользователь";
-            this.Пользователь.Visible = true;
-            this.Пользователь.VisibleIndex = 0;
+            this.colUserName.Caption = "Пользователь";
+            this.colUserName.FieldName = "UserName";
+            this.colUserName.Name = "colUserName";
+            this.colUserName.Visible = true;
+            this.colUserName.VisibleIndex = 0;
             // 
-            // Пароль
+            // colPasswordMD5
             // 
-            this.Пароль.Caption = "Пароль";
-            this.Пароль.FieldName = "PasswordMD5";
-            this.Пароль.Name = "Пароль";
-            this.Пароль.OptionsColumn.AllowEdit = false;
-            this.Пароль.OptionsColumn.AllowMove = false;
-            this.Пароль.OptionsColumn.ReadOnly = true;
-            this.Пароль.Visible = true;
-            this.Пароль.VisibleIndex = 1;
+            this.colPasswordMD5.Caption = "Пароль";
+            this.colPasswordMD5.FieldName = "PasswordMD5";
+            this.colPasswordMD5.Name = "colPasswordMD5";
+            this.colPasswordMD5.Visible = true;
+            this.colPasswordMD5.VisibleIndex = 1;
             // 
             // colPermissions
             // 
@@ -144,38 +164,73 @@
             // 
             // colLastLogon
             // 
-            this.colLastLogon.Caption = "Дата входа";
-            this.colLastLogon.DisplayFormat.FormatString = "d";
-            this.colLastLogon.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colLastLogon.Caption = "Последний вход";
             this.colLastLogon.FieldName = "LastLogon";
             this.colLastLogon.Name = "colLastLogon";
-            this.colLastLogon.OptionsColumn.AllowEdit = false;
-            this.colLastLogon.OptionsColumn.ReadOnly = true;
             this.colLastLogon.Visible = true;
             this.colLastLogon.VisibleIndex = 2;
             // 
             // colLastLogOff
             // 
-            this.colLastLogOff.Caption = "Дата выхода";
-            this.colLastLogOff.DisplayFormat.FormatString = "d";
-            this.colLastLogOff.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colLastLogOff.Caption = "Завершение сеанса";
             this.colLastLogOff.FieldName = "LastLogOff";
             this.colLastLogOff.Name = "colLastLogOff";
-            this.colLastLogOff.OptionsColumn.AllowEdit = false;
-            this.colLastLogOff.OptionsColumn.ReadOnly = true;
             this.colLastLogOff.Visible = true;
             this.colLastLogOff.VisibleIndex = 3;
             // 
-            // zOVReminderUsersTableAdapter
+            // colUserNameChange
             // 
-            this.zOVReminderUsersTableAdapter.ClearBeforeFill = true;
+            this.colUserNameChange.FieldName = "UserNameChange";
+            this.colUserNameChange.Name = "colUserNameChange";
+            // 
+            // colPasswordChange
+            // 
+            this.colPasswordChange.FieldName = "PasswordChange";
+            this.colPasswordChange.Name = "colPasswordChange";
+            // 
+            // colPermissionsChange
+            // 
+            this.colPermissionsChange.FieldName = "PermissionsChange";
+            this.colPermissionsChange.Name = "colPermissionsChange";
+            // 
+            // colUserCreated
+            // 
+            this.colUserCreated.Caption = "Создан";
+            this.colUserCreated.FieldName = "UserCreated";
+            this.colUserCreated.Name = "colUserCreated";
+            this.colUserCreated.Visible = true;
+            this.colUserCreated.VisibleIndex = 4;
+            // 
+            // colLastEditTime
+            // 
+            this.colLastEditTime.Caption = "Изменен";
+            this.colLastEditTime.FieldName = "LastEditTime";
+            this.colLastEditTime.Name = "colLastEditTime";
+            this.colLastEditTime.Visible = true;
+            this.colLastEditTime.VisibleIndex = 5;
+            // 
+            // colReadOnly
+            // 
+            this.colReadOnly.Caption = "Только для чтения";
+            this.colReadOnly.FieldName = "ReadOnly";
+            this.colReadOnly.Name = "colReadOnly";
+            this.colReadOnly.Visible = true;
+            this.colReadOnly.VisibleIndex = 6;
+            // 
+            // colSendToAll
+            // 
+            this.colSendToAll.Caption = "Отправлять всем";
+            this.colSendToAll.FieldName = "SendToAll";
+            this.colSendToAll.Name = "colSendToAll";
+            this.colSendToAll.Visible = true;
+            this.colSendToAll.VisibleIndex = 7;
             // 
             // FrmUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 276);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ClientSize = new System.Drawing.Size(1042, 437);
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "FrmUsers";
             this.Text = "Пользователи";
             this.Load += new System.EventHandler(this.frmUsers_Load);
@@ -199,10 +254,17 @@
         private System.Windows.Forms.BindingSource zOVReminderUsersBindingSource;
         private GlobalbaseDataSetTableAdapters.ZOVReminderUsersTableAdapter zOVReminderUsersTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colZOVReminderUsersID;
-        private DevExpress.XtraGrid.Columns.GridColumn Пользователь;
-        private DevExpress.XtraGrid.Columns.GridColumn Пароль;
+        private DevExpress.XtraGrid.Columns.GridColumn colUserName;
+        private DevExpress.XtraGrid.Columns.GridColumn colPasswordMD5;
         private DevExpress.XtraGrid.Columns.GridColumn colPermissions;
         private DevExpress.XtraGrid.Columns.GridColumn colLastLogon;
         private DevExpress.XtraGrid.Columns.GridColumn colLastLogOff;
+        private DevExpress.XtraGrid.Columns.GridColumn colUserNameChange;
+        private DevExpress.XtraGrid.Columns.GridColumn colPasswordChange;
+        private DevExpress.XtraGrid.Columns.GridColumn colPermissionsChange;
+        private DevExpress.XtraGrid.Columns.GridColumn colUserCreated;
+        private DevExpress.XtraGrid.Columns.GridColumn colLastEditTime;
+        private DevExpress.XtraGrid.Columns.GridColumn colReadOnly;
+        private DevExpress.XtraGrid.Columns.GridColumn colSendToAll;
     }
 }

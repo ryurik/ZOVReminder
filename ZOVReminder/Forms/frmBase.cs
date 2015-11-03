@@ -70,7 +70,7 @@ namespace ZOVReminder.Forms
 
         private void FrmBase_Resize(object sender, EventArgs e)
         {
-            btnClose.Left = this.Size.Width - btnClose.Width - 10;
+            btnClose.Left = panelControlBottom.Size.Width - btnClose.Width - 15;
             btnApply.Left = btnClose.Left - btnApply.Width - 20;
         }
 

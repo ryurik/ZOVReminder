@@ -22,20 +22,9 @@ namespace ZOVReminder.Forms
             this.zOVReminderUsersTableAdapter.Fill(this.globalbaseDataSet.ZOVReminderUsers);
         }
 
-        private void simpleButtonApply_Click(object sender, EventArgs e)
-        {
-            UpdateData();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            CheckForChanges();
-            Close();
-        }
-
         public override void CheckForChanges()
         {
-            var dt = globalbaseDataSet.ZOVReminderGroups.GetChanges();
+            var dt = globalbaseDataSet.ZOVReminderUsers.GetChanges();
             if ((dt != null) && (dt.Rows.Count > 0))
             {
                 if (MessageBox.Show("Данные были изменены. Сохранить?", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -49,6 +38,5 @@ namespace ZOVReminder.Forms
         {
             zOVReminderUsersTableAdapter.Update(globalbaseDataSet);
         }
-
     }
 }
