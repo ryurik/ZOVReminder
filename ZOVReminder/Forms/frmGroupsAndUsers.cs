@@ -31,23 +31,6 @@ namespace ZOVReminder.Forms
             }
         }
 
-        public override void CheckForChanges()
-        {
-            //var dt = globalbaseDataSet.ZOVReminderGroups.GetChanges();
-            //if ((dt != null) && (dt.Rows.Count > 0))
-            //{
-            //    if (MessageBox.Show("Данные были изменены. Сохранить?", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            //    {
-            //        UpdateData();
-            //    }
-            //}
-        }
-
-        public override void UpdateData()
-        {
-            //zOVReminderGroupsTableAdapter.Update(globalbaseDataSet);
-        }
-
         private void frmGroupsAndUsers_Resize(object sender, EventArgs e)
         {
             panelControlRight.Width = (ClientSize.Width - panelMiddle.Width)/2;
@@ -104,25 +87,19 @@ namespace ZOVReminder.Forms
             {
                 if (gridViewAllUsers.GetSelectedRows()[i] >= 0)
                 {
-                    AddUserToGroup((int)(gridViewAllUsers.GetDataRow(gridViewAllUsers.GetSelectedRows()[i]))["ZOVReminderUsersID"]);
+                    AddUserToGroup((int)(gridViewAllUsers.GetDataRow(gridViewAllUsers.GetSelectedRows()[i]))["ZOVReminderUsersID"], false);
                 }
             }
             RefreshDsForGroup();
         }
 
-        private void AddUserToGroup(int userID)
+        private void AddUserToGroup(int userID, bool readOnly)
         {
 
             if ((GroupId != 0) && (userID != 0))
             {
-                globalbaseDataSet.ZOVReminderUsersAndGroups.AddZOVReminderUsersAndGroupsRow(GroupId, userID);
+                globalbaseDataSet.ZOVReminderUsersAndGroups.AddZOVReminderUsersAndGroupsRow(GroupId, userID, readOnly);
                 taUsersAndGroups.Update(globalbaseDataSet.ZOVReminderUsersAndGroups);
-/*
-                MyConnectionString.ExecuteScalarQuery(
-                    String.Format(
-                        "INSERT INTO ZOVReminderUsersAndGroups (ZOVReminderGroupsID, ZOVReminderUsersID) VALUES ({0},{1})",
-                        GroupId, userID));
- //*/
             }
         }
 
@@ -159,6 +136,22 @@ namespace ZOVReminder.Forms
             RemoveSelectedUsersFromGroup();
         }
 
+        public override void CheckForChanges()
+        {
+            var dt = globalbaseDataSet.ZOVReminderUsersAndGroups.GetChanges();
+            if ((dt != null) && (dt.Rows.Count > 0))
+            {
+                if (MessageBox.Show("Данные были изменены. Сохранить?", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    UpdateData();
+                }
+            }
+        }
+
+        public override void UpdateData()
+        {
+            taUsersAndGroups.Update(globalbaseDataSet);
+        }
 
     }
 }

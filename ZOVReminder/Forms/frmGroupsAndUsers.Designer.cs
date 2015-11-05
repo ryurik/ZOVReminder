@@ -43,6 +43,7 @@
             this.colZOVReminderUsersID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.bsUsers = new System.Windows.Forms.BindingSource(this.components);
+            this.readOnly = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelMiddle = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonFromRightToLeft = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonFromLeftToRight = new DevExpress.XtraEditors.SimpleButton();
@@ -92,15 +93,12 @@
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(566, 5);
-            this.btnApply.Margin = new System.Windows.Forms.Padding(2);
+            this.btnApply.Location = new System.Drawing.Point(563, 5);
             this.btnApply.Size = new System.Drawing.Size(131, 23);
-            this.btnApply.Visible = false;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(717, 5);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Location = new System.Drawing.Point(714, 5);
             this.btnClose.Size = new System.Drawing.Size(131, 23);
             // 
             // panelControlMain
@@ -188,10 +186,10 @@
             this.gridViewUsersAndGroup.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colZOVReminderUsersAndGroupsID,
             this.colZOVReminderGroupsID,
-            this.colZOVReminderUsersID});
+            this.colZOVReminderUsersID,
+            this.readOnly});
             this.gridViewUsersAndGroup.GridControl = this.zOVReminderUsersAndGroupsGridControl;
             this.gridViewUsersAndGroup.Name = "gridViewUsersAndGroup";
-            this.gridViewUsersAndGroup.OptionsBehavior.ReadOnly = true;
             this.gridViewUsersAndGroup.OptionsSelection.CheckBoxSelectorColumnWidth = 30;
             this.gridViewUsersAndGroup.OptionsSelection.EnableAppearanceHideSelection = false;
             this.gridViewUsersAndGroup.OptionsSelection.MultiSelect = true;
@@ -235,6 +233,14 @@
             // 
             this.bsUsers.DataMember = "ZOVReminderUsers";
             this.bsUsers.DataSource = this.globalbaseDataSet;
+            // 
+            // readOnly
+            // 
+            this.readOnly.Caption = "Только для чтения";
+            this.readOnly.FieldName = "ReadOnly";
+            this.readOnly.Name = "readOnly";
+            this.readOnly.Visible = true;
+            this.readOnly.VisibleIndex = 1;
             // 
             // panelMiddle
             // 
@@ -446,6 +452,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
         private System.Windows.Forms.BindingSource bsUsersForGroup;
         private GlobalbaseDataSetTableAdapters.ZOVReminderUsersForGroupsTableAdapter taUsersForGroup;
+        private DevExpress.XtraGrid.Columns.GridColumn readOnly;
 
 
     }

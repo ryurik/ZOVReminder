@@ -47,15 +47,21 @@ namespace ZOVReminder.Forms
 //*/
         private void frmMainMDI_Load(object sender, EventArgs e)
         {
-            toolStripStatusLabelUserName.Text = Program.Security.UserName;
+            toolStripStatusLabelUserName.Text = Program.Security.UserName + (Program.Security.ReadOnly ? "(Только для чтения)" : "");
             mToolStripMenuItemSettings.Visible = Program.Security.IsAdmin;
             if (Program.Security.ZOVReminderUsersID > 0)
+            {
                 mToolStripMenuItemCalendar_Click(sender, e);
+                toolStripStatusLabelConnectionString.Text = "";
+            }
             else
-                группыИПользователиToolStripMenuItem_Click(sender, e);
-            toolStripStatusLabelConnectionString.Text = MyConnectionString.ConnectionString;
+            {
+                пользователиToolStripMenuItem_Click(sender, e);
+                toolStripStatusLabelConnectionString.Text = MyConnectionString.ConnectionString;
+            }
+            FrmMainMDI_Resize(sender, e);
         }
-
+        
 
         private void OpenChildForms(Type frmType, String caption, FormWindowState formWindowState = FormWindowState.Minimized)
         {
@@ -72,15 +78,13 @@ namespace ZOVReminder.Forms
             Type[] types = new Type[0];
             //types[0] = typeof(int);
             //types[0] = null;
-            // Get the public instance constructor that takes an integer parameter.
+            // Get the public instance constructor that takes NO Paramters - default constructor (an integer parameter).
             ConstructorInfo constructorInfoObj = frmType.GetConstructor(
                 BindingFlags.Instance | BindingFlags.Public, null,
                 CallingConventions.HasThis, types, null);
             if (constructorInfoObj != null)
             {
-                //object[] i = new object[1];
                 object[] i = new object[0];
-                //var f = constructorInfoObj.Invoke(i);
                 var f = constructorInfoObj.Invoke(i);
                 if (f is Form)
                 {
@@ -197,6 +201,21 @@ namespace ZOVReminder.Forms
         private void группыИПользователиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenChildForms(typeof(FrmGroupsAndUsers), "Группы и пользователи");
+        }
+
+        private void FrmMainMDI_Resize(object sender, EventArgs e)
+        {
+            foreach (Form c in MdiChildren)
+            {
+                if (c.MinimizeBox)
+                {
+                    c.Top = 0;
+                    c.Left = 0;
+                    c.Size = new Size(this.ClientSize.Width, this.ClientSize.Height);
+                    c.Height = this.ClientSize.Height - menuStripMain.Height - statusStrip.Height - 5;
+                    c.Width = this.ClientSize.Width - 5;
+                }
+            }
         }
 
     }

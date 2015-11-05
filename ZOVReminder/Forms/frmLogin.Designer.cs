@@ -57,7 +57,7 @@
             this.panelControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControlLeft.Location = new System.Drawing.Point(0, 0);
             this.panelControlLeft.Name = "panelControlLeft";
-            this.panelControlLeft.Size = new System.Drawing.Size(97, 121);
+            this.panelControlLeft.Size = new System.Drawing.Size(97, 102);
             this.panelControlLeft.TabIndex = 2;
             // 
             // pictureEdit
@@ -72,7 +72,7 @@
             this.pictureEdit.Properties.ReadOnly = true;
             this.pictureEdit.Properties.ShowMenu = false;
             this.pictureEdit.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit.Size = new System.Drawing.Size(97, 121);
+            this.pictureEdit.Size = new System.Drawing.Size(97, 102);
             this.pictureEdit.TabIndex = 0;
             // 
             // panelControl1
@@ -85,7 +85,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(97, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(232, 121);
+            this.panelControl1.Size = new System.Drawing.Size(232, 102);
             this.panelControl1.TabIndex = 3;
             // 
             // comboBoxUsers
@@ -105,7 +105,7 @@
             this.panelControlButtons.Controls.Add(this.btnCancel);
             this.panelControlButtons.Controls.Add(this.btnLogin);
             this.panelControlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlButtons.Location = new System.Drawing.Point(2, 82);
+            this.panelControlButtons.Location = new System.Drawing.Point(2, 63);
             this.panelControlButtons.Name = "panelControlButtons";
             this.panelControlButtons.Size = new System.Drawing.Size(228, 37);
             this.panelControlButtons.TabIndex = 10;
@@ -157,9 +157,9 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 121);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(329, 102);
             this.ControlBox = false;
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panelControlLeft);

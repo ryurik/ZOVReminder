@@ -30,7 +30,7 @@ namespace ZOVReminder
             try
             {
                 conn.Open();
-                SqlCommand comm = new SqlCommand(String.Format("SELECT UserName, Permissions FROM ZOVReminderUsers "), conn);
+                SqlCommand comm = new SqlCommand(String.Format("SELECT UserName, Permissions FROM ZOVReminderUsers WHERE (Enabled = 1)"), conn);
                 SqlDataReader dataReader = comm.ExecuteReader();
 
                 if (dataReader.HasRows)
@@ -83,7 +83,7 @@ namespace ZOVReminder
 
             string pwdMD5 = Classes.WorkWithHashes.GetHashString(textEditPwd.Text);
 
-            SqlCommand comm = new SqlCommand(String.Format("SELECT ZOVReminderUsersID, UserName, Permissions FROM ZOVReminderUsers WHERE (LOWER(UserName)='{0}' AND PasswordMD5='{1}')", comboBoxUsers.Text.ToLower(), pwdMD5), conn);
+            SqlCommand comm = new SqlCommand(String.Format("SELECT ZOVReminderUsersID, UserName, Permissions, ReadOnly FROM ZOVReminderUsers WHERE (LOWER(UserName)='{0}' AND PasswordMD5='{1}')", comboBoxUsers.Text.ToLower(), pwdMD5), conn);
 
             SqlDataReader dataReader = comm.ExecuteReader();
 
@@ -108,23 +108,16 @@ namespace ZOVReminder
                 Program.Security.ZOVReminderUsersID = dataReader.GetInt32(0);
                 Program.Security.UserName = dataReader.GetString(1);
                 Program.Security.IsAdmin = false;
+                Program.Security.ReadOnly = dataReader.GetBoolean(3);
                 dataReader.Close();
 
-                try
-                {
-                    comm.CommandText = String.Format(
-                                "UPDATE ZOVRU " +
-                                "  SET LastLogon = CONVERT(datetime, '{1}', 103)" +
-                                "  FROM ZOVReminderUsers ZOVRU " +
-                                "  WHERE (UserName LIKE '{0}')",
-                                comboBoxUsers.Text, DateTime.Now);
+                MyConnectionString.ExecuteScalarQuery(String.Format(
+                    "UPDATE ZOVRU " +
+                    "  SET LastLogon = CONVERT(datetime, '{1}', 103)" +
+                    "  FROM ZOVReminderUsers ZOVRU " +
+                    "  WHERE (UserName LIKE '{0}')",
+                    comboBoxUsers.Text, DateTime.Now));
 
-                    comm.ExecuteScalar();
-                }
-                catch (Exception E)
-                {
-                    MessageBox.Show(E.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
                 Properties.Settings.Default.UserName = comboBoxUsers.Text;
                 Properties.Settings.Default.Save();
             }

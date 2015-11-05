@@ -94,7 +94,7 @@
             this.btnCheck.Location = new System.Drawing.Point(24, 90);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(75, 23);
-            this.btnCheck.TabIndex = 15;
+            this.btnCheck.TabIndex = 4;
             this.btnCheck.Text = "Проверить";
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
@@ -115,7 +115,7 @@
             this.textEditPassConfirm.Properties.Appearance.Options.UseBackColor = true;
             this.textEditPassConfirm.Properties.PasswordChar = '*';
             this.textEditPassConfirm.Size = new System.Drawing.Size(117, 20);
-            this.textEditPassConfirm.TabIndex = 13;
+            this.textEditPassConfirm.TabIndex = 3;
             this.textEditPassConfirm.EditValueChanged += new System.EventHandler(this.textEditPassConfirm_EditValueChanged);
             this.textEditPassConfirm.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEditPassConfirm_KeyDown);
             // 
@@ -125,7 +125,7 @@
             this.btnApply.Location = new System.Drawing.Point(142, 90);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
-            this.btnApply.TabIndex = 12;
+            this.btnApply.TabIndex = 5;
             this.btnApply.Text = "Применить";
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
@@ -138,7 +138,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxUsers.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxUsers.Size = new System.Drawing.Size(116, 20);
-            this.comboBoxUsers.TabIndex = 11;
+            this.comboBoxUsers.TabIndex = 1;
+            this.comboBoxUsers.SelectedIndexChanged += new System.EventHandler(this.comboBoxUsers_SelectedIndexChanged);
             // 
             // labelControl2
             // 
@@ -163,7 +164,7 @@
             this.textEditPwd.Name = "textEditPwd";
             this.textEditPwd.Properties.PasswordChar = '*';
             this.textEditPwd.Size = new System.Drawing.Size(117, 20);
-            this.textEditPwd.TabIndex = 6;
+            this.textEditPwd.TabIndex = 2;
             // 
             // panBottom
             // 
@@ -180,7 +181,7 @@
             this.btnCancel.Location = new System.Drawing.Point(142, 6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 

@@ -217,6 +217,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CustomSchedulerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\MyConnectionString.cs" />
     <Compile Include="Classes\Security.cs" />
     <Compile Include="Classes\WorkWithHashes.cs" />

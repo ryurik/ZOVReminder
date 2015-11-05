@@ -36,6 +36,10 @@ namespace ZOVReminder {
         
         private ZOVReminderUsersForGroupsDataTable tableZOVReminderUsersForGroups;
         
+        private SP_GetTreeListDataTable tableSP_GetTreeList;
+        
+        private GetTreeDataTable tableGetTree;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -81,6 +85,12 @@ namespace ZOVReminder {
                 }
                 if ((ds.Tables["ZOVReminderUsersForGroups"] != null)) {
                     base.Tables.Add(new ZOVReminderUsersForGroupsDataTable(ds.Tables["ZOVReminderUsersForGroups"]));
+                }
+                if ((ds.Tables["SP_GetTreeList"] != null)) {
+                    base.Tables.Add(new SP_GetTreeListDataTable(ds.Tables["SP_GetTreeList"]));
+                }
+                if ((ds.Tables["GetTree"] != null)) {
+                    base.Tables.Add(new GetTreeDataTable(ds.Tables["GetTree"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -157,6 +167,26 @@ namespace ZOVReminder {
         public ZOVReminderUsersForGroupsDataTable ZOVReminderUsersForGroups {
             get {
                 return this.tableZOVReminderUsersForGroups;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SP_GetTreeListDataTable SP_GetTreeList {
+            get {
+                return this.tableSP_GetTreeList;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public GetTreeDataTable GetTree {
+            get {
+                return this.tableGetTree;
             }
         }
         
@@ -245,6 +275,12 @@ namespace ZOVReminder {
                 if ((ds.Tables["ZOVReminderUsersForGroups"] != null)) {
                     base.Tables.Add(new ZOVReminderUsersForGroupsDataTable(ds.Tables["ZOVReminderUsersForGroups"]));
                 }
+                if ((ds.Tables["SP_GetTreeList"] != null)) {
+                    base.Tables.Add(new SP_GetTreeListDataTable(ds.Tables["SP_GetTreeList"]));
+                }
+                if ((ds.Tables["GetTree"] != null)) {
+                    base.Tables.Add(new GetTreeDataTable(ds.Tables["GetTree"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -314,6 +350,18 @@ namespace ZOVReminder {
                     this.tableZOVReminderUsersForGroups.InitVars();
                 }
             }
+            this.tableSP_GetTreeList = ((SP_GetTreeListDataTable)(base.Tables["SP_GetTreeList"]));
+            if ((initTable == true)) {
+                if ((this.tableSP_GetTreeList != null)) {
+                    this.tableSP_GetTreeList.InitVars();
+                }
+            }
+            this.tableGetTree = ((GetTreeDataTable)(base.Tables["GetTree"]));
+            if ((initTable == true)) {
+                if ((this.tableGetTree != null)) {
+                    this.tableGetTree.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -336,6 +384,10 @@ namespace ZOVReminder {
             base.Tables.Add(this.tableZOVReminderUsersAndGroups);
             this.tableZOVReminderUsersForGroups = new ZOVReminderUsersForGroupsDataTable();
             base.Tables.Add(this.tableZOVReminderUsersForGroups);
+            this.tableSP_GetTreeList = new SP_GetTreeListDataTable();
+            base.Tables.Add(this.tableSP_GetTreeList);
+            this.tableGetTree = new GetTreeDataTable();
+            base.Tables.Add(this.tableGetTree);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -371,6 +423,18 @@ namespace ZOVReminder {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeZOVReminderUsersForGroups() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeSP_GetTreeList() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeGetTree() {
             return false;
         }
         
@@ -446,6 +510,12 @@ namespace ZOVReminder {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ZOVReminderUsersForGroupsRowChangeEventHandler(object sender, ZOVReminderUsersForGroupsRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void SP_GetTreeListRowChangeEventHandler(object sender, SP_GetTreeListRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void GetTreeRowChangeEventHandler(object sender, GetTreeRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1605,6 +1675,8 @@ namespace ZOVReminder {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ZOVReminderUsersDataTable : global::System.Data.TypedTableBase<ZOVReminderUsersRow> {
             
+            private global::System.Data.DataColumn columnEnabled;
+            
             private global::System.Data.DataColumn columnZOVReminderUsersID;
             
             private global::System.Data.DataColumn columnUserName;
@@ -1612,10 +1684,6 @@ namespace ZOVReminder {
             private global::System.Data.DataColumn columnPasswordMD5;
             
             private global::System.Data.DataColumn columnPermissions;
-            
-            private global::System.Data.DataColumn columnLastLogon;
-            
-            private global::System.Data.DataColumn columnLastLogOff;
             
             private global::System.Data.DataColumn columnUserNameChange;
             
@@ -1625,11 +1693,15 @@ namespace ZOVReminder {
             
             private global::System.Data.DataColumn columnUserCreated;
             
+            private global::System.Data.DataColumn columnLastLogon;
+            
+            private global::System.Data.DataColumn columnLastLogOff;
+            
             private global::System.Data.DataColumn columnLastEditTime;
             
-            private global::System.Data.DataColumn columnReadOnly;
-            
             private global::System.Data.DataColumn columnSendToAll;
+            
+            private global::System.Data.DataColumn columnReadOnly;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1666,6 +1738,14 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EnabledColumn {
+                get {
+                    return this.columnEnabled;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn ZOVReminderUsersIDColumn {
                 get {
                     return this.columnZOVReminderUsersID;
@@ -1693,22 +1773,6 @@ namespace ZOVReminder {
             public global::System.Data.DataColumn PermissionsColumn {
                 get {
                     return this.columnPermissions;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LastLogonColumn {
-                get {
-                    return this.columnLastLogon;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LastLogOffColumn {
-                get {
-                    return this.columnLastLogOff;
                 }
             }
             
@@ -1746,6 +1810,22 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LastLogonColumn {
+                get {
+                    return this.columnLastLogon;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LastLogOffColumn {
+                get {
+                    return this.columnLastLogOff;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn LastEditTimeColumn {
                 get {
                     return this.columnLastEditTime;
@@ -1754,17 +1834,17 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ReadOnlyColumn {
+            public global::System.Data.DataColumn SendToAllColumn {
                 get {
-                    return this.columnReadOnly;
+                    return this.columnSendToAll;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SendToAllColumn {
+            public global::System.Data.DataColumn ReadOnlyColumn {
                 get {
-                    return this.columnSendToAll;
+                    return this.columnReadOnly;
                 }
             }
             
@@ -1805,22 +1885,23 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ZOVReminderUsersRow AddZOVReminderUsersRow(string UserName, string PasswordMD5, int Permissions, System.DateTime LastLogon, System.DateTime LastLogOff, System.DateTime UserNameChange, System.DateTime PasswordChange, System.DateTime PermissionsChange, System.DateTime UserCreated, System.DateTime LastEditTime, bool ReadOnly, bool SendToAll) {
+            public ZOVReminderUsersRow AddZOVReminderUsersRow(bool Enabled, string UserName, string PasswordMD5, int Permissions, System.DateTime UserNameChange, System.DateTime PasswordChange, System.DateTime PermissionsChange, System.DateTime UserCreated, System.DateTime LastLogon, System.DateTime LastLogOff, System.DateTime LastEditTime, bool SendToAll, bool ReadOnly) {
                 ZOVReminderUsersRow rowZOVReminderUsersRow = ((ZOVReminderUsersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        Enabled,
                         null,
                         UserName,
                         PasswordMD5,
                         Permissions,
-                        LastLogon,
-                        LastLogOff,
                         UserNameChange,
                         PasswordChange,
                         PermissionsChange,
                         UserCreated,
+                        LastLogon,
+                        LastLogOff,
                         LastEditTime,
-                        ReadOnly,
-                        SendToAll};
+                        SendToAll,
+                        ReadOnly};
                 rowZOVReminderUsersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowZOVReminderUsersRow);
                 return rowZOVReminderUsersRow;
@@ -1850,24 +1931,27 @@ namespace ZOVReminder {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnEnabled = base.Columns["Enabled"];
                 this.columnZOVReminderUsersID = base.Columns["ZOVReminderUsersID"];
                 this.columnUserName = base.Columns["UserName"];
                 this.columnPasswordMD5 = base.Columns["PasswordMD5"];
                 this.columnPermissions = base.Columns["Permissions"];
-                this.columnLastLogon = base.Columns["LastLogon"];
-                this.columnLastLogOff = base.Columns["LastLogOff"];
                 this.columnUserNameChange = base.Columns["UserNameChange"];
                 this.columnPasswordChange = base.Columns["PasswordChange"];
                 this.columnPermissionsChange = base.Columns["PermissionsChange"];
                 this.columnUserCreated = base.Columns["UserCreated"];
+                this.columnLastLogon = base.Columns["LastLogon"];
+                this.columnLastLogOff = base.Columns["LastLogOff"];
                 this.columnLastEditTime = base.Columns["LastEditTime"];
-                this.columnReadOnly = base.Columns["ReadOnly"];
                 this.columnSendToAll = base.Columns["SendToAll"];
+                this.columnReadOnly = base.Columns["ReadOnly"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnEnabled = new global::System.Data.DataColumn("Enabled", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnabled);
                 this.columnZOVReminderUsersID = new global::System.Data.DataColumn("ZOVReminderUsersID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnZOVReminderUsersID);
                 this.columnUserName = new global::System.Data.DataColumn("UserName", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1876,10 +1960,6 @@ namespace ZOVReminder {
                 base.Columns.Add(this.columnPasswordMD5);
                 this.columnPermissions = new global::System.Data.DataColumn("Permissions", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPermissions);
-                this.columnLastLogon = new global::System.Data.DataColumn("LastLogon", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLastLogon);
-                this.columnLastLogOff = new global::System.Data.DataColumn("LastLogOff", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLastLogOff);
                 this.columnUserNameChange = new global::System.Data.DataColumn("UserNameChange", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUserNameChange);
                 this.columnPasswordChange = new global::System.Data.DataColumn("PasswordChange", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -1888,12 +1968,16 @@ namespace ZOVReminder {
                 base.Columns.Add(this.columnPermissionsChange);
                 this.columnUserCreated = new global::System.Data.DataColumn("UserCreated", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUserCreated);
+                this.columnLastLogon = new global::System.Data.DataColumn("LastLogon", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLastLogon);
+                this.columnLastLogOff = new global::System.Data.DataColumn("LastLogOff", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLastLogOff);
                 this.columnLastEditTime = new global::System.Data.DataColumn("LastEditTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLastEditTime);
-                this.columnReadOnly = new global::System.Data.DataColumn("ReadOnly", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReadOnly);
                 this.columnSendToAll = new global::System.Data.DataColumn("SendToAll", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSendToAll);
+                this.columnReadOnly = new global::System.Data.DataColumn("ReadOnly", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReadOnly);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnZOVReminderUsersID}, true));
                 this.columnZOVReminderUsersID.AutoIncrement = true;
@@ -2044,6 +2128,8 @@ namespace ZOVReminder {
             
             private global::System.Data.DataColumn columnZOVReminderUsersID;
             
+            private global::System.Data.DataColumn columnReadOnly;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ZOVReminderUsersAndGroupsDataTable() {
@@ -2103,6 +2189,14 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ReadOnlyColumn {
+                get {
+                    return this.columnReadOnly;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2138,12 +2232,13 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ZOVReminderUsersAndGroupsRow AddZOVReminderUsersAndGroupsRow(int ZOVReminderGroupsID, int ZOVReminderUsersID) {
+            public ZOVReminderUsersAndGroupsRow AddZOVReminderUsersAndGroupsRow(int ZOVReminderGroupsID, int ZOVReminderUsersID, bool ReadOnly) {
                 ZOVReminderUsersAndGroupsRow rowZOVReminderUsersAndGroupsRow = ((ZOVReminderUsersAndGroupsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         ZOVReminderGroupsID,
-                        ZOVReminderUsersID};
+                        ZOVReminderUsersID,
+                        ReadOnly};
                 rowZOVReminderUsersAndGroupsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowZOVReminderUsersAndGroupsRow);
                 return rowZOVReminderUsersAndGroupsRow;
@@ -2176,6 +2271,7 @@ namespace ZOVReminder {
                 this.columnZOVReminderUsersAndGroupsID = base.Columns["ZOVReminderUsersAndGroupsID"];
                 this.columnZOVReminderGroupsID = base.Columns["ZOVReminderGroupsID"];
                 this.columnZOVReminderUsersID = base.Columns["ZOVReminderUsersID"];
+                this.columnReadOnly = base.Columns["ReadOnly"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2187,6 +2283,8 @@ namespace ZOVReminder {
                 base.Columns.Add(this.columnZOVReminderGroupsID);
                 this.columnZOVReminderUsersID = new global::System.Data.DataColumn("ZOVReminderUsersID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnZOVReminderUsersID);
+                this.columnReadOnly = new global::System.Data.DataColumn("ReadOnly", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReadOnly);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnZOVReminderUsersAndGroupsID}, true));
                 this.columnZOVReminderUsersAndGroupsID.AutoIncrement = true;
@@ -2573,6 +2671,564 @@ namespace ZOVReminder {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ZOVReminderUsersForGroupsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SP_GetTreeListDataTable : global::System.Data.TypedTableBase<SP_GetTreeListRow> {
+            
+            private global::System.Data.DataColumn columnId;
+            
+            private global::System.Data.DataColumn columnParentId;
+            
+            private global::System.Data.DataColumn columnName;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SP_GetTreeListDataTable() {
+                this.TableName = "SP_GetTreeList";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal SP_GetTreeListDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected SP_GetTreeListDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdColumn {
+                get {
+                    return this.columnId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ParentIdColumn {
+                get {
+                    return this.columnParentId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SP_GetTreeListRow this[int index] {
+                get {
+                    return ((SP_GetTreeListRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event SP_GetTreeListRowChangeEventHandler SP_GetTreeListRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event SP_GetTreeListRowChangeEventHandler SP_GetTreeListRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event SP_GetTreeListRowChangeEventHandler SP_GetTreeListRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event SP_GetTreeListRowChangeEventHandler SP_GetTreeListRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddSP_GetTreeListRow(SP_GetTreeListRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SP_GetTreeListRow AddSP_GetTreeListRow(int Id, int ParentId, string Name) {
+                SP_GetTreeListRow rowSP_GetTreeListRow = ((SP_GetTreeListRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Id,
+                        ParentId,
+                        Name};
+                rowSP_GetTreeListRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_GetTreeListRow);
+                return rowSP_GetTreeListRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SP_GetTreeListDataTable cln = ((SP_GetTreeListDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SP_GetTreeListDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnId = base.Columns["Id"];
+                this.columnParentId = base.Columns["ParentId"];
+                this.columnName = base.Columns["Name"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId);
+                this.columnParentId = new global::System.Data.DataColumn("ParentId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnParentId);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
+                this.columnId.ReadOnly = true;
+                this.columnParentId.ReadOnly = true;
+                this.columnName.ReadOnly = true;
+                this.columnName.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SP_GetTreeListRow NewSP_GetTreeListRow() {
+                return ((SP_GetTreeListRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SP_GetTreeListRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SP_GetTreeListRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SP_GetTreeListRowChanged != null)) {
+                    this.SP_GetTreeListRowChanged(this, new SP_GetTreeListRowChangeEvent(((SP_GetTreeListRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SP_GetTreeListRowChanging != null)) {
+                    this.SP_GetTreeListRowChanging(this, new SP_GetTreeListRowChangeEvent(((SP_GetTreeListRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SP_GetTreeListRowDeleted != null)) {
+                    this.SP_GetTreeListRowDeleted(this, new SP_GetTreeListRowChangeEvent(((SP_GetTreeListRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SP_GetTreeListRowDeleting != null)) {
+                    this.SP_GetTreeListRowDeleting(this, new SP_GetTreeListRowChangeEvent(((SP_GetTreeListRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveSP_GetTreeListRow(SP_GetTreeListRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                GlobalbaseDataSet ds = new GlobalbaseDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SP_GetTreeListDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class GetTreeDataTable : global::System.Data.TypedTableBase<GetTreeRow> {
+            
+            private global::System.Data.DataColumn columnId;
+            
+            private global::System.Data.DataColumn columnParentId;
+            
+            private global::System.Data.DataColumn columnName;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetTreeDataTable() {
+                this.TableName = "GetTree";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal GetTreeDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected GetTreeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdColumn {
+                get {
+                    return this.columnId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ParentIdColumn {
+                get {
+                    return this.columnParentId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetTreeRow this[int index] {
+                get {
+                    return ((GetTreeRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GetTreeRowChangeEventHandler GetTreeRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GetTreeRowChangeEventHandler GetTreeRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GetTreeRowChangeEventHandler GetTreeRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GetTreeRowChangeEventHandler GetTreeRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddGetTreeRow(GetTreeRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetTreeRow AddGetTreeRow(int Id, int ParentId, string Name) {
+                GetTreeRow rowGetTreeRow = ((GetTreeRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Id,
+                        ParentId,
+                        Name};
+                rowGetTreeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGetTreeRow);
+                return rowGetTreeRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                GetTreeDataTable cln = ((GetTreeDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new GetTreeDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnId = base.Columns["Id"];
+                this.columnParentId = base.Columns["ParentId"];
+                this.columnName = base.Columns["Name"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId);
+                this.columnParentId = new global::System.Data.DataColumn("ParentId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnParentId);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
+                this.columnId.ReadOnly = true;
+                this.columnParentId.ReadOnly = true;
+                this.columnName.ReadOnly = true;
+                this.columnName.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetTreeRow NewGetTreeRow() {
+                return ((GetTreeRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new GetTreeRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(GetTreeRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.GetTreeRowChanged != null)) {
+                    this.GetTreeRowChanged(this, new GetTreeRowChangeEvent(((GetTreeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.GetTreeRowChanging != null)) {
+                    this.GetTreeRowChanging(this, new GetTreeRowChangeEvent(((GetTreeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.GetTreeRowDeleted != null)) {
+                    this.GetTreeRowDeleted(this, new GetTreeRowChangeEvent(((GetTreeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.GetTreeRowDeleting != null)) {
+                    this.GetTreeRowDeleting(this, new GetTreeRowChangeEvent(((GetTreeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveGetTreeRow(GetTreeRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                GlobalbaseDataSet ds = new GlobalbaseDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "GetTreeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3362,6 +4018,22 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Enabled {
+                get {
+                    try {
+                        return ((bool)(this[this.tableZOVReminderUsers.EnabledColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Enabled\' in table \'ZOVReminderUsers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableZOVReminderUsers.EnabledColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ZOVReminderUsersID {
                 get {
                     return ((int)(this[this.tableZOVReminderUsers.ZOVReminderUsersIDColumn]));
@@ -3411,38 +4083,6 @@ namespace ZOVReminder {
                 }
                 set {
                     this[this.tableZOVReminderUsers.PermissionsColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime LastLogon {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableZOVReminderUsers.LastLogonColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LastLogon\' in table \'ZOVReminderUsers\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableZOVReminderUsers.LastLogonColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime LastLogOff {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableZOVReminderUsers.LastLogOffColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LastLogOff\' in table \'ZOVReminderUsers\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableZOVReminderUsers.LastLogOffColumn] = value;
                 }
             }
             
@@ -3512,6 +4152,38 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime LastLogon {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableZOVReminderUsers.LastLogonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LastLogon\' in table \'ZOVReminderUsers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableZOVReminderUsers.LastLogonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime LastLogOff {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableZOVReminderUsers.LastLogOffColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LastLogOff\' in table \'ZOVReminderUsers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableZOVReminderUsers.LastLogOffColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime LastEditTime {
                 get {
                     try {
@@ -3523,6 +4195,22 @@ namespace ZOVReminder {
                 }
                 set {
                     this[this.tableZOVReminderUsers.LastEditTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool SendToAll {
+                get {
+                    try {
+                        return ((bool)(this[this.tableZOVReminderUsers.SendToAllColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SendToAll\' in table \'ZOVReminderUsers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableZOVReminderUsers.SendToAllColumn] = value;
                 }
             }
             
@@ -3544,18 +4232,14 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool SendToAll {
-                get {
-                    try {
-                        return ((bool)(this[this.tableZOVReminderUsers.SendToAllColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SendToAll\' in table \'ZOVReminderUsers\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableZOVReminderUsers.SendToAllColumn] = value;
-                }
+            public bool IsEnabledNull() {
+                return this.IsNull(this.tableZOVReminderUsers.EnabledColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEnabledNull() {
+                this[this.tableZOVReminderUsers.EnabledColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3580,30 +4264,6 @@ namespace ZOVReminder {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPermissionsNull() {
                 this[this.tableZOVReminderUsers.PermissionsColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLastLogonNull() {
-                return this.IsNull(this.tableZOVReminderUsers.LastLogonColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLastLogonNull() {
-                this[this.tableZOVReminderUsers.LastLogonColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsLastLogOffNull() {
-                return this.IsNull(this.tableZOVReminderUsers.LastLogOffColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetLastLogOffNull() {
-                this[this.tableZOVReminderUsers.LastLogOffColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3656,6 +4316,30 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLastLogonNull() {
+                return this.IsNull(this.tableZOVReminderUsers.LastLogonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLastLogonNull() {
+                this[this.tableZOVReminderUsers.LastLogonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLastLogOffNull() {
+                return this.IsNull(this.tableZOVReminderUsers.LastLogOffColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLastLogOffNull() {
+                this[this.tableZOVReminderUsers.LastLogOffColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsLastEditTimeNull() {
                 return this.IsNull(this.tableZOVReminderUsers.LastEditTimeColumn);
             }
@@ -3668,18 +4352,6 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsReadOnlyNull() {
-                return this.IsNull(this.tableZOVReminderUsers.ReadOnlyColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetReadOnlyNull() {
-                this[this.tableZOVReminderUsers.ReadOnlyColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSendToAllNull() {
                 return this.IsNull(this.tableZOVReminderUsers.SendToAllColumn);
             }
@@ -3688,6 +4360,18 @@ namespace ZOVReminder {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSendToAllNull() {
                 this[this.tableZOVReminderUsers.SendToAllColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsReadOnlyNull() {
+                return this.IsNull(this.tableZOVReminderUsers.ReadOnlyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetReadOnlyNull() {
+                this[this.tableZOVReminderUsers.ReadOnlyColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3752,6 +4436,22 @@ namespace ZOVReminder {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool ReadOnly {
+                get {
+                    try {
+                        return ((bool)(this[this.tableZOVReminderUsersAndGroups.ReadOnlyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReadOnly\' in table \'ZOVReminderUsersAndGroups\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableZOVReminderUsersAndGroups.ReadOnlyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsZOVReminderGroupsIDNull() {
                 return this.IsNull(this.tableZOVReminderUsersAndGroups.ZOVReminderGroupsIDColumn);
             }
@@ -3772,6 +4472,18 @@ namespace ZOVReminder {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetZOVReminderUsersIDNull() {
                 this[this.tableZOVReminderUsersAndGroups.ZOVReminderUsersIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsReadOnlyNull() {
+                return this.IsNull(this.tableZOVReminderUsersAndGroups.ReadOnlyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetReadOnlyNull() {
+                this[this.tableZOVReminderUsersAndGroups.ReadOnlyColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3838,6 +4550,204 @@ namespace ZOVReminder {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPermissionsNull() {
                 this[this.tableZOVReminderUsersForGroups.PermissionsColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SP_GetTreeListRow : global::System.Data.DataRow {
+            
+            private SP_GetTreeListDataTable tableSP_GetTreeList;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal SP_GetTreeListRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSP_GetTreeList = ((SP_GetTreeListDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Id {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_GetTreeList.IdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Id\' in table \'SP_GetTreeList\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_GetTreeList.IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ParentId {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_GetTreeList.ParentIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ParentId\' in table \'SP_GetTreeList\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_GetTreeList.ParentIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_GetTreeList.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'SP_GetTreeList\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_GetTreeList.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdNull() {
+                return this.IsNull(this.tableSP_GetTreeList.IdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdNull() {
+                this[this.tableSP_GetTreeList.IdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsParentIdNull() {
+                return this.IsNull(this.tableSP_GetTreeList.ParentIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetParentIdNull() {
+                this[this.tableSP_GetTreeList.ParentIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNameNull() {
+                return this.IsNull(this.tableSP_GetTreeList.NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNameNull() {
+                this[this.tableSP_GetTreeList.NameColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class GetTreeRow : global::System.Data.DataRow {
+            
+            private GetTreeDataTable tableGetTree;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal GetTreeRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableGetTree = ((GetTreeDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Id {
+                get {
+                    try {
+                        return ((int)(this[this.tableGetTree.IdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Id\' in table \'GetTree\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTree.IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ParentId {
+                get {
+                    try {
+                        return ((int)(this[this.tableGetTree.ParentIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ParentId\' in table \'GetTree\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTree.ParentIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetTree.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'GetTree\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetTree.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdNull() {
+                return this.IsNull(this.tableGetTree.IdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdNull() {
+                this[this.tableGetTree.IdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsParentIdNull() {
+                return this.IsNull(this.tableGetTree.ParentIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetParentIdNull() {
+                this[this.tableGetTree.ParentIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNameNull() {
+                return this.IsNull(this.tableGetTree.NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNameNull() {
+                this[this.tableGetTree.NameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4031,6 +4941,74 @@ namespace ZOVReminder {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ZOVReminderUsersForGroupsRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class SP_GetTreeListRowChangeEvent : global::System.EventArgs {
+            
+            private SP_GetTreeListRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SP_GetTreeListRowChangeEvent(SP_GetTreeListRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SP_GetTreeListRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class GetTreeRowChangeEvent : global::System.EventArgs {
+            
+            private GetTreeRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetTreeRowChangeEvent(GetTreeRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetTreeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5735,23 +6713,24 @@ SELECT ZOVReminderGroupsID, Name, Note FROM ZOVReminderGroups WHERE (ZOVReminder
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ZOVReminderUsers";
+            tableMapping.ColumnMappings.Add("Enabled", "Enabled");
             tableMapping.ColumnMappings.Add("ZOVReminderUsersID", "ZOVReminderUsersID");
             tableMapping.ColumnMappings.Add("UserName", "UserName");
             tableMapping.ColumnMappings.Add("PasswordMD5", "PasswordMD5");
             tableMapping.ColumnMappings.Add("Permissions", "Permissions");
-            tableMapping.ColumnMappings.Add("LastLogon", "LastLogon");
-            tableMapping.ColumnMappings.Add("LastLogOff", "LastLogOff");
             tableMapping.ColumnMappings.Add("UserNameChange", "UserNameChange");
             tableMapping.ColumnMappings.Add("PasswordChange", "PasswordChange");
             tableMapping.ColumnMappings.Add("PermissionsChange", "PermissionsChange");
             tableMapping.ColumnMappings.Add("UserCreated", "UserCreated");
+            tableMapping.ColumnMappings.Add("LastLogon", "LastLogon");
+            tableMapping.ColumnMappings.Add("LastLogOff", "LastLogOff");
             tableMapping.ColumnMappings.Add("LastEditTime", "LastEditTime");
-            tableMapping.ColumnMappings.Add("ReadOnly", "ReadOnly");
             tableMapping.ColumnMappings.Add("SendToAll", "SendToAll");
+            tableMapping.ColumnMappings.Add("ReadOnly", "ReadOnly");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [ZOVReminderUsers] WHERE (([ZOVReminderUsersID] = @Original_ZOVReminderUsersID) AND ([UserName] = @Original_UserName) AND ((@IsNull_PasswordMD5 = 1 AND [PasswordMD5] IS NULL) OR ([PasswordMD5] = @Original_PasswordMD5)) AND ((@IsNull_Permissions = 1 AND [Permissions] IS NULL) OR ([Permissions] = @Original_Permissions)) AND ((@IsNull_LastLogon = 1 AND [LastLogon] IS NULL) OR ([LastLogon] = @Original_LastLogon)) AND ((@IsNull_LastLogOff = 1 AND [LastLogOff] IS NULL) OR ([LastLogOff] = @Original_LastLogOff)) AND ((@IsNull_UserNameChange = 1 AND [UserNameChange] IS NULL) OR ([UserNameChange] = @Original_UserNameChange)) AND ((@IsNull_PasswordChange = 1 AND [PasswordChange] IS NULL) OR ([PasswordChange] = @Original_PasswordChange)) AND ((@IsNull_PermissionsChange = 1 AND [PermissionsChange] IS NULL) OR ([PermissionsChange] = @Original_PermissionsChange)) AND ((@IsNull_UserCreated = 1 AND [UserCreated] IS NULL) OR ([UserCreated] = @Original_UserCreated)) AND ((@IsNull_LastEditTime = 1 AND [LastEditTime] IS NULL) OR ([LastEditTime] = @Original_LastEditTime)) AND ((@IsNull_ReadOnly = 1 AND [ReadOnly] IS NULL) OR ([ReadOnly] = @Original_ReadOnly)) AND ((@IsNull_SendToAll = 1 AND [SendToAll] IS NULL) OR ([SendToAll] = @Original_SendToAll)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [ZOVReminderUsers] WHERE (([ZOVReminderUsersID] = @Original_ZOVReminderUsersID) AND ([UserName] = @Original_UserName) AND ((@IsNull_PasswordMD5 = 1 AND [PasswordMD5] IS NULL) OR ([PasswordMD5] = @Original_PasswordMD5)) AND ((@IsNull_Permissions = 1 AND [Permissions] IS NULL) OR ([Permissions] = @Original_Permissions)) AND ((@IsNull_UserNameChange = 1 AND [UserNameChange] IS NULL) OR ([UserNameChange] = @Original_UserNameChange)) AND ((@IsNull_PasswordChange = 1 AND [PasswordChange] IS NULL) OR ([PasswordChange] = @Original_PasswordChange)) AND ((@IsNull_PermissionsChange = 1 AND [PermissionsChange] IS NULL) OR ([PermissionsChange] = @Original_PermissionsChange)) AND ((@IsNull_UserCreated = 1 AND [UserCreated] IS NULL) OR ([UserCreated] = @Original_UserCreated)) AND ((@IsNull_LastLogon = 1 AND [LastLogon] IS NULL) OR ([LastLogon] = @Original_LastLogon)) AND ((@IsNull_LastLogOff = 1 AND [LastLogOff] IS NULL) OR ([LastLogOff] = @Original_LastLogOff)) AND ((@IsNull_LastEditTime = 1 AND [LastEditTime] IS NULL) OR ([LastEditTime] = @Original_LastEditTime)) AND ((@IsNull_SendToAll = 1 AND [SendToAll] IS NULL) OR ([SendToAll] = @Original_SendToAll)) AND ((@IsNull_ReadOnly = 1 AND [ReadOnly] IS NULL) OR ([ReadOnly] = @Original_ReadOnly)) AND ((@IsNull_Enabled = 1 AND [Enabled] IS NULL) OR ([Enabled] = @Original_Enabled)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5759,10 +6738,6 @@ SELECT ZOVReminderGroupsID, Name, Note FROM ZOVReminderGroups WHERE (ZOVReminder
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PasswordMD5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PasswordMD5", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Permissions", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Permissions", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Permissions", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Permissions", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastLogon", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogon", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastLogon", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogon", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastLogOff", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogOff", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastLogOff", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogOff", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UserNameChange", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserNameChange", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserNameChange", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserNameChange", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PasswordChange", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PasswordChange", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -5771,78 +6746,83 @@ SELECT ZOVReminderGroupsID, Name, Note FROM ZOVReminderGroups WHERE (ZOVReminder
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermissionsChange", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionsChange", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UserCreated", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserCreated", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserCreated", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserCreated", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastLogon", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogon", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastLogon", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogon", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastLogOff", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogOff", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastLogOff", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogOff", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastEditTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastEditTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastEditTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastEditTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReadOnly", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReadOnly", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SendToAll", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SendToAll", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SendToAll", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SendToAll", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReadOnly", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReadOnly", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Enabled", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enabled", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Enabled", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enabled", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [ZOVReminderUsers] ([UserName], [PasswordMD5], [Permissions], [LastLogon], [LastLogOff], [UserNameChange], [PasswordChange], [PermissionsChange], [UserCreated], [LastEditTime], [ReadOnly], [SendToAll]) VALUES (@UserName, @PasswordMD5, @Permissions, @LastLogon, @LastLogOff, @UserNameChange, @PasswordChange, @PermissionsChange, @UserCreated, @LastEditTime, @ReadOnly, @SendToAll);
-SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLogOff, UserNameChange, PasswordChange, PermissionsChange, UserCreated, LastEditTime, ReadOnly, SendToAll FROM ZOVReminderUsers WHERE (ZOVReminderUsersID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [ZOVReminderUsers] ([UserName], [PasswordMD5], [Permissions], [UserNameChange], [PasswordChange], [PermissionsChange], [UserCreated], [LastLogon], [LastLogOff], [LastEditTime], [SendToAll], [ReadOnly], [Enabled]) VALUES (@UserName, @PasswordMD5, @Permissions, @UserNameChange, @PasswordChange, @PermissionsChange, @UserCreated, @LastLogon, @LastLogOff, @LastEditTime, @SendToAll, @ReadOnly, @Enabled);
+SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, UserNameChange, PasswordChange, PermissionsChange, UserCreated, LastLogon, LastLogOff, LastEditTime, SendToAll, ReadOnly, Enabled FROM ZOVReminderUsers WHERE (ZOVReminderUsersID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PasswordMD5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PasswordMD5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Permissions", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Permissions", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastLogon", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastLogOff", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogOff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserNameChange", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserNameChange", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PasswordChange", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PasswordChange", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermissionsChange", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionsChange", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserCreated", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserCreated", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastLogon", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastLogOff", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogOff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastEditTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastEditTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReadOnly", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SendToAll", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SendToAll", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReadOnly", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Enabled", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enabled", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [ZOVReminderUsers] SET [UserName] = @UserName, [PasswordMD5] = @PasswordMD" +
-                "5, [Permissions] = @Permissions, [LastLogon] = @LastLogon, [LastLogOff] = @LastL" +
-                "ogOff, [UserNameChange] = @UserNameChange, [PasswordChange] = @PasswordChange, [" +
-                "PermissionsChange] = @PermissionsChange, [UserCreated] = @UserCreated, [LastEdit" +
-                "Time] = @LastEditTime, [ReadOnly] = @ReadOnly, [SendToAll] = @SendToAll WHERE ((" +
-                "[ZOVReminderUsersID] = @Original_ZOVReminderUsersID) AND ([UserName] = @Original" +
-                "_UserName) AND ((@IsNull_PasswordMD5 = 1 AND [PasswordMD5] IS NULL) OR ([Passwor" +
-                "dMD5] = @Original_PasswordMD5)) AND ((@IsNull_Permissions = 1 AND [Permissions] " +
-                "IS NULL) OR ([Permissions] = @Original_Permissions)) AND ((@IsNull_LastLogon = 1" +
-                " AND [LastLogon] IS NULL) OR ([LastLogon] = @Original_LastLogon)) AND ((@IsNull_" +
-                "LastLogOff = 1 AND [LastLogOff] IS NULL) OR ([LastLogOff] = @Original_LastLogOff" +
-                ")) AND ((@IsNull_UserNameChange = 1 AND [UserNameChange] IS NULL) OR ([UserNameC" +
-                "hange] = @Original_UserNameChange)) AND ((@IsNull_PasswordChange = 1 AND [Passwo" +
-                "rdChange] IS NULL) OR ([PasswordChange] = @Original_PasswordChange)) AND ((@IsNu" +
-                "ll_PermissionsChange = 1 AND [PermissionsChange] IS NULL) OR ([PermissionsChange" +
-                "] = @Original_PermissionsChange)) AND ((@IsNull_UserCreated = 1 AND [UserCreated" +
-                "] IS NULL) OR ([UserCreated] = @Original_UserCreated)) AND ((@IsNull_LastEditTim" +
-                "e = 1 AND [LastEditTime] IS NULL) OR ([LastEditTime] = @Original_LastEditTime)) " +
-                "AND ((@IsNull_ReadOnly = 1 AND [ReadOnly] IS NULL) OR ([ReadOnly] = @Original_Re" +
-                "adOnly)) AND ((@IsNull_SendToAll = 1 AND [SendToAll] IS NULL) OR ([SendToAll] = " +
-                "@Original_SendToAll)));\r\nSELECT ZOVReminderUsersID, UserName, PasswordMD5, Permi" +
-                "ssions, LastLogon, LastLogOff, UserNameChange, PasswordChange, PermissionsChange" +
-                ", UserCreated, LastEditTime, ReadOnly, SendToAll FROM ZOVReminderUsers WHERE (ZO" +
-                "VReminderUsersID = @ZOVReminderUsersID)";
+                "5, [Permissions] = @Permissions, [UserNameChange] = @UserNameChange, [PasswordCh" +
+                "ange] = @PasswordChange, [PermissionsChange] = @PermissionsChange, [UserCreated]" +
+                " = @UserCreated, [LastLogon] = @LastLogon, [LastLogOff] = @LastLogOff, [LastEdit" +
+                "Time] = @LastEditTime, [SendToAll] = @SendToAll, [ReadOnly] = @ReadOnly, [Enable" +
+                "d] = @Enabled WHERE (([ZOVReminderUsersID] = @Original_ZOVReminderUsersID) AND (" +
+                "[UserName] = @Original_UserName) AND ((@IsNull_PasswordMD5 = 1 AND [PasswordMD5]" +
+                " IS NULL) OR ([PasswordMD5] = @Original_PasswordMD5)) AND ((@IsNull_Permissions " +
+                "= 1 AND [Permissions] IS NULL) OR ([Permissions] = @Original_Permissions)) AND (" +
+                "(@IsNull_UserNameChange = 1 AND [UserNameChange] IS NULL) OR ([UserNameChange] =" +
+                " @Original_UserNameChange)) AND ((@IsNull_PasswordChange = 1 AND [PasswordChange" +
+                "] IS NULL) OR ([PasswordChange] = @Original_PasswordChange)) AND ((@IsNull_Permi" +
+                "ssionsChange = 1 AND [PermissionsChange] IS NULL) OR ([PermissionsChange] = @Ori" +
+                "ginal_PermissionsChange)) AND ((@IsNull_UserCreated = 1 AND [UserCreated] IS NUL" +
+                "L) OR ([UserCreated] = @Original_UserCreated)) AND ((@IsNull_LastLogon = 1 AND [" +
+                "LastLogon] IS NULL) OR ([LastLogon] = @Original_LastLogon)) AND ((@IsNull_LastLo" +
+                "gOff = 1 AND [LastLogOff] IS NULL) OR ([LastLogOff] = @Original_LastLogOff)) AND" +
+                " ((@IsNull_LastEditTime = 1 AND [LastEditTime] IS NULL) OR ([LastEditTime] = @Or" +
+                "iginal_LastEditTime)) AND ((@IsNull_SendToAll = 1 AND [SendToAll] IS NULL) OR ([" +
+                "SendToAll] = @Original_SendToAll)) AND ((@IsNull_ReadOnly = 1 AND [ReadOnly] IS " +
+                "NULL) OR ([ReadOnly] = @Original_ReadOnly)) AND ((@IsNull_Enabled = 1 AND [Enabl" +
+                "ed] IS NULL) OR ([Enabled] = @Original_Enabled)));\r\nSELECT ZOVReminderUsersID, U" +
+                "serName, PasswordMD5, Permissions, UserNameChange, PasswordChange, PermissionsCh" +
+                "ange, UserCreated, LastLogon, LastLogOff, LastEditTime, SendToAll, ReadOnly, Ena" +
+                "bled FROM ZOVReminderUsers WHERE (ZOVReminderUsersID = @ZOVReminderUsersID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PasswordMD5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PasswordMD5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Permissions", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Permissions", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastLogon", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastLogOff", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogOff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserNameChange", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserNameChange", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PasswordChange", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PasswordChange", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PermissionsChange", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionsChange", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserCreated", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserCreated", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastLogon", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastLogOff", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogOff", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastEditTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastEditTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReadOnly", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SendToAll", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SendToAll", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReadOnly", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Enabled", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enabled", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PasswordMD5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PasswordMD5", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PasswordMD5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PasswordMD5", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Permissions", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Permissions", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Permissions", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Permissions", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastLogon", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogon", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastLogon", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogon", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastLogOff", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogOff", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastLogOff", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogOff", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UserNameChange", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserNameChange", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserNameChange", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserNameChange", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PasswordChange", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PasswordChange", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -5851,12 +6831,18 @@ SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLo
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PermissionsChange", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PermissionsChange", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_UserCreated", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserCreated", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserCreated", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserCreated", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastLogon", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogon", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastLogon", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogon", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastLogOff", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogOff", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastLogOff", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastLogOff", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LastEditTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastEditTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LastEditTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastEditTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReadOnly", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReadOnly", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SendToAll", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SendToAll", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SendToAll", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SendToAll", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReadOnly", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReadOnly", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Enabled", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enabled", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Enabled", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Enabled", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -5873,13 +6859,14 @@ SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLo
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLog" +
-                "Off, UserNameChange, PasswordChange, PermissionsChange, UserCreated, LastEditTim" +
-                "e, ReadOnly, SendToAll\r\nFROM   ZOVReminderUsers";
+            this._commandCollection[0].CommandText = "SELECT     ZOVReminderUsersID, UserName, PasswordMD5, Permissions, UserNameChange" +
+                ", PasswordChange, PermissionsChange, UserCreated, LastLogon, LastLogOff, \r\n     " +
+                "                 LastEditTime, SendToAll, ReadOnly, Enabled\r\nFROM         ZOVRem" +
+                "inderUsers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT LastEditTime, LastLogOff, LastLogon, PasswordChange, PasswordMD5, Permissions, PermissionsChange, ReadOnly, SendToAll, UserCreated, UserName, UserNameChange, ZOVReminderUsersID FROM ZOVReminderUsers AS U WHERE (ZOVReminderUsersID NOT IN (SELECT ZOVReminderUsersID FROM ZOVReminderUsersAndGroups WHERE (ZOVReminderGroupsID = @GroupID)))";
+            this._commandCollection[1].CommandText = @"SELECT Enabled, LastEditTime, LastLogOff, LastLogon, PasswordChange, PasswordMD5, Permissions, PermissionsChange, ReadOnly, SendToAll, UserCreated, UserName, UserNameChange, ZOVReminderUsersID FROM ZOVReminderUsers AS U WHERE (ZOVReminderUsersID NOT IN (SELECT ZOVReminderUsersID FROM ZOVReminderUsersAndGroups WHERE (ZOVReminderGroupsID = @GroupID)))";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GroupID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -5977,7 +6964,7 @@ SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ZOVReminderUsersID, string Original_UserName, string Original_PasswordMD5, global::System.Nullable<int> Original_Permissions, global::System.Nullable<global::System.DateTime> Original_LastLogon, global::System.Nullable<global::System.DateTime> Original_LastLogOff, global::System.Nullable<global::System.DateTime> Original_UserNameChange, global::System.Nullable<global::System.DateTime> Original_PasswordChange, global::System.Nullable<global::System.DateTime> Original_PermissionsChange, global::System.Nullable<global::System.DateTime> Original_UserCreated, global::System.Nullable<global::System.DateTime> Original_LastEditTime, global::System.Nullable<bool> Original_ReadOnly, global::System.Nullable<bool> Original_SendToAll) {
+        public virtual int Delete(int Original_ZOVReminderUsersID, string Original_UserName, string Original_PasswordMD5, global::System.Nullable<int> Original_Permissions, global::System.Nullable<global::System.DateTime> Original_UserNameChange, global::System.Nullable<global::System.DateTime> Original_PasswordChange, global::System.Nullable<global::System.DateTime> Original_PermissionsChange, global::System.Nullable<global::System.DateTime> Original_UserCreated, global::System.Nullable<global::System.DateTime> Original_LastLogon, global::System.Nullable<global::System.DateTime> Original_LastLogOff, global::System.Nullable<global::System.DateTime> Original_LastEditTime, global::System.Nullable<bool> Original_SendToAll, global::System.Nullable<bool> Original_ReadOnly, global::System.Nullable<bool> Original_Enabled) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ZOVReminderUsersID));
             if ((Original_UserName == null)) {
                 throw new global::System.ArgumentNullException("Original_UserName");
@@ -6001,49 +6988,49 @@ SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLo
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Original_LastLogon.HasValue == true)) {
+            if ((Original_UserNameChange.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_LastLogon.Value));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_UserNameChange.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Original_LastLogOff.HasValue == true)) {
+            if ((Original_PasswordChange.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_LastLogOff.Value));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_PasswordChange.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Original_UserNameChange.HasValue == true)) {
+            if ((Original_PermissionsChange.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((System.DateTime)(Original_UserNameChange.Value));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((System.DateTime)(Original_PermissionsChange.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Original_PasswordChange.HasValue == true)) {
+            if ((Original_UserCreated.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((System.DateTime)(Original_PasswordChange.Value));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((System.DateTime)(Original_UserCreated.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Original_PermissionsChange.HasValue == true)) {
+            if ((Original_LastLogon.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((System.DateTime)(Original_PermissionsChange.Value));
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((System.DateTime)(Original_LastLogon.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((Original_UserCreated.HasValue == true)) {
+            if ((Original_LastLogOff.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((System.DateTime)(Original_UserCreated.Value));
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((System.DateTime)(Original_LastLogOff.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
@@ -6057,21 +7044,29 @@ SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLo
                 this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            if ((Original_ReadOnly.HasValue == true)) {
+            if ((Original_SendToAll.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((bool)(Original_ReadOnly.Value));
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((bool)(Original_SendToAll.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((Original_SendToAll.HasValue == true)) {
+            if ((Original_ReadOnly.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((bool)(Original_SendToAll.Value));
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((bool)(Original_ReadOnly.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Enabled.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((bool)(Original_Enabled.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6093,7 +7088,7 @@ SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string UserName, string PasswordMD5, global::System.Nullable<int> Permissions, global::System.Nullable<global::System.DateTime> LastLogon, global::System.Nullable<global::System.DateTime> LastLogOff, global::System.Nullable<global::System.DateTime> UserNameChange, global::System.Nullable<global::System.DateTime> PasswordChange, global::System.Nullable<global::System.DateTime> PermissionsChange, global::System.Nullable<global::System.DateTime> UserCreated, global::System.Nullable<global::System.DateTime> LastEditTime, global::System.Nullable<bool> ReadOnly, global::System.Nullable<bool> SendToAll) {
+        public virtual int Insert(string UserName, string PasswordMD5, global::System.Nullable<int> Permissions, global::System.Nullable<global::System.DateTime> UserNameChange, global::System.Nullable<global::System.DateTime> PasswordChange, global::System.Nullable<global::System.DateTime> PermissionsChange, global::System.Nullable<global::System.DateTime> UserCreated, global::System.Nullable<global::System.DateTime> LastLogon, global::System.Nullable<global::System.DateTime> LastLogOff, global::System.Nullable<global::System.DateTime> LastEditTime, global::System.Nullable<bool> SendToAll, global::System.Nullable<bool> ReadOnly, global::System.Nullable<bool> Enabled) {
             if ((UserName == null)) {
                 throw new global::System.ArgumentNullException("UserName");
             }
@@ -6112,38 +7107,38 @@ SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLo
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((LastLogon.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(LastLogon.Value));
+            if ((UserNameChange.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(UserNameChange.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((LastLogOff.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(LastLogOff.Value));
+            if ((PasswordChange.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(PasswordChange.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((UserNameChange.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(UserNameChange.Value));
+            if ((PermissionsChange.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(PermissionsChange.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((PasswordChange.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(PasswordChange.Value));
+            if ((UserCreated.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(UserCreated.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((PermissionsChange.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(PermissionsChange.Value));
+            if ((LastLogon.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(LastLogon.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((UserCreated.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(UserCreated.Value));
+            if ((LastLogOff.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(LastLogOff.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
@@ -6154,17 +7149,23 @@ SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLo
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((ReadOnly.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((bool)(ReadOnly.Value));
+            if ((SendToAll.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((bool)(SendToAll.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((SendToAll.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((bool)(SendToAll.Value));
+            if ((ReadOnly.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((bool)(ReadOnly.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Enabled.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((bool)(Enabled.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6190,28 +7191,30 @@ SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLo
                     string UserName, 
                     string PasswordMD5, 
                     global::System.Nullable<int> Permissions, 
-                    global::System.Nullable<global::System.DateTime> LastLogon, 
-                    global::System.Nullable<global::System.DateTime> LastLogOff, 
                     global::System.Nullable<global::System.DateTime> UserNameChange, 
                     global::System.Nullable<global::System.DateTime> PasswordChange, 
                     global::System.Nullable<global::System.DateTime> PermissionsChange, 
                     global::System.Nullable<global::System.DateTime> UserCreated, 
+                    global::System.Nullable<global::System.DateTime> LastLogon, 
+                    global::System.Nullable<global::System.DateTime> LastLogOff, 
                     global::System.Nullable<global::System.DateTime> LastEditTime, 
-                    global::System.Nullable<bool> ReadOnly, 
                     global::System.Nullable<bool> SendToAll, 
+                    global::System.Nullable<bool> ReadOnly, 
+                    global::System.Nullable<bool> Enabled, 
                     int Original_ZOVReminderUsersID, 
                     string Original_UserName, 
                     string Original_PasswordMD5, 
                     global::System.Nullable<int> Original_Permissions, 
-                    global::System.Nullable<global::System.DateTime> Original_LastLogon, 
-                    global::System.Nullable<global::System.DateTime> Original_LastLogOff, 
                     global::System.Nullable<global::System.DateTime> Original_UserNameChange, 
                     global::System.Nullable<global::System.DateTime> Original_PasswordChange, 
                     global::System.Nullable<global::System.DateTime> Original_PermissionsChange, 
                     global::System.Nullable<global::System.DateTime> Original_UserCreated, 
+                    global::System.Nullable<global::System.DateTime> Original_LastLogon, 
+                    global::System.Nullable<global::System.DateTime> Original_LastLogOff, 
                     global::System.Nullable<global::System.DateTime> Original_LastEditTime, 
-                    global::System.Nullable<bool> Original_ReadOnly, 
                     global::System.Nullable<bool> Original_SendToAll, 
+                    global::System.Nullable<bool> Original_ReadOnly, 
+                    global::System.Nullable<bool> Original_Enabled, 
                     int ZOVReminderUsersID) {
             if ((UserName == null)) {
                 throw new global::System.ArgumentNullException("UserName");
@@ -6231,38 +7234,38 @@ SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLo
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((LastLogon.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(LastLogon.Value));
+            if ((UserNameChange.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(UserNameChange.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((LastLogOff.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(LastLogOff.Value));
+            if ((PasswordChange.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(PasswordChange.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((UserNameChange.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(UserNameChange.Value));
+            if ((PermissionsChange.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(PermissionsChange.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((PasswordChange.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(PasswordChange.Value));
+            if ((UserCreated.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(UserCreated.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((PermissionsChange.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(PermissionsChange.Value));
+            if ((LastLogon.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(LastLogon.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((UserCreated.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(UserCreated.Value));
+            if ((LastLogOff.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(LastLogOff.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
@@ -6273,114 +7276,128 @@ SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLo
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((ReadOnly.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(ReadOnly.Value));
+            if ((SendToAll.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(SendToAll.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((SendToAll.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(SendToAll.Value));
+            if ((ReadOnly.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(ReadOnly.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_ZOVReminderUsersID));
+            if ((Enabled.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(Enabled.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_ZOVReminderUsersID));
             if ((Original_UserName == null)) {
                 throw new global::System.ArgumentNullException("Original_UserName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_UserName));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_UserName));
             }
             if ((Original_PasswordMD5 == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_PasswordMD5));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_PasswordMD5));
             }
             if ((Original_Permissions.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_Permissions.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_Permissions.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((Original_LastLogon.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_LastLogon.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            if ((Original_LastLogOff.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_LastLogOff.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             if ((Original_UserNameChange.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_UserNameChange.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_UserNameChange.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             if ((Original_PasswordChange.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(Original_PasswordChange.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_PasswordChange.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             if ((Original_PermissionsChange.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTime)(Original_PermissionsChange.Value));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_PermissionsChange.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             if ((Original_UserCreated.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((System.DateTime)(Original_UserCreated.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_UserCreated.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LastLogon.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((System.DateTime)(Original_LastLogon.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            if ((Original_LastLogOff.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((System.DateTime)(Original_LastLogOff.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             if ((Original_LastEditTime.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(Original_LastEditTime.Value));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((System.DateTime)(Original_LastEditTime.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ReadOnly.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((bool)(Original_ReadOnly.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             if ((Original_SendToAll.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((bool)(Original_SendToAll.Value));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((bool)(Original_SendToAll.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(ZOVReminderUsersID));
+            if ((Original_ReadOnly.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((bool)(Original_ReadOnly.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Enabled.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((bool)(Original_Enabled.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(ZOVReminderUsersID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6405,29 +7422,31 @@ SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLo
                     string UserName, 
                     string PasswordMD5, 
                     global::System.Nullable<int> Permissions, 
-                    global::System.Nullable<global::System.DateTime> LastLogon, 
-                    global::System.Nullable<global::System.DateTime> LastLogOff, 
                     global::System.Nullable<global::System.DateTime> UserNameChange, 
                     global::System.Nullable<global::System.DateTime> PasswordChange, 
                     global::System.Nullable<global::System.DateTime> PermissionsChange, 
                     global::System.Nullable<global::System.DateTime> UserCreated, 
+                    global::System.Nullable<global::System.DateTime> LastLogon, 
+                    global::System.Nullable<global::System.DateTime> LastLogOff, 
                     global::System.Nullable<global::System.DateTime> LastEditTime, 
-                    global::System.Nullable<bool> ReadOnly, 
                     global::System.Nullable<bool> SendToAll, 
+                    global::System.Nullable<bool> ReadOnly, 
+                    global::System.Nullable<bool> Enabled, 
                     int Original_ZOVReminderUsersID, 
                     string Original_UserName, 
                     string Original_PasswordMD5, 
                     global::System.Nullable<int> Original_Permissions, 
-                    global::System.Nullable<global::System.DateTime> Original_LastLogon, 
-                    global::System.Nullable<global::System.DateTime> Original_LastLogOff, 
                     global::System.Nullable<global::System.DateTime> Original_UserNameChange, 
                     global::System.Nullable<global::System.DateTime> Original_PasswordChange, 
                     global::System.Nullable<global::System.DateTime> Original_PermissionsChange, 
                     global::System.Nullable<global::System.DateTime> Original_UserCreated, 
+                    global::System.Nullable<global::System.DateTime> Original_LastLogon, 
+                    global::System.Nullable<global::System.DateTime> Original_LastLogOff, 
                     global::System.Nullable<global::System.DateTime> Original_LastEditTime, 
+                    global::System.Nullable<bool> Original_SendToAll, 
                     global::System.Nullable<bool> Original_ReadOnly, 
-                    global::System.Nullable<bool> Original_SendToAll) {
-            return this.Update(UserName, PasswordMD5, Permissions, LastLogon, LastLogOff, UserNameChange, PasswordChange, PermissionsChange, UserCreated, LastEditTime, ReadOnly, SendToAll, Original_ZOVReminderUsersID, Original_UserName, Original_PasswordMD5, Original_Permissions, Original_LastLogon, Original_LastLogOff, Original_UserNameChange, Original_PasswordChange, Original_PermissionsChange, Original_UserCreated, Original_LastEditTime, Original_ReadOnly, Original_SendToAll, Original_ZOVReminderUsersID);
+                    global::System.Nullable<bool> Original_Enabled) {
+            return this.Update(UserName, PasswordMD5, Permissions, UserNameChange, PasswordChange, PermissionsChange, UserCreated, LastLogon, LastLogOff, LastEditTime, SendToAll, ReadOnly, Enabled, Original_ZOVReminderUsersID, Original_UserName, Original_PasswordMD5, Original_Permissions, Original_UserNameChange, Original_PasswordChange, Original_PermissionsChange, Original_UserCreated, Original_LastLogon, Original_LastLogOff, Original_LastEditTime, Original_SendToAll, Original_ReadOnly, Original_Enabled, Original_ZOVReminderUsersID);
         }
     }
     
@@ -6555,35 +7574,42 @@ SELECT ZOVReminderUsersID, UserName, PasswordMD5, Permissions, LastLogon, LastLo
             tableMapping.ColumnMappings.Add("ZOVReminderUsersAndGroupsID", "ZOVReminderUsersAndGroupsID");
             tableMapping.ColumnMappings.Add("ZOVReminderGroupsID", "ZOVReminderGroupsID");
             tableMapping.ColumnMappings.Add("ZOVReminderUsersID", "ZOVReminderUsersID");
+            tableMapping.ColumnMappings.Add("ReadOnly", "ReadOnly");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [ZOVReminderUsersAndGroups] WHERE (([ZOVReminderUsersAndGroupsID] = @Original_ZOVReminderUsersAndGroupsID) AND ((@IsNull_ZOVReminderGroupsID = 1 AND [ZOVReminderGroupsID] IS NULL) OR ([ZOVReminderGroupsID] = @Original_ZOVReminderGroupsID)) AND ((@IsNull_ZOVReminderUsersID = 1 AND [ZOVReminderUsersID] IS NULL) OR ([ZOVReminderUsersID] = @Original_ZOVReminderUsersID)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [ZOVReminderUsersAndGroups] WHERE (([ZOVReminderUsersAndGroupsID] = @Original_ZOVReminderUsersAndGroupsID) AND ((@IsNull_ZOVReminderGroupsID = 1 AND [ZOVReminderGroupsID] IS NULL) OR ([ZOVReminderGroupsID] = @Original_ZOVReminderGroupsID)) AND ((@IsNull_ZOVReminderUsersID = 1 AND [ZOVReminderUsersID] IS NULL) OR ([ZOVReminderUsersID] = @Original_ZOVReminderUsersID)) AND ((@IsNull_ReadOnly = 1 AND [ReadOnly] IS NULL) OR ([ReadOnly] = @Original_ReadOnly)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZOVReminderUsersAndGroupsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersAndGroupsID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ZOVReminderGroupsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderGroupsID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZOVReminderGroupsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderGroupsID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReadOnly", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReadOnly", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [ZOVReminderUsersAndGroups] ([ZOVReminderGroupsID], [ZOVReminderUsersID]) VALUES (@ZOVReminderGroupsID, @ZOVReminderUsersID);
-SELECT ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID FROM ZOVReminderUsersAndGroups WHERE (ZOVReminderUsersAndGroupsID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [ZOVReminderUsersAndGroups] ([ZOVReminderGroupsID], [ZOVReminderUsersID], [ReadOnly]) VALUES (@ZOVReminderGroupsID, @ZOVReminderUsersID, @ReadOnly);
+SELECT ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID, ReadOnly FROM ZOVReminderUsersAndGroups WHERE (ZOVReminderUsersAndGroupsID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZOVReminderGroupsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderGroupsID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReadOnly", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [ZOVReminderUsersAndGroups] SET [ZOVReminderGroupsID] = @ZOVReminderGroupsID, [ZOVReminderUsersID] = @ZOVReminderUsersID WHERE (([ZOVReminderUsersAndGroupsID] = @Original_ZOVReminderUsersAndGroupsID) AND ((@IsNull_ZOVReminderGroupsID = 1 AND [ZOVReminderGroupsID] IS NULL) OR ([ZOVReminderGroupsID] = @Original_ZOVReminderGroupsID)) AND ((@IsNull_ZOVReminderUsersID = 1 AND [ZOVReminderUsersID] IS NULL) OR ([ZOVReminderUsersID] = @Original_ZOVReminderUsersID)));
-SELECT ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID FROM ZOVReminderUsersAndGroups WHERE (ZOVReminderUsersAndGroupsID = @ZOVReminderUsersAndGroupsID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [ZOVReminderUsersAndGroups] SET [ZOVReminderGroupsID] = @ZOVReminderGroupsID, [ZOVReminderUsersID] = @ZOVReminderUsersID, [ReadOnly] = @ReadOnly WHERE (([ZOVReminderUsersAndGroupsID] = @Original_ZOVReminderUsersAndGroupsID) AND ((@IsNull_ZOVReminderGroupsID = 1 AND [ZOVReminderGroupsID] IS NULL) OR ([ZOVReminderGroupsID] = @Original_ZOVReminderGroupsID)) AND ((@IsNull_ZOVReminderUsersID = 1 AND [ZOVReminderUsersID] IS NULL) OR ([ZOVReminderUsersID] = @Original_ZOVReminderUsersID)) AND ((@IsNull_ReadOnly = 1 AND [ReadOnly] IS NULL) OR ([ReadOnly] = @Original_ReadOnly)));
+SELECT ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID, ReadOnly FROM ZOVReminderUsersAndGroups WHERE (ZOVReminderUsersAndGroupsID = @ZOVReminderUsersAndGroupsID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZOVReminderGroupsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderGroupsID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReadOnly", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZOVReminderUsersAndGroupsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersAndGroupsID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ZOVReminderGroupsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderGroupsID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZOVReminderGroupsID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderGroupsID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ReadOnly", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ReadOnly", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ReadOnly", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZOVReminderUsersAndGroupsID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ZOVReminderUsersAndGroupsID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -6600,7 +7626,8 @@ SELECT ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID FROM
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT     ZOVReminderUsersAndGroups.*\r\nFROM         ZOVReminderUsersAndGroups";
+            this._commandCollection[0].CommandText = "SELECT     ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID, " +
+                "ReadOnly\r\nFROM         ZOVReminderUsersAndGroups";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -6675,7 +7702,7 @@ SELECT ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ZOVReminderUsersAndGroupsID, global::System.Nullable<int> Original_ZOVReminderGroupsID, global::System.Nullable<int> Original_ZOVReminderUsersID) {
+        public virtual int Delete(int Original_ZOVReminderUsersAndGroupsID, global::System.Nullable<int> Original_ZOVReminderGroupsID, global::System.Nullable<int> Original_ZOVReminderUsersID, global::System.Nullable<bool> Original_ReadOnly) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ZOVReminderUsersAndGroupsID));
             if ((Original_ZOVReminderGroupsID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -6692,6 +7719,14 @@ SELECT ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID FROM
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ReadOnly.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_ReadOnly.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6713,7 +7748,7 @@ SELECT ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> ZOVReminderGroupsID, global::System.Nullable<int> ZOVReminderUsersID) {
+        public virtual int Insert(global::System.Nullable<int> ZOVReminderGroupsID, global::System.Nullable<int> ZOVReminderUsersID, global::System.Nullable<bool> ReadOnly) {
             if ((ZOVReminderGroupsID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ZOVReminderGroupsID.Value));
             }
@@ -6725,6 +7760,12 @@ SELECT ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID FROM
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((ReadOnly.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(ReadOnly.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6746,7 +7787,7 @@ SELECT ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> ZOVReminderGroupsID, global::System.Nullable<int> ZOVReminderUsersID, int Original_ZOVReminderUsersAndGroupsID, global::System.Nullable<int> Original_ZOVReminderGroupsID, global::System.Nullable<int> Original_ZOVReminderUsersID, int ZOVReminderUsersAndGroupsID) {
+        public virtual int Update(global::System.Nullable<int> ZOVReminderGroupsID, global::System.Nullable<int> ZOVReminderUsersID, global::System.Nullable<bool> ReadOnly, int Original_ZOVReminderUsersAndGroupsID, global::System.Nullable<int> Original_ZOVReminderGroupsID, global::System.Nullable<int> Original_ZOVReminderUsersID, global::System.Nullable<bool> Original_ReadOnly, int ZOVReminderUsersAndGroupsID) {
             if ((ZOVReminderGroupsID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ZOVReminderGroupsID.Value));
             }
@@ -6759,24 +7800,38 @@ SELECT ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID FROM
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ZOVReminderUsersAndGroupsID));
-            if ((Original_ZOVReminderGroupsID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ZOVReminderGroupsID.Value));
+            if ((ReadOnly.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(ReadOnly.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ZOVReminderUsersAndGroupsID));
+            if ((Original_ZOVReminderGroupsID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ZOVReminderGroupsID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             if ((Original_ZOVReminderUsersID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ZOVReminderUsersID.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ZOVReminderUsersID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ZOVReminderUsersAndGroupsID));
+            if ((Original_ReadOnly.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(Original_ReadOnly.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(ZOVReminderUsersAndGroupsID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6797,8 +7852,8 @@ SELECT ZOVReminderUsersAndGroupsID, ZOVReminderGroupsID, ZOVReminderUsersID FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> ZOVReminderGroupsID, global::System.Nullable<int> ZOVReminderUsersID, int Original_ZOVReminderUsersAndGroupsID, global::System.Nullable<int> Original_ZOVReminderGroupsID, global::System.Nullable<int> Original_ZOVReminderUsersID) {
-            return this.Update(ZOVReminderGroupsID, ZOVReminderUsersID, Original_ZOVReminderUsersAndGroupsID, Original_ZOVReminderGroupsID, Original_ZOVReminderUsersID, Original_ZOVReminderUsersAndGroupsID);
+        public virtual int Update(global::System.Nullable<int> ZOVReminderGroupsID, global::System.Nullable<int> ZOVReminderUsersID, global::System.Nullable<bool> ReadOnly, int Original_ZOVReminderUsersAndGroupsID, global::System.Nullable<int> Original_ZOVReminderGroupsID, global::System.Nullable<int> Original_ZOVReminderUsersID, global::System.Nullable<bool> Original_ReadOnly) {
+            return this.Update(ZOVReminderGroupsID, ZOVReminderUsersID, ReadOnly, Original_ZOVReminderUsersAndGroupsID, Original_ZOVReminderGroupsID, Original_ZOVReminderUsersID, Original_ReadOnly, Original_ZOVReminderUsersAndGroupsID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7043,6 +8098,377 @@ WHERE     (ZOVReminderUsersID NOT IN
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             GlobalbaseDataSet.ZOVReminderUsersForGroupsDataTable dataTable = new GlobalbaseDataSet.ZOVReminderUsersForGroupsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SP_GetTreeListTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public SP_GetTreeListTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SP_GetTreeList";
+            tableMapping.ColumnMappings.Add("Id", "Id");
+            tableMapping.ColumnMappings.Add("ParentId", "ParentId");
+            tableMapping.ColumnMappings.Add("Name", "Name");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ZOVReminder.Properties.Settings.Default.GlobalbaseConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.SP_GetTreeList";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Variant, 0, global::System.Data.ParameterDirection.ReturnValue, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(GlobalbaseDataSet.SP_GetTreeListDataTable dataTable, int ZOVReminderUsersID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(ZOVReminderUsersID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual GlobalbaseDataSet.SP_GetTreeListDataTable GetData(int ZOVReminderUsersID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(ZOVReminderUsersID));
+            GlobalbaseDataSet.SP_GetTreeListDataTable dataTable = new GlobalbaseDataSet.SP_GetTreeListDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class GetTreeTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public GetTreeTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "GetTree";
+            tableMapping.ColumnMappings.Add("Id", "Id");
+            tableMapping.ColumnMappings.Add("ParentId", "ParentId");
+            tableMapping.ColumnMappings.Add("Name", "Name");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ZOVReminder.Properties.Settings.Default.GlobalbaseConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "WITH s AS (SELECT     - ZOVReminderGroupsID AS Id, NULL AS ParentId, Name\r\n      " +
+                "                   FROM          ZOVReminderGroups AS G\r\n                       " +
+                "  WHERE      (ZOVReminderGroupsID = 1) AND EXISTS\r\n                             " +
+                "                       (SELECT     TOP (1) 1 AS Expr1\r\n                         " +
+                "                             FROM          ZOVReminderUsers AS R2\r\n             " +
+                "                                         WHERE      (SendToAll = 1) AND (ZOVRemi" +
+                "nderUsersID = @ZOVReminderUsersID))\r\n                         UNION ALL\r\n       " +
+                "                  SELECT     - G.ZOVReminderGroupsID AS Id, NULL AS ParentId, G." +
+                "Name\r\n                         FROM         ZOVReminderGroups AS G INNER JOIN\r\n " +
+                "                                              ZOVReminderUsersAndGroups AS UG ON" +
+                " UG.ZOVReminderGroupsID = G.ZOVReminderGroupsID INNER JOIN\r\n                    " +
+                "                           ZOVReminderUsers AS U ON UG.ZOVReminderUsersID = U.ZO" +
+                "VReminderUsersID AND U.SendToAll = 1 AND U.ReadOnly <> 1\r\n                      " +
+                "   WHERE     (UG.ZOVReminderUsersID = @ZOVReminderUsersID)\r\n                    " +
+                "     UNION ALL\r\n                         SELECT     u.ZOVReminderUsersID, - ug.Z" +
+                "OVReminderGroupsID AS Expr1, u.UserName\r\n                         FROM         Z" +
+                "OVReminderUsers AS u INNER JOIN\r\n                                               " +
+                "ZOVReminderUsersAndGroups AS ug ON ug.ZOVReminderUsersID = u.ZOVReminderUsersID\r" +
+                "\n                         WHERE     (u.Enabled = 1)\r\n                         UN" +
+                "ION ALL\r\n                         SELECT     ZOVReminderUsersID, - 1 AS Expr1, U" +
+                "serName\r\n                         FROM         ZOVReminderUsers AS R1\r\n         " +
+                "                WHERE     EXISTS\r\n                                              " +
+                "     (SELECT     TOP (1) 1 AS Expr1\r\n                                           " +
+                "          FROM          ZOVReminderUsers AS R2\r\n                                " +
+                "                     WHERE      (SendToAll = 1) AND (ZOVReminderUsersID = @ZOVRe" +
+                "minderUsersID)) AND (Enabled = 1))\r\n    SELECT     Id, ParentId, Name\r\n     FROM" +
+                "         s AS s_1\r\n     ORDER BY ABS(ParentId), ABS(Id)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZOVReminderUsersID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(GlobalbaseDataSet.GetTreeDataTable dataTable, int ZOVReminderUsersID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ZOVReminderUsersID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual GlobalbaseDataSet.GetTreeDataTable GetData(int ZOVReminderUsersID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ZOVReminderUsersID));
+            GlobalbaseDataSet.GetTreeDataTable dataTable = new GlobalbaseDataSet.GetTreeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

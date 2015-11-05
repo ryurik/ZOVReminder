@@ -11,5 +11,6 @@ namespace ZOVReminder.Classes
         public string UserName { get; set; }
         public  int Permissions { get; set; }
         public bool IsAdmin { get; set; }
+        public bool ReadOnly { get; set; }
     }
 }

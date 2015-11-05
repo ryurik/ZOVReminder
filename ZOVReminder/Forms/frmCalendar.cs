@@ -37,6 +37,7 @@ namespace ZOVReminder
         public frmCalendar()
         {
             InitializeComponent();
+            //searchAppointments.Client = mainSchedulerControl;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -46,8 +47,6 @@ namespace ZOVReminder
             var a = new SwitchShowWorkTimeOnlyCommand(mainSchedulerControl);
             a.Execute();
              
-            
-
             mainSchedulerStorage.AppointmentsChanged += OnAppointmentChangedInsertedDeleted;
             mainSchedulerStorage.AppointmentsInserted += OnAppointmentChangedInsertedDeleted;
             mainSchedulerStorage.AppointmentsDeleted += OnAppointmentChangedInsertedDeleted;
@@ -59,7 +58,25 @@ namespace ZOVReminder
             lastEditDate = lastApdateDateTime;
             timerMain.Start();
 
+
+
+            SetSchedulerControlSecurity();
+        }
+
+        private void SetSchedulerControlSecurity()
+        {
             ribbonPageSettings.Visible = Program.Security.IsAdmin;
+            appointmentRibbonPage.Visible = !Program.Security.ReadOnly;
+            actionsRibbonPageGroup.Visible = !Program.Security.ReadOnly;
+            appointmentRibbonPageGroupHome.Visible = !Program.Security.ReadOnly;
+            mainSchedulerControl.OptionsCustomization.AllowAppointmentCopy = (Program.Security.ReadOnly ? UsedAppointmentType.None : UsedAppointmentType.All);
+            mainSchedulerControl.OptionsCustomization.AllowAppointmentDelete = (Program.Security.ReadOnly ? UsedAppointmentType.None : UsedAppointmentType.All);
+            mainSchedulerControl.OptionsCustomization.AllowAppointmentEdit = (Program.Security.ReadOnly ? UsedAppointmentType.None : UsedAppointmentType.All);
+            mainSchedulerControl.OptionsCustomization.AllowAppointmentResize = (Program.Security.ReadOnly ? UsedAppointmentType.None : UsedAppointmentType.All);
+            mainSchedulerControl.OptionsCustomization.AllowAppointmentConflicts = (Program.Security.ReadOnly ? AppointmentConflictsMode.Forbidden : AppointmentConflictsMode.Allowed);
+            mainSchedulerControl.OptionsCustomization.AllowAppointmentCreate = (Program.Security.ReadOnly ? UsedAppointmentType.None : UsedAppointmentType.All);
+            mainSchedulerControl.OptionsCustomization.AllowAppointmentCreate = (Program.Security.ReadOnly ? UsedAppointmentType.None : UsedAppointmentType.All);
+            mainSchedulerControl.OptionsCustomization.AllowAppointmentCreate = (Program.Security.ReadOnly ? UsedAppointmentType.None : UsedAppointmentType.All);
         }
 
         private void OnAppointmentChangedInsertedDeleted(object sender, PersistentObjectsEventArgs e)
@@ -123,6 +140,12 @@ namespace ZOVReminder
 
         private void mainSchedulerControl_EditAppointmentFormShowing(object sender, AppointmentFormEventArgs e)
         {
+            if (Program.Security.ReadOnly)
+            {
+                e.Handled = true;
+                return;
+            }
+
             timerMain.Stop();
             SchedulerControl scheduler = ((SchedulerControl)(sender));
             FrmCustomAppointmentForm form = new FrmCustomAppointmentForm(scheduler, e.Appointment, e.OpenRecurrenceForm);
@@ -148,6 +171,51 @@ namespace ZOVReminder
         {
             btnClose.Left = this.Width - btnClose.Width - 20;
             btnApply.Left = btnClose.Left - btnApply.Width - 20;
+        }
+
+        private void mainSchedulerControl_AllowAppointmentCreate(object sender, AppointmentOperationEventArgs e)
+        {
+            e.Allow = !Program.Security.ReadOnly;
+        }
+
+        private void mainSchedulerControl_AllowAppointmentDelete(object sender, AppointmentOperationEventArgs e)
+        {
+            e.Allow = !Program.Security.ReadOnly;
+        }
+
+        private void mainSchedulerControl_AllowAppointmentEdit(object sender, AppointmentOperationEventArgs e)
+        {
+            e.Allow = !Program.Security.ReadOnly;
+        }
+
+        private void mainSchedulerControl_AllowAppointmentDrag(object sender, AppointmentOperationEventArgs e)
+        {
+            e.Allow = !Program.Security.ReadOnly;
+        }
+
+        private void mainSchedulerControl_AllowAppointmentResize(object sender, AppointmentOperationEventArgs e)
+        {
+            e.Allow = !Program.Security.ReadOnly;
+        }
+
+        private void mainSchedulerControl_AllowInplaceEditor(object sender, AppointmentOperationEventArgs e)
+        {
+            e.Allow = !Program.Security.ReadOnly;
+        }
+
+        private void mainSchedulerControl_AllowAppointmentDragBetweenResources(object sender, AppointmentOperationEventArgs e)
+        {
+            e.Allow = !Program.Security.ReadOnly;
+        }
+
+        private void mainSchedulerControl_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)
+        {
+
+        }
+
+        private void mainSchedulerControl_ContextMenuStripChanged(object sender, EventArgs e)
+        {
+
         }
 
     }

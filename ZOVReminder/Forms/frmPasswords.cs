@@ -31,7 +31,7 @@ namespace ZOVReminder
             try
             {
                 conn.Open();
-                SqlCommand comm = new SqlCommand(String.Format("SELECT UserName, Permissions FROM ZOVReminderUsers "), conn);
+                SqlCommand comm = new SqlCommand(String.Format("SELECT UserName, Permissions FROM ZOVReminderUsers ORDER BY 1; "), conn);
                 SqlDataReader dataReader = comm.ExecuteReader();
 
                 if (dataReader.HasRows)
@@ -74,7 +74,7 @@ namespace ZOVReminder
                 SqlCommand comm =
                     new SqlCommand(
                         String.Format(
-                            "SELECT ZOVReminderUsersID, UserName, PasswordMD5 FROM ZOVReminderUsers WHERE (UserName LIKE '{0}') --AND (PasswordMD5 LIKE '{1}')",
+                            "SELECT ZOVReminderUsersID, UserName, IsNull(PasswordMD5, '') FROM ZOVReminderUsers WHERE (UserName LIKE '{0}') --AND (PasswordMD5 LIKE '{1}')",
                             comboBoxUsers.Text, Classes.WorkWithHashes.GetHashString(textEditPwd.Text)), conn);
                 SqlDataReader dataReader = comm.ExecuteReader();
 
@@ -157,7 +157,7 @@ namespace ZOVReminder
                     textEditPwd.Text = "";
                     textEditPassConfirm.Text = "";
 
-                    MessageBox.Show(String.Format("Пароль для'{0}' был успешно обнволен", comboBoxUsers.Text), "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(String.Format("Пароль для '{0}' был успешно обновлен", comboBoxUsers.Text), "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -169,6 +169,12 @@ namespace ZOVReminder
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Close();}
+            Close();
+        }
+
+        private void comboBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textEditPwd.Text = "";
+        }
     }
 }
