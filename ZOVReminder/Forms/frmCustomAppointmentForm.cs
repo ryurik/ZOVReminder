@@ -57,6 +57,7 @@ namespace ZOVReminder.Forms
             labelUser.Text = Program.Security.UserName;
             _zovReminderUsersID = Program.Security.ZOVReminderUsersID;
             base.LoadFormData(appointment);
+            taGetTreeList.Fill(globalbaseDataSet.SP_GetTreeList, _zovReminderUsersID);
         }
         /// <summary>
         /// Add your code to retrieve a value from the editor and set the custom appointment field.

@@ -163,10 +163,5 @@ namespace ZOVReminder
                     break;
             }
         }
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-            this.Size = new Size(Size.Width, textEditPwd.Size.Height + textEditPwd.Top + 8  + panelControlButtons.Top); 
-        }
     }
 }

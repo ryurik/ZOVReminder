@@ -173,7 +173,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlLeft)).EndInit();
             this.panelControlLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit.Properties)).EndInit();

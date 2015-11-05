@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
-            this.zOVReminderUsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bsZOVReminderUsers = new System.Windows.Forms.BindingSource(this.components);
             this.globalbaseDataSet = new ZOVReminder.GlobalbaseDataSet();
             this.gridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colZOVReminderUsersID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,60 +44,96 @@
             this.colPermissionsChange = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUserCreated = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLastEditTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.zOVReminderUsersTableAdapter = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVReminderUsersTableAdapter();
-            this.colEnabled = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colReadOnly = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSendToAll = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEnabled = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.taZOVReminderUsers = new ZOVReminder.GlobalbaseDataSetTableAdapters.ZOVReminderUsersTableAdapter();
+            this.pageTree = new DevExpress.XtraTab.XtraTabPage();
+            this.splitTree = new DevExpress.XtraEditors.SplitContainerControl();
+            this.gridTreeUsers = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colReadOnly1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSendToAll1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.treeList1 = new DevExpress.XtraTreeList.TreeList();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).BeginInit();
             this.panelControlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
             this.panelControlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
+            this.tabMain.SuspendLayout();
+            this.pageMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zOVReminderUsersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsZOVReminderUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
+            this.pageTree.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitTree)).BeginInit();
+            this.splitTree.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTreeUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControlBottom
             // 
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 248);
-            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panelControlBottom.Size = new System.Drawing.Size(931, 33);
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 381);
+            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.panelControlBottom.Size = new System.Drawing.Size(1396, 51);
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(638, 5);
-            this.btnApply.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnApply.Location = new System.Drawing.Point(973, 8);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(787, 5);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnClose.Location = new System.Drawing.Point(1187, 8);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             // 
             // panelControlMain
             // 
             this.panelControlMain.Controls.Add(this.gridControl);
-            this.panelControlMain.Margin = new System.Windows.Forms.Padding(3);
-            this.panelControlMain.Size = new System.Drawing.Size(931, 248);
+            this.panelControlMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelControlMain.Size = new System.Drawing.Size(1388, 342);
+            // 
+            // tabMain
+            // 
+            this.tabMain.SelectedTabPage = this.pageMain;
+            this.tabMain.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
+            this.tabMain.Size = new System.Drawing.Size(1396, 381);
+            this.tabMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.pageTree});
+            this.tabMain.Controls.SetChildIndex(this.pageTree, 0);
+            this.tabMain.Controls.SetChildIndex(this.pageMain, 0);
+            // 
+            // pageMain
+            // 
+            this.pageMain.Size = new System.Drawing.Size(1388, 342);
+            this.pageMain.Text = "Пользователи";
             // 
             // gridControl
             // 
-            this.gridControl.DataSource = this.zOVReminderUsersBindingSource;
+            this.gridControl.DataSource = this.bsZOVReminderUsers;
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl.EmbeddedNavigator.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.zOVReminderUsersBindingSource, "ZOVReminderUsersID", true));
+            this.gridControl.EmbeddedNavigator.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsZOVReminderUsers, "ZOVReminderUsersID", true));
+            this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl.Location = new System.Drawing.Point(2, 2);
             this.gridControl.MainView = this.gridView;
+            this.gridControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(927, 244);
+            this.gridControl.Size = new System.Drawing.Size(1384, 338);
             this.gridControl.TabIndex = 2;
             this.gridControl.UseEmbeddedNavigator = true;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
             // 
-            // zOVReminderUsersBindingSource
+            // bsZOVReminderUsers
             // 
-            this.zOVReminderUsersBindingSource.DataMember = "ZOVReminderUsers";
-            this.zOVReminderUsersBindingSource.DataSource = this.globalbaseDataSet;
+            this.bsZOVReminderUsers.DataMember = "ZOVReminderUsers";
+            this.bsZOVReminderUsers.DataSource = this.globalbaseDataSet;
             // 
             // globalbaseDataSet
             // 
@@ -213,18 +249,6 @@
             this.colLastEditTime.Visible = true;
             this.colLastEditTime.VisibleIndex = 5;
             // 
-            // zOVReminderUsersTableAdapter
-            // 
-            this.zOVReminderUsersTableAdapter.ClearBeforeFill = true;
-            // 
-            // colEnabled
-            // 
-            this.colEnabled.Caption = "Включен";
-            this.colEnabled.FieldName = "Enabled";
-            this.colEnabled.Name = "colEnabled";
-            this.colEnabled.Visible = true;
-            this.colEnabled.VisibleIndex = 8;
-            // 
             // colReadOnly
             // 
             this.colReadOnly.Caption = "Только для чтения";
@@ -241,12 +265,127 @@
             this.colSendToAll.Visible = true;
             this.colSendToAll.VisibleIndex = 7;
             // 
+            // colEnabled
+            // 
+            this.colEnabled.Caption = "Включен";
+            this.colEnabled.FieldName = "Enabled";
+            this.colEnabled.Name = "colEnabled";
+            this.colEnabled.Visible = true;
+            this.colEnabled.VisibleIndex = 8;
+            // 
+            // taZOVReminderUsers
+            // 
+            this.taZOVReminderUsers.ClearBeforeFill = true;
+            // 
+            // pageTree
+            // 
+            this.pageTree.Controls.Add(this.splitTree);
+            this.pageTree.Name = "pageTree";
+            this.pageTree.Size = new System.Drawing.Size(1388, 342);
+            this.pageTree.Text = "Дерево";
+            // 
+            // splitTree
+            // 
+            this.splitTree.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1;
+            this.splitTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitTree.Location = new System.Drawing.Point(0, 0);
+            this.splitTree.Name = "splitTree";
+            this.splitTree.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.splitTree.Panel1.Controls.Add(this.gridTreeUsers);
+            this.splitTree.Panel1.Text = "Panel1";
+            this.splitTree.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.splitTree.Panel2.Controls.Add(this.treeList1);
+            this.splitTree.Panel2.Text = "Panel2";
+            this.splitTree.Size = new System.Drawing.Size(1388, 342);
+            this.splitTree.SplitterPosition = 763;
+            this.splitTree.TabIndex = 1;
+            // 
+            // gridTreeUsers
+            // 
+            this.gridTreeUsers.DataSource = this.bsZOVReminderUsers;
+            this.gridTreeUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridTreeUsers.EmbeddedNavigator.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsZOVReminderUsers, "ZOVReminderUsersID", true));
+            this.gridTreeUsers.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gridTreeUsers.Location = new System.Drawing.Point(0, 0);
+            this.gridTreeUsers.MainView = this.gridView1;
+            this.gridTreeUsers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gridTreeUsers.Name = "gridTreeUsers";
+            this.gridTreeUsers.Size = new System.Drawing.Size(759, 338);
+            this.gridTreeUsers.TabIndex = 3;
+            this.gridTreeUsers.UseEmbeddedNavigator = true;
+            this.gridTreeUsers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn14,
+            this.colReadOnly1,
+            this.colSendToAll1});
+            this.gridView1.GridControl = this.gridTreeUsers;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsBehavior.FocusLeaveOnTab = true;
+            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
+            this.gridView1.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
+            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.FieldName = "ZOVReminderUsersID";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Пользователь";
+            this.gridColumn2.FieldName = "UserName";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "Включен";
+            this.gridColumn14.FieldName = "Enabled";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 1;
+            // 
+            // colReadOnly1
+            // 
+            this.colReadOnly1.Caption = "Только для чтения";
+            this.colReadOnly1.FieldName = "ReadOnly";
+            this.colReadOnly1.Name = "colReadOnly1";
+            this.colReadOnly1.Visible = true;
+            this.colReadOnly1.VisibleIndex = 2;
+            // 
+            // colSendToAll1
+            // 
+            this.colSendToAll1.Caption = "Отправить всем";
+            this.colSendToAll1.FieldName = "SendToAll";
+            this.colSendToAll1.Name = "colSendToAll1";
+            this.colSendToAll1.Visible = true;
+            this.colSendToAll1.VisibleIndex = 3;
+            // 
+            // treeList1
+            // 
+            this.treeList1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeList1.Location = new System.Drawing.Point(0, 0);
+            this.treeList1.Name = "treeList1";
+            this.treeList1.Size = new System.Drawing.Size(614, 338);
+            this.treeList1.TabIndex = 0;
+            // 
             // FrmUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 281);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ClientSize = new System.Drawing.Size(1396, 432);
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "FrmUsers";
             this.Text = "Пользователи";
             this.Load += new System.EventHandler(this.frmUsers_Load);
@@ -254,10 +393,19 @@
             this.panelControlBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).EndInit();
             this.panelControlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
+            this.tabMain.ResumeLayout(false);
+            this.pageMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zOVReminderUsersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsZOVReminderUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
+            this.pageTree.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitTree)).EndInit();
+            this.splitTree.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridTreeUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,8 +415,8 @@
         private DevExpress.XtraGrid.GridControl gridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView;
         private GlobalbaseDataSet globalbaseDataSet;
-        private System.Windows.Forms.BindingSource zOVReminderUsersBindingSource;
-        private GlobalbaseDataSetTableAdapters.ZOVReminderUsersTableAdapter zOVReminderUsersTableAdapter;
+        private System.Windows.Forms.BindingSource bsZOVReminderUsers;
+        private GlobalbaseDataSetTableAdapters.ZOVReminderUsersTableAdapter taZOVReminderUsers;
         private DevExpress.XtraGrid.Columns.GridColumn colZOVReminderUsersID;
         private DevExpress.XtraGrid.Columns.GridColumn colUserName;
         private DevExpress.XtraGrid.Columns.GridColumn colPasswordMD5;
@@ -283,5 +431,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colReadOnly;
         private DevExpress.XtraGrid.Columns.GridColumn colSendToAll;
         private DevExpress.XtraGrid.Columns.GridColumn colEnabled;
+        private DevExpress.XtraTab.XtraTabPage pageTree;
+        private DevExpress.XtraEditors.SplitContainerControl splitTree;
+        private DevExpress.XtraGrid.GridControl gridTreeUsers;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn colReadOnly1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSendToAll1;
+        private DevExpress.XtraTreeList.TreeList treeList1;
     }
 }

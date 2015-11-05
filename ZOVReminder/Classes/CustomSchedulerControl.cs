@@ -5,8 +5,6 @@ using System.Text;
 using DevExpress.Data.Filtering;
 using DevExpress.Utils;
 using DevExpress.XtraScheduler;
-using DevExpress.Utils;
-using DevExpress.Data.Filtering;
 
 namespace ZOVReminder.Classes
 {

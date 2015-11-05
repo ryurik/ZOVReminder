@@ -64,6 +64,9 @@
             this.panelControlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
             this.panelControlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
+            this.tabMain.SuspendLayout();
+            this.pageMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelTop)).BeginInit();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsReminderGroups)).BeginInit();
@@ -87,19 +90,21 @@
             // 
             // panelControlBottom
             // 
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 359);
-            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(2);
-            this.panelControlBottom.Size = new System.Drawing.Size(860, 33);
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 552);
+            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.panelControlBottom.Size = new System.Drawing.Size(1290, 51);
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(563, 5);
-            this.btnApply.Size = new System.Drawing.Size(131, 23);
+            this.btnApply.Location = new System.Drawing.Point(845, 8);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnApply.Size = new System.Drawing.Size(196, 35);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(714, 5);
-            this.btnClose.Size = new System.Drawing.Size(131, 23);
+            this.btnClose.Location = new System.Drawing.Point(1071, 8);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnClose.Size = new System.Drawing.Size(196, 35);
             // 
             // panelControlMain
             // 
@@ -107,8 +112,18 @@
             this.panelControlMain.Controls.Add(this.panelMiddle);
             this.panelControlMain.Controls.Add(this.panelControlRight);
             this.panelControlMain.Controls.Add(this.panelTop);
-            this.panelControlMain.Margin = new System.Windows.Forms.Padding(1);
-            this.panelControlMain.Size = new System.Drawing.Size(860, 359);
+            this.panelControlMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelControlMain.Size = new System.Drawing.Size(1282, 513);
+            // 
+            // tabMain
+            // 
+            this.tabMain.SelectedTabPage = this.pageMain;
+            this.tabMain.Size = new System.Drawing.Size(1290, 552);
+            // 
+            // pageMain
+            // 
+            this.pageMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pageMain.Size = new System.Drawing.Size(1282, 513);
             // 
             // panelTop
             // 
@@ -116,9 +131,8 @@
             this.panelTop.Controls.Add(this.labelControlGroupName);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(2, 2);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(2);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(856, 32);
+            this.panelTop.Size = new System.Drawing.Size(1278, 49);
             this.panelTop.TabIndex = 0;
             // 
             // comboBoxGroups
@@ -126,9 +140,10 @@
             this.comboBoxGroups.DataSource = this.bsReminderGroups;
             this.comboBoxGroups.DisplayMember = "Name";
             this.comboBoxGroups.FormattingEnabled = true;
-            this.comboBoxGroups.Location = new System.Drawing.Point(56, 10);
+            this.comboBoxGroups.Location = new System.Drawing.Point(84, 15);
+            this.comboBoxGroups.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxGroups.Name = "comboBoxGroups";
-            this.comboBoxGroups.Size = new System.Drawing.Size(210, 21);
+            this.comboBoxGroups.Size = new System.Drawing.Size(313, 27);
             this.comboBoxGroups.TabIndex = 15;
             this.comboBoxGroups.ValueMember = "ZOVReminderGroupsID";
             this.comboBoxGroups.SelectedIndexChanged += new System.EventHandler(this.comboBoxGroups_SelectedIndexChanged);
@@ -145,9 +160,10 @@
             // 
             // labelControlGroupName
             // 
-            this.labelControlGroupName.Location = new System.Drawing.Point(13, 10);
+            this.labelControlGroupName.Location = new System.Drawing.Point(20, 15);
+            this.labelControlGroupName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControlGroupName.Name = "labelControlGroupName";
-            this.labelControlGroupName.Size = new System.Drawing.Size(36, 13);
+            this.labelControlGroupName.Size = new System.Drawing.Size(51, 19);
             this.labelControlGroupName.TabIndex = 14;
             this.labelControlGroupName.Text = "Группа";
             // 
@@ -155,22 +171,23 @@
             // 
             this.panelControlRight.Controls.Add(this.zOVReminderUsersAndGroupsGridControl);
             this.panelControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControlRight.Location = new System.Drawing.Point(444, 34);
-            this.panelControlRight.Margin = new System.Windows.Forms.Padding(2);
+            this.panelControlRight.Location = new System.Drawing.Point(659, 51);
             this.panelControlRight.Name = "panelControlRight";
-            this.panelControlRight.Size = new System.Drawing.Size(414, 323);
+            this.panelControlRight.Size = new System.Drawing.Size(621, 460);
             this.panelControlRight.TabIndex = 7;
             // 
             // zOVReminderUsersAndGroupsGridControl
             // 
             this.zOVReminderUsersAndGroupsGridControl.DataSource = this.bsUserAndGroups;
             this.zOVReminderUsersAndGroupsGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zOVReminderUsersAndGroupsGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.zOVReminderUsersAndGroupsGridControl.Location = new System.Drawing.Point(2, 2);
             this.zOVReminderUsersAndGroupsGridControl.MainView = this.gridViewUsersAndGroup;
+            this.zOVReminderUsersAndGroupsGridControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.zOVReminderUsersAndGroupsGridControl.Name = "zOVReminderUsersAndGroupsGridControl";
             this.zOVReminderUsersAndGroupsGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit1});
-            this.zOVReminderUsersAndGroupsGridControl.Size = new System.Drawing.Size(410, 319);
+            this.zOVReminderUsersAndGroupsGridControl.Size = new System.Drawing.Size(617, 456);
             this.zOVReminderUsersAndGroupsGridControl.TabIndex = 0;
             this.zOVReminderUsersAndGroupsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewUsersAndGroup});
@@ -248,28 +265,25 @@
             this.panelMiddle.Controls.Add(this.simpleButtonFromRightToLeft);
             this.panelMiddle.Controls.Add(this.simpleButtonFromLeftToRight);
             this.panelMiddle.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelMiddle.Location = new System.Drawing.Point(377, 34);
-            this.panelMiddle.Margin = new System.Windows.Forms.Padding(2);
+            this.panelMiddle.Location = new System.Drawing.Point(559, 51);
             this.panelMiddle.Name = "panelMiddle";
-            this.panelMiddle.Size = new System.Drawing.Size(67, 323);
+            this.panelMiddle.Size = new System.Drawing.Size(100, 460);
             this.panelMiddle.TabIndex = 6;
             // 
             // simpleButtonFromRightToLeft
             // 
-            this.simpleButtonFromRightToLeft.Location = new System.Drawing.Point(13, 178);
-            this.simpleButtonFromRightToLeft.Margin = new System.Windows.Forms.Padding(2);
+            this.simpleButtonFromRightToLeft.Location = new System.Drawing.Point(20, 274);
             this.simpleButtonFromRightToLeft.Name = "simpleButtonFromRightToLeft";
-            this.simpleButtonFromRightToLeft.Size = new System.Drawing.Size(40, 15);
+            this.simpleButtonFromRightToLeft.Size = new System.Drawing.Size(60, 23);
             this.simpleButtonFromRightToLeft.TabIndex = 3;
             this.simpleButtonFromRightToLeft.Text = "<<";
             this.simpleButtonFromRightToLeft.Click += new System.EventHandler(this.simpleButtonFromRightToLeft_Click);
             // 
             // simpleButtonFromLeftToRight
             // 
-            this.simpleButtonFromLeftToRight.Location = new System.Drawing.Point(13, 157);
-            this.simpleButtonFromLeftToRight.Margin = new System.Windows.Forms.Padding(2);
+            this.simpleButtonFromLeftToRight.Location = new System.Drawing.Point(20, 242);
             this.simpleButtonFromLeftToRight.Name = "simpleButtonFromLeftToRight";
-            this.simpleButtonFromLeftToRight.Size = new System.Drawing.Size(40, 15);
+            this.simpleButtonFromLeftToRight.Size = new System.Drawing.Size(60, 23);
             this.simpleButtonFromLeftToRight.TabIndex = 4;
             this.simpleButtonFromLeftToRight.Text = ">>";
             this.simpleButtonFromLeftToRight.Click += new System.EventHandler(this.simpleButtonFromLeftToRight_Click);
@@ -278,22 +292,23 @@
             // 
             this.panelControl2.Controls.Add(this.gridControlAllUsers);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(2, 34);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(2);
+            this.panelControl2.Location = new System.Drawing.Point(2, 51);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(375, 323);
+            this.panelControl2.Size = new System.Drawing.Size(557, 460);
             this.panelControl2.TabIndex = 5;
             // 
             // gridControlAllUsers
             // 
             this.gridControlAllUsers.DataSource = this.bsUsersForGroup;
             this.gridControlAllUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlAllUsers.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControlAllUsers.Location = new System.Drawing.Point(2, 2);
             this.gridControlAllUsers.MainView = this.gridViewAllUsers;
+            this.gridControlAllUsers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControlAllUsers.Name = "gridControlAllUsers";
             this.gridControlAllUsers.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit2});
-            this.gridControlAllUsers.Size = new System.Drawing.Size(371, 319);
+            this.gridControlAllUsers.Size = new System.Drawing.Size(553, 456);
             this.gridControlAllUsers.TabIndex = 1;
             this.gridControlAllUsers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewAllUsers});
@@ -383,10 +398,10 @@
             // 
             // FrmGroupsAndUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 392);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.ClientSize = new System.Drawing.Size(1290, 603);
+            this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.Name = "FrmGroupsAndUsers";
             this.Text = "Группы и пользователи";
             this.Activated += new System.EventHandler(this.FrmGroupsAndUsers_Activated);
@@ -396,6 +411,9 @@
             this.panelControlBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).EndInit();
             this.panelControlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
+            this.tabMain.ResumeLayout(false);
+            this.pageMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelTop)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();

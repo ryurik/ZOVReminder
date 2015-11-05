@@ -117,6 +117,9 @@
             this.panelControlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
             this.panelControlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
+            this.tabMain.SuspendLayout();
+            this.pageMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainSchedulerStorage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zOVAppointmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).BeginInit();
@@ -141,26 +144,36 @@
             // 
             // panelControlBottom
             // 
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 536);
-            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(2);
-            this.panelControlBottom.Size = new System.Drawing.Size(1106, 33);
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 824);
+            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(3);
+            this.panelControlBottom.Size = new System.Drawing.Size(1659, 51);
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(813, 6);
+            this.btnApply.Location = new System.Drawing.Point(1236, 9);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             this.btnApply.Visible = false;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(962, 6);
+            this.btnClose.Location = new System.Drawing.Point(1450, 9);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             // 
             // panelControlMain
             // 
             this.panelControlMain.Controls.Add(this.panSchedullerControl);
             this.panelControlMain.Controls.Add(this.panRightDate);
-            this.panelControlMain.Location = new System.Drawing.Point(0, 141);
-            this.panelControlMain.Margin = new System.Windows.Forms.Padding(1);
-            this.panelControlMain.Size = new System.Drawing.Size(1106, 395);
+            this.panelControlMain.Margin = new System.Windows.Forms.Padding(2);
+            this.panelControlMain.Size = new System.Drawing.Size(1651, 836);
+            // 
+            // tabMain
+            // 
+            this.tabMain.SelectedTabPage = this.pageMain;
+            this.tabMain.Size = new System.Drawing.Size(1659, 875);
+            // 
+            // pageMain
+            // 
+            this.pageMain.Size = new System.Drawing.Size(1651, 836);
             // 
             // mainSchedulerStorage
             // 
@@ -266,6 +279,7 @@
             this.changeAppointmentReminderItem1,
             this.barButtonItemPasswords});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonControl.MaxItemId = 3;
             this.ribbonControl.MiniToolbars.Add(this.ribbonMiniToolbar);
             this.ribbonControl.Name = "ribbonControl";
@@ -279,7 +293,7 @@
             this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1,
             this.repositoryItemDuration1});
-            this.ribbonControl.Size = new System.Drawing.Size(1106, 141);
+            this.ribbonControl.Size = new System.Drawing.Size(1659, 181);
             // 
             // openScheduleItem1
             // 
@@ -545,9 +559,10 @@
             // 
             this.mainSchedulerControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainSchedulerControl.Location = new System.Drawing.Point(2, 2);
+            this.mainSchedulerControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mainSchedulerControl.MenuManager = this.ribbonControl;
             this.mainSchedulerControl.Name = "mainSchedulerControl";
-            this.mainSchedulerControl.Size = new System.Drawing.Size(897, 387);
+            this.mainSchedulerControl.Size = new System.Drawing.Size(1341, 828);
             this.mainSchedulerControl.Start = new System.DateTime(2015, 10, 1, 0, 0, 0, 0);
             this.mainSchedulerControl.Storage = this.mainSchedulerStorage;
             this.mainSchedulerControl.TabIndex = 5;
@@ -556,6 +571,7 @@
             this.mainSchedulerControl.Views.FullWeekView.Enabled = true;
             this.mainSchedulerControl.Views.FullWeekView.TimeRulers.Add(timeRuler2);
             this.mainSchedulerControl.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
+            this.mainSchedulerControl.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.mainSchedulerControl_EditAppointmentFormShowing);
             // 
             // appointmentRibbonPage
             // 
@@ -744,18 +760,20 @@
             this.panRightDate.Controls.Add(this.panCalendar);
             this.panRightDate.Controls.Add(this.panSearch);
             this.panRightDate.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panRightDate.Location = new System.Drawing.Point(903, 2);
+            this.panRightDate.Location = new System.Drawing.Point(1347, 2);
+            this.panRightDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panRightDate.Name = "panRightDate";
-            this.panRightDate.Size = new System.Drawing.Size(201, 391);
+            this.panRightDate.Size = new System.Drawing.Size(302, 832);
             this.panRightDate.TabIndex = 5;
             // 
             // panCalendar
             // 
             this.panCalendar.Controls.Add(this.dateNavigator);
             this.panCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panCalendar.Location = new System.Drawing.Point(2, 26);
+            this.panCalendar.Location = new System.Drawing.Point(2, 39);
+            this.panCalendar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panCalendar.Name = "panCalendar";
-            this.panCalendar.Size = new System.Drawing.Size(197, 363);
+            this.panCalendar.Size = new System.Drawing.Size(298, 791);
             this.panCalendar.TabIndex = 10;
             // 
             // dateNavigator
@@ -764,9 +782,10 @@
             this.dateNavigator.HighlightTodayCell = DevExpress.Utils.DefaultBoolean.Default;
             this.dateNavigator.HotDate = null;
             this.dateNavigator.Location = new System.Drawing.Point(2, 2);
+            this.dateNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateNavigator.Name = "dateNavigator";
             this.dateNavigator.SchedulerControl = this.mainSchedulerControl;
-            this.dateNavigator.Size = new System.Drawing.Size(193, 359);
+            this.dateNavigator.Size = new System.Drawing.Size(294, 787);
             this.dateNavigator.TabIndex = 9;
             // 
             // panSearch
@@ -774,20 +793,22 @@
             this.panSearch.Controls.Add(this.searchAppointments);
             this.panSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.panSearch.Location = new System.Drawing.Point(2, 2);
+            this.panSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panSearch.Name = "panSearch";
-            this.panSearch.Size = new System.Drawing.Size(197, 24);
+            this.panSearch.Size = new System.Drawing.Size(298, 37);
             this.panSearch.TabIndex = 9;
             // 
             // searchAppointments
             // 
             this.searchAppointments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.searchAppointments.Location = new System.Drawing.Point(2, 2);
+            this.searchAppointments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchAppointments.MenuManager = this.ribbonControl;
             this.searchAppointments.Name = "searchAppointments";
             this.searchAppointments.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.searchAppointments.Size = new System.Drawing.Size(193, 20);
+            this.searchAppointments.Size = new System.Drawing.Size(294, 26);
             this.searchAppointments.TabIndex = 0;
             // 
             // panSchedullerControl
@@ -795,29 +816,33 @@
             this.panSchedullerControl.Controls.Add(this.mainSchedulerControl);
             this.panSchedullerControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panSchedullerControl.Location = new System.Drawing.Point(2, 2);
+            this.panSchedullerControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panSchedullerControl.Name = "panSchedullerControl";
-            this.panSchedullerControl.Size = new System.Drawing.Size(901, 391);
+            this.panSchedullerControl.Size = new System.Drawing.Size(1345, 832);
             this.panSchedullerControl.TabIndex = 6;
             // 
             // frmCalendar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 569);
+            this.ClientSize = new System.Drawing.Size(1659, 875);
             this.Controls.Add(this.ribbonControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "frmCalendar";
             this.Text = "ЗОВ";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Resize += new System.EventHandler(this.frmCalendar_Resize);
+            this.Controls.SetChildIndex(this.tabMain, 0);
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.panelControlBottom, 0);
-            this.Controls.SetChildIndex(this.panelControlMain, 0);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).EndInit();
             this.panelControlBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).EndInit();
             this.panelControlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
+            this.tabMain.ResumeLayout(false);
+            this.pageMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainSchedulerStorage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zOVAppointmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).EndInit();

@@ -19,7 +19,7 @@ namespace ZOVReminder.Forms
         private void frmUsers_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'globalbaseDataSet.ZOVReminderUsers' table. You can move, or remove it, as needed.
-            this.zOVReminderUsersTableAdapter.Fill(this.globalbaseDataSet.ZOVReminderUsers);
+            this.taZOVReminderUsers.Fill(this.globalbaseDataSet.ZOVReminderUsers);
         }
 
         public override void CheckForChanges()
@@ -36,7 +36,7 @@ namespace ZOVReminder.Forms
 
         public override void UpdateData()
         {
-            zOVReminderUsersTableAdapter.Update(globalbaseDataSet);
+            taZOVReminderUsers.Update(globalbaseDataSet);
         }
     }
 }

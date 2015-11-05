@@ -41,6 +41,9 @@
             this.panelControlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
             this.panelControlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
+            this.tabMain.SuspendLayout();
+            this.pageMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zOVReminderGroupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
@@ -52,18 +55,27 @@
             this.panelControlBottom.Location = new System.Drawing.Point(0, 415);
             this.panelControlBottom.Size = new System.Drawing.Size(1178, 51);
             // 
-            // simpleButtonApply
+            // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(765, 8);
+            this.btnApply.Location = new System.Drawing.Point(755, 8);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(974, 8);
+            this.btnClose.Location = new System.Drawing.Point(969, 8);
             // 
             // panelControlMain
             // 
             this.panelControlMain.Controls.Add(this.gridControl);
-            this.panelControlMain.Size = new System.Drawing.Size(1178, 415);
+            this.panelControlMain.Size = new System.Drawing.Size(1170, 376);
+            // 
+            // tabMain
+            // 
+            this.tabMain.SelectedTabPage = this.pageMain;
+            this.tabMain.Size = new System.Drawing.Size(1178, 415);
+            // 
+            // pageMain
+            // 
+            this.pageMain.Size = new System.Drawing.Size(1170, 376);
             // 
             // zOVReminderGroupsBindingSource
             // 
@@ -87,7 +99,7 @@
             this.gridControl.Location = new System.Drawing.Point(2, 2);
             this.gridControl.MainView = this.gridView;
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(1174, 411);
+            this.gridControl.Size = new System.Drawing.Size(1166, 372);
             this.gridControl.TabIndex = 1;
             this.gridControl.UseEmbeddedNavigator = true;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -127,19 +139,22 @@
             this.colNote.Visible = true;
             this.colNote.VisibleIndex = 1;
             // 
-            // frmGroups
+            // FrmGroups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 466);
             this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.Name = "frmGroups";
+            this.Name = "FrmGroups";
             this.Text = "Группы";
             this.Load += new System.EventHandler(this.frmGroups_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).EndInit();
             this.panelControlBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).EndInit();
             this.panelControlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
+            this.tabMain.ResumeLayout(false);
+            this.pageMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.zOVReminderGroupsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.globalbaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();

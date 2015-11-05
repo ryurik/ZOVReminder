@@ -172,51 +172,5 @@ namespace ZOVReminder
             btnClose.Left = this.Width - btnClose.Width - 20;
             btnApply.Left = btnClose.Left - btnApply.Width - 20;
         }
-
-        private void mainSchedulerControl_AllowAppointmentCreate(object sender, AppointmentOperationEventArgs e)
-        {
-            e.Allow = !Program.Security.ReadOnly;
-        }
-
-        private void mainSchedulerControl_AllowAppointmentDelete(object sender, AppointmentOperationEventArgs e)
-        {
-            e.Allow = !Program.Security.ReadOnly;
-        }
-
-        private void mainSchedulerControl_AllowAppointmentEdit(object sender, AppointmentOperationEventArgs e)
-        {
-            e.Allow = !Program.Security.ReadOnly;
-        }
-
-        private void mainSchedulerControl_AllowAppointmentDrag(object sender, AppointmentOperationEventArgs e)
-        {
-            e.Allow = !Program.Security.ReadOnly;
-        }
-
-        private void mainSchedulerControl_AllowAppointmentResize(object sender, AppointmentOperationEventArgs e)
-        {
-            e.Allow = !Program.Security.ReadOnly;
-        }
-
-        private void mainSchedulerControl_AllowInplaceEditor(object sender, AppointmentOperationEventArgs e)
-        {
-            e.Allow = !Program.Security.ReadOnly;
-        }
-
-        private void mainSchedulerControl_AllowAppointmentDragBetweenResources(object sender, AppointmentOperationEventArgs e)
-        {
-            e.Allow = !Program.Security.ReadOnly;
-        }
-
-        private void mainSchedulerControl_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)
-        {
-
-        }
-
-        private void mainSchedulerControl_ContextMenuStripChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
