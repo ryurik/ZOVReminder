@@ -6,6 +6,10 @@
 }
 
 namespace ZOVReminder.GlobalbaseDataSetTableAdapters {
+    partial class GetTreeTableAdapter
+    {
+    }
+
     partial class ZOVAppointmentsTableAdapter
     {
     }

@@ -31,8 +31,6 @@ namespace ZOVReminder.Forms
             this.components = new System.ComponentModel.Container();
             this.panelTree = new System.Windows.Forms.Panel();
             this.treeList = new DevExpress.XtraTreeList.TreeList();
-            this.colId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.bsSP_GetTreeList = new System.Windows.Forms.BindingSource(this.components);
             this.globalbaseDataSet = new ZOVReminder.GlobalbaseDataSet();
             this.labelUser = new DevExpress.XtraEditors.LabelControl();
@@ -68,134 +66,132 @@ namespace ZOVReminder.Forms
             // 
             // lblSubject
             // 
-            this.lblSubject.Location = new System.Drawing.Point(24, 51);
-            this.lblSubject.Margin = new System.Windows.Forms.Padding(3);
-            this.lblSubject.Size = new System.Drawing.Size(42, 19);
+            this.lblSubject.Location = new System.Drawing.Point(16, 35);
+            this.lblSubject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblSubject.Size = new System.Drawing.Size(28, 13);
             this.lblSubject.Text = "&Тема:";
             // 
             // lblLocation
             // 
-            this.lblLocation.Location = new System.Drawing.Point(24, 89);
-            this.lblLocation.Margin = new System.Windows.Forms.Padding(3);
-            this.lblLocation.Size = new System.Drawing.Size(50, 19);
+            this.lblLocation.Location = new System.Drawing.Point(16, 61);
+            this.lblLocation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblLocation.Size = new System.Drawing.Size(35, 13);
             this.lblLocation.Text = "&Место:";
             // 
             // lblLabel
             // 
             this.lblLabel.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.lblLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.lblLabel.Size = new System.Drawing.Size(50, 19);
+            this.lblLabel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblLabel.Size = new System.Drawing.Size(36, 13);
             this.lblLabel.Text = "Метка:";
             // 
             // lblStartTime
             // 
-            this.lblStartTime.Location = new System.Drawing.Point(24, 143);
-            this.lblStartTime.Margin = new System.Windows.Forms.Padding(3);
-            this.lblStartTime.Size = new System.Drawing.Size(60, 19);
+            this.lblStartTime.Location = new System.Drawing.Point(16, 98);
+            this.lblStartTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblStartTime.Size = new System.Drawing.Size(41, 13);
             this.lblStartTime.Text = "Начало:";
             // 
             // lblEndTime
             // 
-            this.lblEndTime.Location = new System.Drawing.Point(24, 180);
-            this.lblEndTime.Margin = new System.Windows.Forms.Padding(3);
-            this.lblEndTime.Size = new System.Drawing.Size(51, 19);
+            this.lblEndTime.Location = new System.Drawing.Point(16, 123);
+            this.lblEndTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblEndTime.Size = new System.Drawing.Size(35, 13);
             this.lblEndTime.Text = "Конец:";
             // 
             // lblShowTimeAs
             // 
-            this.lblShowTimeAs.Location = new System.Drawing.Point(24, 234);
-            this.lblShowTimeAs.Margin = new System.Windows.Forms.Padding(3);
-            this.lblShowTimeAs.Size = new System.Drawing.Size(98, 19);
+            this.lblShowTimeAs.Location = new System.Drawing.Point(16, 160);
+            this.lblShowTimeAs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblShowTimeAs.Size = new System.Drawing.Size(66, 13);
             this.lblShowTimeAs.Text = "В это время :";
             // 
             // chkAllDay
             // 
-            this.chkAllDay.Margin = new System.Windows.Forms.Padding(3);
+            this.chkAllDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkAllDay.Properties.Caption = "&Целый день";
-            this.chkAllDay.Size = new System.Drawing.Size(109, 23);
+            this.chkAllDay.Size = new System.Drawing.Size(84, 19);
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(24, 528);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(3);
+            this.btnOk.Location = new System.Drawing.Point(16, 361);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOk.Text = "Принять";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(156, 528);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3);
+            this.btnCancel.Location = new System.Drawing.Point(104, 361);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Text = "Отмена";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(288, 528);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3);
+            this.btnDelete.Location = new System.Drawing.Point(192, 361);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Text = "&Удалить";
             // 
             // btnRecurrence
             // 
-            this.btnRecurrence.Location = new System.Drawing.Point(420, 528);
-            this.btnRecurrence.Margin = new System.Windows.Forms.Padding(3);
+            this.btnRecurrence.Location = new System.Drawing.Point(280, 361);
+            this.btnRecurrence.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRecurrence.Text = "&Повторение";
             // 
             // edtStartDate
             // 
             this.edtStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.edtStartDate.EditValue = new System.DateTime(2005, 3, 31, 0, 0, 0, 0);
-            this.edtStartDate.Location = new System.Drawing.Point(144, 139);
-            this.edtStartDate.Margin = new System.Windows.Forms.Padding(3);
-            this.edtStartDate.Size = new System.Drawing.Size(134, 26);
+            this.edtStartDate.Location = new System.Drawing.Point(96, 95);
+            this.edtStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.edtStartDate.Size = new System.Drawing.Size(89, 20);
             // 
             // edtEndDate
             // 
             this.edtEndDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.edtEndDate.EditValue = new System.DateTime(2005, 3, 31, 0, 0, 0, 0);
-            this.edtEndDate.Location = new System.Drawing.Point(144, 175);
-            this.edtEndDate.Margin = new System.Windows.Forms.Padding(3);
-            this.edtEndDate.Size = new System.Drawing.Size(134, 26);
+            this.edtEndDate.Location = new System.Drawing.Point(96, 120);
+            this.edtEndDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.edtEndDate.Size = new System.Drawing.Size(89, 20);
             // 
             // edtStartTime
             // 
             this.edtStartTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.edtStartTime.EditValue = new System.DateTime(2005, 3, 31, 0, 0, 0, 0);
-            this.edtStartTime.Location = new System.Drawing.Point(333, 140);
-            this.edtStartTime.Margin = new System.Windows.Forms.Padding(3);
+            this.edtStartTime.Location = new System.Drawing.Point(222, 96);
+            this.edtStartTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             // 
             // edtEndTime
             // 
             this.edtEndTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.edtEndTime.EditValue = new System.DateTime(2005, 3, 31, 0, 0, 0, 0);
-            this.edtEndTime.Location = new System.Drawing.Point(333, 175);
-            this.edtEndTime.Margin = new System.Windows.Forms.Padding(3);
+            this.edtEndTime.Location = new System.Drawing.Point(222, 120);
+            this.edtEndTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             // 
             // edtLabel
             // 
-            this.edtLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.edtLabel.Size = new System.Drawing.Size(168, 26);
+            this.edtLabel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             // 
             // edtShowTimeAs
             // 
             this.edtShowTimeAs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.edtShowTimeAs.Location = new System.Drawing.Point(144, 229);
-            this.edtShowTimeAs.Margin = new System.Windows.Forms.Padding(3);
-            this.edtShowTimeAs.Size = new System.Drawing.Size(325, 26);
+            this.edtShowTimeAs.Location = new System.Drawing.Point(96, 157);
+            this.edtShowTimeAs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.edtShowTimeAs.Size = new System.Drawing.Size(217, 20);
             // 
             // tbSubject
             // 
             this.tbSubject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbSubject.Location = new System.Drawing.Point(144, 48);
-            this.tbSubject.Margin = new System.Windows.Forms.Padding(3);
-            this.tbSubject.Size = new System.Drawing.Size(623, 26);
+            this.tbSubject.Location = new System.Drawing.Point(96, 33);
+            this.tbSubject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSubject.Size = new System.Drawing.Size(415, 20);
             // 
             // edtResource
             // 
-            this.edtResource.Margin = new System.Windows.Forms.Padding(3);
-            this.edtResource.Size = new System.Drawing.Size(168, 26);
+            this.edtResource.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             // 
             // lblResource
             // 
-            this.lblResource.Margin = new System.Windows.Forms.Padding(3);
-            this.lblResource.Size = new System.Drawing.Size(73, 19);
+            this.lblResource.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblResource.Size = new System.Drawing.Size(53, 13);
             this.lblResource.Text = "Средства:";
             // 
             // edtResources
@@ -212,17 +208,17 @@ namespace ZOVReminder.Forms
             // 
             // chkReminder
             // 
-            this.chkReminder.Margin = new System.Windows.Forms.Padding(3);
+            this.chkReminder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkReminder.Properties.Caption = "&Оповещение";
-            this.chkReminder.Size = new System.Drawing.Size(115, 23);
+            this.chkReminder.Size = new System.Drawing.Size(87, 19);
             // 
             // tbDescription
             // 
             this.tbDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbDescription.Location = new System.Drawing.Point(24, 327);
-            this.tbDescription.Margin = new System.Windows.Forms.Padding(3);
-            this.tbDescription.Size = new System.Drawing.Size(742, 187);
+            this.tbDescription.Location = new System.Drawing.Point(16, 224);
+            this.tbDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDescription.Size = new System.Drawing.Size(495, 128);
             // 
             // cbReminder
             // 
@@ -230,41 +226,41 @@ namespace ZOVReminder.Forms
             // tbLocation
             // 
             this.tbLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbLocation.Location = new System.Drawing.Point(144, 85);
-            this.tbLocation.Margin = new System.Windows.Forms.Padding(3);
-            this.tbLocation.Size = new System.Drawing.Size(320, 26);
+            this.tbLocation.Location = new System.Drawing.Point(96, 58);
+            this.tbLocation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbLocation.Size = new System.Drawing.Size(213, 20);
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.Location = new System.Drawing.Point(479, 85);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3);
+            this.panel1.Location = new System.Drawing.Point(319, 58);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             // 
             // progressPanel
             // 
             this.progressPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.progressPanel.Location = new System.Drawing.Point(24, 267);
-            this.progressPanel.Margin = new System.Windows.Forms.Padding(3);
-            this.progressPanel.Size = new System.Drawing.Size(742, 50);
+            this.progressPanel.Location = new System.Drawing.Point(16, 183);
+            this.progressPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.progressPanel.Size = new System.Drawing.Size(495, 34);
             // 
             // tbProgress
             // 
             this.tbProgress.Properties.LabelAppearance.Options.UseTextOptions = true;
             this.tbProgress.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.tbProgress.Size = new System.Drawing.Size(322, 45);
+            this.tbProgress.Size = new System.Drawing.Size(215, 31);
             // 
             // lblPercentComplete
             // 
             this.lblPercentComplete.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.lblPercentComplete.Margin = new System.Windows.Forms.Padding(3);
-            this.lblPercentComplete.Size = new System.Drawing.Size(109, 19);
+            this.lblPercentComplete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblPercentComplete.Size = new System.Drawing.Size(74, 13);
             this.lblPercentComplete.Text = "% &Выполнено:";
             // 
             // lblPercentCompleteValue
             // 
             this.lblPercentCompleteValue.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.lblPercentCompleteValue.Location = new System.Drawing.Point(714, 15);
-            this.lblPercentCompleteValue.Margin = new System.Windows.Forms.Padding(3);
+            this.lblPercentCompleteValue.Location = new System.Drawing.Point(476, 10);
+            this.lblPercentCompleteValue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             // 
             // panelTree
             // 
@@ -272,19 +268,19 @@ namespace ZOVReminder.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTree.Controls.Add(this.treeList);
-            this.panelTree.Location = new System.Drawing.Point(782, 51);
+            this.panelTree.Location = new System.Drawing.Point(521, 35);
+            this.panelTree.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelTree.Name = "panelTree";
-            this.panelTree.Size = new System.Drawing.Size(310, 511);
+            this.panelTree.Size = new System.Drawing.Size(207, 350);
             this.panelTree.TabIndex = 29;
             // 
             // treeList
             // 
-            this.treeList.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.colId,
-            this.colName});
             this.treeList.DataSource = this.bsSP_GetTreeList;
             this.treeList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeList.KeyFieldName = "Id";
             this.treeList.Location = new System.Drawing.Point(0, 0);
+            this.treeList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.treeList.Name = "treeList";
             this.treeList.OptionsBehavior.AllowIncrementalSearch = true;
             this.treeList.OptionsBehavior.AllowRecursiveNodeChecking = true;
@@ -292,24 +288,8 @@ namespace ZOVReminder.Forms
             this.treeList.ParentFieldName = "ParentId";
             this.treeList.PreviewFieldName = "Name";
             this.treeList.ShowButtonMode = DevExpress.XtraTreeList.ShowButtonModeEnum.ShowAlways;
-            this.treeList.Size = new System.Drawing.Size(310, 511);
+            this.treeList.Size = new System.Drawing.Size(207, 350);
             this.treeList.TabIndex = 0;
-            // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
-            this.colId.Width = 98;
-            // 
-            // colName
-            // 
-            this.colName.FieldName = "Name";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 1;
-            this.colName.Width = 145;
             // 
             // bsSP_GetTreeList
             // 
@@ -323,9 +303,10 @@ namespace ZOVReminder.Forms
             // 
             // labelUser
             // 
-            this.labelUser.Location = new System.Drawing.Point(24, 12);
+            this.labelUser.Location = new System.Drawing.Point(16, 8);
+            this.labelUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(102, 19);
+            this.labelUser.Size = new System.Drawing.Size(72, 13);
             this.labelUser.TabIndex = 30;
             this.labelUser.Text = "Пользователь";
             // 
@@ -344,11 +325,11 @@ namespace ZOVReminder.Forms
             // 
             // FrmCustomAppointmentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
-            this.ClientSize = new System.Drawing.Size(1104, 577);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(736, 395);
             this.Controls.Add(this.labelUser);
             this.Controls.Add(this.panelTree);
-            this.Margin = new System.Windows.Forms.Padding(3);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MinimumSize = new System.Drawing.Size(718, 300);
             this.Name = "FrmCustomAppointmentForm";
             this.Controls.SetChildIndex(this.edtShowTimeAs, 0);
@@ -414,7 +395,5 @@ namespace ZOVReminder.Forms
         private GlobalbaseDataSetTableAdapters.SP_GetTreeListTableAdapter taGetTreeList;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraTreeList.TreeList treeList;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colId;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
     }
 }

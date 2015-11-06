@@ -38,5 +38,12 @@ namespace ZOVReminder.Forms
         {
             taZOVReminderUsers.Update(globalbaseDataSet);
         }
+
+        private void vwUsersForTree_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            int rowHandle = e.FocusedRowHandle;
+            int ZOVReminderUsersID = (int)vwUsersForTree.GetDataRow(rowHandle)["ZOVReminderUsersID"];
+            taSP_GetTreeList.Fill(globalbaseDataSet.SP_GetTreeList, ZOVReminderUsersID);
+        }
     }
 }
