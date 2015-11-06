@@ -45,5 +45,53 @@ namespace ZOVReminder.Forms
             int ZOVReminderUsersID = (int)vwUsersForTree.GetDataRow(rowHandle)["ZOVReminderUsersID"];
             taSP_GetTreeList.Fill(globalbaseDataSet.SP_GetTreeList, ZOVReminderUsersID);
         }
+
+        private void treeListUsers_AfterCheckNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
+        {
+            if (e.Node.Checked)
+            {
+                if (e.Node.HasChildren)
+                {
+                    e.Node.ExpandAll();
+                }
+                e.Node.CheckAll();
+            }
+            else
+            {
+                e.Node.UncheckAll();
+            }
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            var allCheckedNodes = treeListUsers.GetAllCheckedNodes();
+            foreach (var cn in allCheckedNodes)
+            {
+                if (!cn.HasChildren)
+                {
+                    string sid = cn.GetValue("Id").ToString();
+                    string spid = cn.GetValue("ParentId").ToString();
+
+                    int id = 0;
+                    int pid = 0;
+                    if (sid != null)
+                    {
+                        id = int.Parse(sid);
+                    }
+
+                    if (spid != null)
+                    {
+                        pid = int.Parse(spid);
+                    }
+
+                    if (pid != 0)
+                    {
+                        
+                    }
+                    // Create Appointments for this ID
+                }
+
+            }
+        }
     }
 }

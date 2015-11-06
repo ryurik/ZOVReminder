@@ -124,12 +124,12 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="bsSP_GetTreeList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>400, 15</value>
+    <value>484, 10</value>
   </metadata>
   <metadata name="taZOVReminderUsers.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>244, 43</value>
   </metadata>
   <metadata name="taSP_GetTreeList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>402, 41</value>
+    <value>483, 47</value>
   </metadata>
 </root>
