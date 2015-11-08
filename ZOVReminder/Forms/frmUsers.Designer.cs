@@ -110,7 +110,6 @@
             // tabMain
             // 
             this.tabMain.Margin = new System.Windows.Forms.Padding(2);
-            this.tabMain.SelectedTabPage = this.pageMain;
             this.tabMain.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
             this.tabMain.Size = new System.Drawing.Size(1408, 381);
             this.tabMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {

@@ -65,12 +65,14 @@ namespace ZOVReminder.Forms
         private void btnApply_Click(object sender, EventArgs e)
         {
             var allCheckedNodes = treeListUsers.GetAllCheckedNodes();
+            Dictionary<int, string> userInfo = new Dictionary<int, string>();
             foreach (var cn in allCheckedNodes)
             {
                 if (!cn.HasChildren)
                 {
                     string sid = cn.GetValue("Id").ToString();
                     string spid = cn.GetValue("ParentId").ToString();
+                    string sname  = cn.GetValue("Name").ToString();
 
                     int id = 0;
                     int pid = 0;
@@ -84,14 +86,27 @@ namespace ZOVReminder.Forms
                         pid = int.Parse(spid);
                     }
 
-                    if (pid != 0)
+                    if (pid * id != 0)
                     {
-                        
+                        int userId = (id - pid*1000) - 10000;
+                        if (!userInfo.ContainsKey(userId))
+                        {
+                            userInfo.Add(userId, sname);
+                        }
                     }
-                    // Create Appointments for this ID
                 }
-
             }
+            // Create Appointments for this ID
+            
+            StringBuilder builder = new StringBuilder();
+            foreach (KeyValuePair<int, string> pair in userInfo)
+            {
+                builder.Append(pair.Key).Append(":").Append(pair.Value).Append(Environment.NewLine);
+            }
+            string result = builder.ToString();
+            // Remove the final delimiter
+            result = result.TrimEnd(Environment.NewLine.ToCharArray());
+            MessageBox.Show((result != "" ? result : "Никого не выбрал чтоли"));
         }
     }
 }
