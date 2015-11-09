@@ -350,6 +350,7 @@ namespace ZOVReminder.Forms
             this.Margin = new System.Windows.Forms.Padding(3);
             this.MinimumSize = new System.Drawing.Size(718, 300);
             this.Name = "FrmCustomAppointmentForm";
+            this.Load += new System.EventHandler(this.FrmCustomAppointmentForm_Load);
             this.Controls.SetChildIndex(this.edtShowTimeAs, 0);
             this.Controls.SetChildIndex(this.edtEndTime, 0);
             this.Controls.SetChildIndex(this.edtEndDate, 0);

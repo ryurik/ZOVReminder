@@ -33,6 +33,8 @@ namespace ZOVReminder.Forms
         private int _zovReminderUsersID;
         private string _zovReminderUsers;
 
+        private BindingSource bs = new BindingSource();
+
         public FrmCustomAppointmentForm()
         {
             InitializeComponent();
@@ -72,6 +74,12 @@ namespace ZOVReminder.Forms
 
             taSP_GetTreeList.Fill(globalbaseDataSet.SP_GetTreeList, _zovReminderUsersID);
 
+            
+            bs.DataSource = globalbaseDataSet;
+            bs.DataMember = "SP_GetTreeList";
+
+            treeList.DataSource = bs;
+
             if (appointment.CustomFields["ZOVReminderUsers"] == null)
             {
                 treeList.UncheckAll();
@@ -81,7 +89,7 @@ namespace ZOVReminder.Forms
                 var pairs = appointment.CustomFields["ZOVReminderUsers"].ToString().Split(' ');
                 foreach (var p in pairs)
                 {
-                    var sid = p.Split(',');
+                    var sid = p.Split(':');
                     int pid = Int32.Parse(sid[1]);
                     if (pid != 0)
                     {
@@ -89,27 +97,37 @@ namespace ZOVReminder.Forms
                         if (id != 0)
                         {
                             id = pid * 1000 + 10000 + id;
-                            CheckNodeByIdandPid(id, pid);
+                            CheckNodeByIdandPid(treeList.Nodes, id, pid);
                         }
                     }
                 }
             }
         }
 
-        private void CheckNodeByIdandPid(int id, int pid)
+        private bool CheckNodeByIdandPid(TreeListNodes treeListNodes, int id, int pid)
         {
-            foreach (TreeListNode cn in treeList.Nodes)
+            foreach (TreeListNode cn in treeListNodes)
             {
-                if (!cn.HasChildren)
+                if (cn.HasChildren)
                 {
-                    //if ((cn.Id == id) && (cn.ParentNode.Id == pid))
-                    if (cn.Id == id)
+                    if (CheckNodeByIdandPid(cn.Nodes, id, pid))
+                    {
+                        cn.ExpandAll();
+                    }
+                }
+                else
+                //if ((cn.Id == id) && (cn.ParentNode.Id == pid))
+                {
+                    if (cn.GetValue("Id").ToString() == id.ToString())
                     {
                         cn.Checked = true;
+                        return true;
                     }
                 }
             }
+            return false;
         }
+
 
         /// <summary>
         /// Add your code to retrieve a value from the editor and set the custom appointment field.
@@ -160,11 +178,10 @@ namespace ZOVReminder.Forms
                 //builder.Append(pair.Key).Append(":").Append(pair.Value).Append(Environment.NewLine);
                 builder.Append(pair.Key).Append(":").Append(pair.Value).Append(" ");
             }
-            string result = builder.ToString();
+            string result = builder.ToString().Trim(' ');
             // Remove the final delimiter
 //            result = result.Trim(Environment.NewLine.ToCharArray());
-            result = result.Trim(' ');
-            MessageBox.Show((result != "" ? result : "Никого не выбрал чтоли"));
+//            MessageBox.Show((result != "" ? result : "Никого не выбрал чтоли"));
 
             appointment.CustomFields["ZOVReminderUsersID"] = _zovReminderUsersID; //Program.Security.ZOVReminderUsersID;
             appointment.CustomFields["ZOVReminderUsers"] = result; 
@@ -196,6 +213,10 @@ namespace ZOVReminder.Forms
                 e.Node.UncheckAll();
             }
 
+        }
+
+        private void FrmCustomAppointmentForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

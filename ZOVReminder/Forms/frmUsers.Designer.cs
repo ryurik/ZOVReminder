@@ -86,32 +86,33 @@
             // 
             // panelControlBottom
             // 
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 248);
-            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panelControlBottom.Size = new System.Drawing.Size(939, 33);
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 381);
+            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.panelControlBottom.Size = new System.Drawing.Size(1408, 51);
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(743, 5);
-            this.btnApply.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnApply.Location = new System.Drawing.Point(773, 8);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(843, 5);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.btnClose.Location = new System.Drawing.Point(1095, 8);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             // 
             // panelControlMain
             // 
             this.panelControlMain.Controls.Add(this.gridControl);
-            this.panelControlMain.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.panelControlMain.Size = new System.Drawing.Size(933, 220);
+            this.panelControlMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelControlMain.Size = new System.Drawing.Size(1400, 342);
             // 
             // tabMain
             // 
-            this.tabMain.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabMain.SelectedTabPage = this.pageMain;
             this.tabMain.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
-            this.tabMain.Size = new System.Drawing.Size(939, 248);
+            this.tabMain.Size = new System.Drawing.Size(1408, 381);
             this.tabMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.pageTree});
             this.tabMain.Controls.SetChildIndex(this.pageTree, 0);
@@ -119,8 +120,8 @@
             // 
             // pageMain
             // 
-            this.pageMain.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.pageMain.Size = new System.Drawing.Size(933, 220);
+            this.pageMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pageMain.Size = new System.Drawing.Size(1400, 342);
             this.pageMain.Text = "Пользователи";
             // 
             // gridControl
@@ -128,10 +129,12 @@
             this.gridControl.DataSource = this.bsZOVReminderUsers;
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl.EmbeddedNavigator.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsZOVReminderUsers, "ZOVReminderUsersID", true));
+            this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl.Location = new System.Drawing.Point(2, 2);
             this.gridControl.MainView = this.gridView;
+            this.gridControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(929, 216);
+            this.gridControl.Size = new System.Drawing.Size(1396, 338);
             this.gridControl.TabIndex = 2;
             this.gridControl.UseEmbeddedNavigator = true;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -287,9 +290,8 @@
             // pageTree
             // 
             this.pageTree.Controls.Add(this.splitTree);
-            this.pageTree.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pageTree.Name = "pageTree";
-            this.pageTree.Size = new System.Drawing.Size(413, 118);
+            this.pageTree.Size = new System.Drawing.Size(1400, 342);
             this.pageTree.Text = "Дерево";
             // 
             // splitTree
@@ -297,7 +299,6 @@
             this.splitTree.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1;
             this.splitTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitTree.Location = new System.Drawing.Point(0, 0);
-            this.splitTree.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitTree.Name = "splitTree";
             this.splitTree.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.splitTree.Panel1.Controls.Add(this.gridTreeUsers);
@@ -305,7 +306,7 @@
             this.splitTree.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.splitTree.Panel2.Controls.Add(this.treeListUsers);
             this.splitTree.Panel2.Text = "Panel2";
-            this.splitTree.Size = new System.Drawing.Size(413, 118);
+            this.splitTree.Size = new System.Drawing.Size(1400, 342);
             this.splitTree.SplitterPosition = 456;
             this.splitTree.TabIndex = 1;
             // 
@@ -314,10 +315,12 @@
             this.gridTreeUsers.DataSource = this.bsZOVReminderUsers;
             this.gridTreeUsers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridTreeUsers.EmbeddedNavigator.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsZOVReminderUsers, "ZOVReminderUsersID", true));
+            this.gridTreeUsers.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridTreeUsers.Location = new System.Drawing.Point(0, 0);
             this.gridTreeUsers.MainView = this.vwUsersForTree;
+            this.gridTreeUsers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridTreeUsers.Name = "gridTreeUsers";
-            this.gridTreeUsers.Size = new System.Drawing.Size(300, 114);
+            this.gridTreeUsers.Size = new System.Drawing.Size(680, 338);
             this.gridTreeUsers.TabIndex = 3;
             this.gridTreeUsers.UseEmbeddedNavigator = true;
             this.gridTreeUsers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -396,7 +399,6 @@
             this.treeListUsers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeListUsers.KeyFieldName = "Id";
             this.treeListUsers.Location = new System.Drawing.Point(0, 0);
-            this.treeListUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.treeListUsers.Name = "treeListUsers";
             this.treeListUsers.OptionsBehavior.PopulateServiceColumns = true;
             this.treeListUsers.OptionsLayout.AddNewColumns = false;
@@ -404,7 +406,7 @@
             this.treeListUsers.OptionsSelection.UseIndicatorForSelection = true;
             this.treeListUsers.OptionsView.ShowCheckBoxes = true;
             this.treeListUsers.ParentFieldName = "ParentId";
-            this.treeListUsers.Size = new System.Drawing.Size(100, 114);
+            this.treeListUsers.Size = new System.Drawing.Size(705, 338);
             this.treeListUsers.TabIndex = 0;
             this.treeListUsers.AfterCheckNode += new DevExpress.XtraTreeList.NodeEventHandler(this.treeListUsers_AfterCheckNode);
             // 
@@ -446,10 +448,10 @@
             // 
             // FrmUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 281);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ClientSize = new System.Drawing.Size(1408, 432);
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.Name = "FrmUsers";
             this.Text = "Пользователи";
             this.Load += new System.EventHandler(this.frmUsers_Load);
