@@ -288,6 +288,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structures\TreeId.cs" />
     <EmbeddedResource Include="Forms\FrmCustomAppointmentForm.resx">
       <DependentUpon>FrmCustomAppointmentForm.cs</DependentUpon>
     </EmbeddedResource>

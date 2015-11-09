@@ -51,10 +51,10 @@ namespace ZOVReminder
             mainSchedulerStorage.AppointmentsInserted += OnAppointmentChangedInsertedDeleted;
             mainSchedulerStorage.AppointmentsDeleted += OnAppointmentChangedInsertedDeleted;
 
-            Debug.WriteLine(zOVAppointmentsTableAdapter.Connection);
+            Debug.WriteLine(taZOVAppointments.Connection);
             
-            zOVAppointmentsTableAdapter.Fill(globalbaseDataSet.ZOVAppointments);
-            zOVResourcesTableAdapter.Fill(globalbaseDataSet.ZOVResources);
+            taZOVAppointments.Fill(globalbaseDataSet.ZOVAppointments);
+            taZOVResources.Fill(globalbaseDataSet.ZOVResources);
             lastEditDate = lastApdateDateTime;
             timerMain.Start();
 
@@ -82,7 +82,7 @@ namespace ZOVReminder
         private void OnAppointmentChangedInsertedDeleted(object sender, PersistentObjectsEventArgs e)
         {
 
-            zOVAppointmentsTableAdapter.Update(this.globalbaseDataSet.ZOVAppointments);
+            taZOVAppointments.Update(this.globalbaseDataSet.ZOVAppointments);
             globalbaseDataSet.AcceptChanges();
             if (!timerMain.Enabled)
             {
@@ -105,9 +105,9 @@ namespace ZOVReminder
                 }
                 dt.AcceptChanges();
                 //zOVAppointmentsTableAdapter.Update(globalbaseDataSet.ZOVAppointments.GetChanges() as GlobalbaseDataSet.ZOVAppointmentsDataTable);
-                zOVAppointmentsTableAdapter.Update(dt as GlobalbaseDataSet.ZOVAppointmentsDataTable);
+                taZOVAppointments.Update(dt as GlobalbaseDataSet.ZOVAppointmentsDataTable);
             }
-            zOVAppointmentsTableAdapter.Fill(newDs.ZOVAppointments);
+            taZOVAppointments.Fill(newDs.ZOVAppointments);
             lock (locker)
             {
                 globalbaseDataSet.ZOVAppointments.Merge(newDs.ZOVAppointments, false);

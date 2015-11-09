@@ -118,7 +118,6 @@ namespace ZOVReminder.Forms
             this.btnOk.Location = new System.Drawing.Point(24, 528);
             this.btnOk.Margin = new System.Windows.Forms.Padding(3);
             this.btnOk.Text = "Принять";
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 

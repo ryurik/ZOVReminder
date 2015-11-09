@@ -19,53 +19,109 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraScheduler;
+using DevExpress.XtraTreeList.Nodes;
+using ZOVReminder.Classes;
 
 namespace ZOVReminder.Forms
 {
     public partial class FrmCustomAppointmentForm : DevExpress.XtraScheduler.UI.AppointmentForm
     {
         private int _zovReminderUsersID;
+        private string _zovReminderUsers;
+
         public FrmCustomAppointmentForm()
         {
             InitializeComponent();
         }
-        public FrmCustomAppointmentForm(DevExpress.XtraScheduler.SchedulerControl control, DevExpress.XtraScheduler.Appointment apt)
-            : base(control, apt)
+        public FrmCustomAppointmentForm(DevExpress.XtraScheduler.SchedulerControl control, DevExpress.XtraScheduler.Appointment apt): base(control, apt)
         {
             InitializeComponent();
         }
-        public FrmCustomAppointmentForm(DevExpress.XtraScheduler.SchedulerControl control, DevExpress.XtraScheduler.Appointment apt, bool openRecurrenceForm)
-            : base(control, apt, openRecurrenceForm)
+        public FrmCustomAppointmentForm(DevExpress.XtraScheduler.SchedulerControl control, DevExpress.XtraScheduler.Appointment apt, bool openRecurrenceForm): base(control, apt, openRecurrenceForm)
         {
             InitializeComponent();
+        }
+
+        private int GetUserIdByIdAndParentID(int id, int parentId)
+        {
+            return (id - parentId * 1000) - 10000;
         }
         /// <summary>
         /// Add your code to obtain a custom field value and fill the editor with data.
         /// </summary>
         public override void LoadFormData(DevExpress.XtraScheduler.Appointment appointment)
         {
+            base.LoadFormData(appointment);
+
             if (appointment.CustomFields["ZOVReminderUsersID"] == null)
             {
                 labelUser.Text = "";
                 _zovReminderUsersID = Program.Security.ZOVReminderUsersID;
                 appointment.CustomFields["ZOVReminderUsersID"] = _zovReminderUsersID;
+                appointment.CustomFields["ZOVReminderUsers"] = _zovReminderUsers;
             }
-                //labelUser = appointment.CustomFields["ZOVReminderUsersID"].ToString();
+
+
+            //labelUser = appointment.CustomFields["ZOVReminderUsersID"].ToString();
             labelUser.Text = Program.Security.UserName;
             _zovReminderUsersID = Program.Security.ZOVReminderUsersID;
-            base.LoadFormData(appointment);
+
             taSP_GetTreeList.Fill(globalbaseDataSet.SP_GetTreeList, _zovReminderUsersID);
+
+            if (appointment.CustomFields["ZOVReminderUsers"] == null)
+            {
+                treeList.UncheckAll();
+            }
+            else
+            {
+                var pairs = appointment.CustomFields["ZOVReminderUsers"].ToString().Split(' ');
+                foreach (var p in pairs)
+                {
+                    var sid = p.Split(',');
+                    int pid = Int32.Parse(sid[1]);
+                    if (pid != 0)
+                    {
+                        int id = Int32.Parse(sid[0]);
+                        if (id != 0)
+                        {
+                            id = pid * 1000 + 10000 + id;
+                            CheckNodeByIdandPid(id, pid);
+                        }
+                    }
+                }
+            }
         }
+
+        private void CheckNodeByIdandPid(int id, int pid)
+        {
+            foreach (TreeListNode cn in treeList.Nodes)
+            {
+                if (!cn.HasChildren)
+                {
+                    //if ((cn.Id == id) && (cn.ParentNode.Id == pid))
+                    if (cn.Id == id)
+                    {
+                        cn.Checked = true;
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// Add your code to retrieve a value from the editor and set the custom appointment field.
         /// </summary>
         public override bool SaveFormData(DevExpress.XtraScheduler.Appointment appointment)
         {
+            // Clear all appointments for UnCheked
+            MyConnectionString.ExecuteScalarQuery(String.Format("EXEC SP_ClearAppointmentsForUsers @UniqueID = {0};", appointment.Id));
+
             var allCheckedNodes = treeList.GetAllCheckedNodes();
-            Dictionary<int, string> userInfo = new Dictionary<int, string>();
+            
+            Dictionary<int, int> userInfo = new Dictionary<int, int>();
             foreach (var cn in allCheckedNodes)
             {
                 if (!cn.HasChildren)
@@ -88,10 +144,10 @@ namespace ZOVReminder.Forms
 
                     if (pid * id != 0)
                     {
-                        int userId = (id - pid * 1000) - 10000;
-                        if (!userInfo.ContainsKey(userId))
+                        int userId = GetUserIdByIdAndParentID(id, pid); // (id - pid * 1000) - 10000;
+                        //if (!userInfo.ContainsKey(userId))
                         {
-                            userInfo.Add(userId, sname);
+                            userInfo.Add(userId, pid);
                         }
                     }
                 }
@@ -99,16 +155,19 @@ namespace ZOVReminder.Forms
             // Create Appointments for this ID
 
             StringBuilder builder = new StringBuilder();
-            foreach (KeyValuePair<int, string> pair in userInfo)
+            foreach (KeyValuePair<int, int> pair in userInfo)
             {
-                builder.Append(pair.Key).Append(":").Append(pair.Value).Append(Environment.NewLine);
+                //builder.Append(pair.Key).Append(":").Append(pair.Value).Append(Environment.NewLine);
+                builder.Append(pair.Key).Append(":").Append(pair.Value).Append(" ");
             }
             string result = builder.ToString();
             // Remove the final delimiter
-            result = result.TrimEnd(Environment.NewLine.ToCharArray());
+//            result = result.Trim(Environment.NewLine.ToCharArray());
+            result = result.Trim(' ');
             MessageBox.Show((result != "" ? result : "Никого не выбрал чтоли"));
 
             appointment.CustomFields["ZOVReminderUsersID"] = _zovReminderUsersID; //Program.Security.ZOVReminderUsersID;
+            appointment.CustomFields["ZOVReminderUsers"] = result; 
             return base.SaveFormData(appointment);
         }
         /// <summary>

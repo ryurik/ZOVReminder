@@ -77,7 +77,7 @@
             // 
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Location = new System.Drawing.Point(0, 0);
-            this.tabMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabMain.Margin = new System.Windows.Forms.Padding(2);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedTabPage = this.pageMain;
             this.tabMain.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
@@ -89,7 +89,7 @@
             // pageMain
             // 
             this.pageMain.Controls.Add(this.panelControlMain);
-            this.pageMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pageMain.Margin = new System.Windows.Forms.Padding(2);
             this.pageMain.Name = "pageMain";
             this.pageMain.Size = new System.Drawing.Size(622, 237);
             this.pageMain.Text = "Main";
@@ -99,7 +99,7 @@
             this.panelControlMain.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.panelControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlMain.Location = new System.Drawing.Point(0, 0);
-            this.panelControlMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelControlMain.Margin = new System.Windows.Forms.Padding(2);
             this.panelControlMain.Name = "panelControlMain";
             this.panelControlMain.Size = new System.Drawing.Size(622, 237);
             this.panelControlMain.TabIndex = 5;
