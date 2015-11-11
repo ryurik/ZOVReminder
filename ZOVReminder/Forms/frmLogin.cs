@@ -30,7 +30,7 @@ namespace ZOVReminder
             try
             {
                 conn.Open();
-                SqlCommand comm = new SqlCommand(String.Format("SELECT UserName, Permissions FROM ZOVReminderUsers WHERE (Enabled = 1)"), conn);
+                SqlCommand comm = new SqlCommand(String.Format("SELECT UserName, Permissions FROM ZOVReminderUsers WHERE (Enabled = 1) ORDER BY UserName"), conn);
                 SqlDataReader dataReader = comm.ExecuteReader();
 
                 if (dataReader.HasRows)

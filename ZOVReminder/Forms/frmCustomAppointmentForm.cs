@@ -88,7 +88,9 @@ namespace ZOVReminder.Forms
             bs.DataMember = "SP_GetTreeList";
             treeList.DataSource = bs;
 
-            var pairs = appointment.CustomFields["ZOVReminderUsers"].ToString().Split(' ');
+            if (_zovReminderUsers == "")
+                return;
+            var pairs = _zovReminderUsers.Split(' ');
             foreach (var p in pairs)
             {
                 var sid = p.Split(':');
@@ -137,6 +139,11 @@ namespace ZOVReminder.Forms
         {
             // Clear all appointments for UnCheked, must clear Trigger
             // MyConnectionString.ExecuteScalarQuery(String.Format("EXEC SP_ClearAppointmentsForUsers @UniqueID = {0};", appointment.Id));
+            // if we try to change foreign appointment
+            if ((Program.Security.ZOVReminderUsersID != 0) && (appointment.CustomFields["ZOVReminderUsersID"] != null) && (appointment.CustomFields["ZOVReminderUsersID"].ToString() != Program.Security.ZOVReminderUsersID.ToString()))
+            {
+                return false;
+            }
 
             var allCheckedNodes = treeList.GetAllCheckedNodes();
             

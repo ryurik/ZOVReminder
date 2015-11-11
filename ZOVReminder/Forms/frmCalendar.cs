@@ -53,7 +53,7 @@ namespace ZOVReminder
 
             Debug.WriteLine(taZOVAppointments.Connection);
             
-            taZOVAppointments.Fill(globalbaseDataSet.ZOVAppointments);
+            taZOVAppointments.FillByID(globalbaseDataSet.ZOVAppointments, Program.Security.ZOVReminderUsersID);
             taZOVResources.Fill(globalbaseDataSet.ZOVResources);
             lastEditDate = lastApdateDateTime;
             timerMain.Start();
@@ -107,7 +107,7 @@ namespace ZOVReminder
                 //zOVAppointmentsTableAdapter.Update(globalbaseDataSet.ZOVAppointments.GetChanges() as GlobalbaseDataSet.ZOVAppointmentsDataTable);
                 taZOVAppointments.Update(dt as GlobalbaseDataSet.ZOVAppointmentsDataTable);
             }
-            taZOVAppointments.Fill(newDs.ZOVAppointments);
+            taZOVAppointments.FillByID(newDs.ZOVAppointments, Program.Security.ZOVReminderUsersID);
             lock (locker)
             {
                 globalbaseDataSet.ZOVAppointments.Merge(newDs.ZOVAppointments, false);
