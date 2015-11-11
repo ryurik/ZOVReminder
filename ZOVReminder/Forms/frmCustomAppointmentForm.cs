@@ -33,6 +33,8 @@ namespace ZOVReminder.Forms
         private int _zovReminderUsersID;
         private string _zovReminderUsers;
 
+        private bool canCheck;
+
         private BindingSource bs = new BindingSource();
 
         public FrmCustomAppointmentForm()
@@ -58,6 +60,7 @@ namespace ZOVReminder.Forms
         public override void LoadFormData(DevExpress.XtraScheduler.Appointment appointment)
         {
             base.LoadFormData(appointment);
+            canCheck = true;
 
             if (appointment.CustomFields["ZOVReminderUsersID"] == null)
             {
@@ -66,51 +69,49 @@ namespace ZOVReminder.Forms
                 appointment.CustomFields["ZOVReminderUsersID"] = _zovReminderUsersID;
                 appointment.CustomFields["ZOVReminderUsers"] = _zovReminderUsers;
             }
+            else if ((appointment.CustomFields["ZOVReminderUsersID"].ToString() != Program.Security.ZOVReminderUsersID.ToString()) && 
+                     (Program.Security.ZOVReminderUsersID != 0))
+            {
+                canCheck = false;
+            }
 
 
             //labelUser = appointment.CustomFields["ZOVReminderUsersID"].ToString();
             labelUser.Text = Program.Security.UserName;
             _zovReminderUsersID = Program.Security.ZOVReminderUsersID;
+            _zovReminderUsers = (appointment.CustomFields["ZOVReminderUsers"] == null? "" : appointment.CustomFields["ZOVReminderUsers"].ToString());
 
             taSP_GetTreeList.Fill(globalbaseDataSet.SP_GetTreeList, _zovReminderUsersID);
 
-            
+            // Don't paint TreeList by visual BindingSource
             bs.DataSource = globalbaseDataSet;
             bs.DataMember = "SP_GetTreeList";
-
             treeList.DataSource = bs;
 
-            if (appointment.CustomFields["ZOVReminderUsers"] == null)
+            var pairs = appointment.CustomFields["ZOVReminderUsers"].ToString().Split(' ');
+            foreach (var p in pairs)
             {
-                treeList.UncheckAll();
-            }
-            else
-            {
-                var pairs = appointment.CustomFields["ZOVReminderUsers"].ToString().Split(' ');
-                foreach (var p in pairs)
+                var sid = p.Split(':');
+                int pid = Int32.Parse(sid[1]);
+                if (pid != 0)
                 {
-                    var sid = p.Split(':');
-                    int pid = Int32.Parse(sid[1]);
-                    if (pid != 0)
+                    int id = Int32.Parse(sid[0]);
+                    if (id != 0)
                     {
-                        int id = Int32.Parse(sid[0]);
-                        if (id != 0)
-                        {
-                            id = pid * 1000 + 10000 + id;
-                            CheckNodeByIdandPid(treeList.Nodes, id, pid);
-                        }
+//                        id = pid * 1000 + 10000 + id;
+                        CheckNodeByIdAndPid(treeList.Nodes, id, pid);
                     }
                 }
             }
         }
 
-        private bool CheckNodeByIdandPid(TreeListNodes treeListNodes, int id, int pid)
+        private bool CheckNodeByIdAndPid(TreeListNodes treeListNodes, int id, int pid)
         {
             foreach (TreeListNode cn in treeListNodes)
             {
                 if (cn.HasChildren)
                 {
-                    if (CheckNodeByIdandPid(cn.Nodes, id, pid))
+                    if (CheckNodeByIdAndPid(cn.Nodes, id, pid))
                     {
                         cn.ExpandAll();
                     }
@@ -134,8 +135,8 @@ namespace ZOVReminder.Forms
         /// </summary>
         public override bool SaveFormData(DevExpress.XtraScheduler.Appointment appointment)
         {
-            // Clear all appointments for UnCheked
-            MyConnectionString.ExecuteScalarQuery(String.Format("EXEC SP_ClearAppointmentsForUsers @UniqueID = {0};", appointment.Id));
+            // Clear all appointments for UnCheked, must clear Trigger
+            // MyConnectionString.ExecuteScalarQuery(String.Format("EXEC SP_ClearAppointmentsForUsers @UniqueID = {0};", appointment.Id));
 
             var allCheckedNodes = treeList.GetAllCheckedNodes();
             
@@ -162,26 +163,18 @@ namespace ZOVReminder.Forms
 
                     if (pid * id != 0)
                     {
-                        int userId = GetUserIdByIdAndParentID(id, pid); // (id - pid * 1000) - 10000;
-                        //if (!userInfo.ContainsKey(userId))
-                        {
-                            userInfo.Add(userId, pid);
-                        }
+                        // int userId = GetUserIdByIdAndParentID(id, pid); 
+                        userInfo.Add(id, pid);
                     }
                 }
             }
-            // Create Appointments for this ID
 
             StringBuilder builder = new StringBuilder();
             foreach (KeyValuePair<int, int> pair in userInfo)
             {
-                //builder.Append(pair.Key).Append(":").Append(pair.Value).Append(Environment.NewLine);
                 builder.Append(pair.Key).Append(":").Append(pair.Value).Append(" ");
             }
             string result = builder.ToString().Trim(' ');
-            // Remove the final delimiter
-//            result = result.Trim(Environment.NewLine.ToCharArray());
-//            MessageBox.Show((result != "" ? result : "Никого не выбрал чтоли"));
 
             appointment.CustomFields["ZOVReminderUsersID"] = _zovReminderUsersID; //Program.Security.ZOVReminderUsersID;
             appointment.CustomFields["ZOVReminderUsers"] = result; 
@@ -192,12 +185,19 @@ namespace ZOVReminder.Forms
         /// </summary>
         public override bool IsAppointmentChanged(DevExpress.XtraScheduler.Appointment appointment)
         {
-            if (_zovReminderUsersID.ToString() == appointment.CustomFields["ZOVReminderUsersID"].ToString())
+            if ((_zovReminderUsersID.ToString() == appointment.CustomFields["ZOVReminderUsersID"].ToString()) &&
+                 (_zovReminderUsers == appointment.CustomFields["ZOVReminderUsers"].ToString()))
                 return false;
-            else
-                return true;
+            if ((_zovReminderUsersID.ToString() != appointment.CustomFields["ZOVReminderUsersID"].ToString()) &&
+                (appointment.CustomFields["ZOVReminderUsersID"].ToString() != "") &&
+                (Program.Security.ZOVReminderUsersID != 0))  // Super Admin
+                return false;
+            return true;
         }
 
+        /// <summary>
+        /// Add your code to notify that any custom field is changed. Return true if a custom field is changed, otherwise false.
+        /// </summary>
         private void treeList_AfterCheckNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
         {
             if (e.Node.Checked)
@@ -217,6 +217,20 @@ namespace ZOVReminder.Forms
 
         private void FrmCustomAppointmentForm_Load(object sender, EventArgs e)
         {
+        }
+
+        private void treeList_CustomDrawNodeCheckBox(object sender, DevExpress.XtraTreeList.CustomDrawNodeCheckBoxEventArgs e)
+        {
+            if (!canCheck)
+                e.ObjectArgs.State = DevExpress.Utils.Drawing.ObjectState.Disabled;
+        }
+
+        private void treeList_BeforeCheckNode(object sender, DevExpress.XtraTreeList.CheckNodeEventArgs e)
+        {
+            if (!canCheck)
+            {
+                e.State = e.PrevState;
+            }
         }
     }
 }

@@ -172,5 +172,6 @@ namespace ZOVReminder
             btnClose.Left = this.Width - btnClose.Width - 20;
             btnApply.Left = btnClose.Left - btnApply.Width - 20;
         }
+
     }
 }
