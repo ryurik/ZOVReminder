@@ -13,7 +13,7 @@
     <Shape ID="DesignTable:ZOVReminderUsersForGroups" ZOrder="6" X="-1" Y="180" Height="122" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
     <Shape ID="DesignTable:SP_GetTreeList" ZOrder="3" X="1022" Y="286" Height="122" Width="229" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="75" />
     <Shape ID="DesignTable:ZOVAppointmentsForUsers" ZOrder="2" X="1024" Y="482" Height="190" Width="295" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="143" />
-    <Shape ID="DesignTable:ZOVAppointments" ZOrder="1" X="613" Y="204" Height="428" Width="265" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="364" />
+    <Shape ID="DesignTable:ZOVAppointments" ZOrder="1" X="613" Y="204" Height="734" Width="265" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="615" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
