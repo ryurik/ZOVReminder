@@ -2,6 +2,9 @@
     
     
     public partial class GlobalbaseDataSet {
+        partial class ZOVAppointments_DataTable
+        {
+        }
     }
 }
 
@@ -10,7 +13,7 @@ namespace ZOVReminder.GlobalbaseDataSetTableAdapters {
     {
     }
 
-    partial class ZOVAppointmentsTableAdapter
+    partial class ZOVAppointments_TableAdapter
     {
     }
     
