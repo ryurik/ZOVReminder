@@ -25,6 +25,7 @@ using System.Windows.Forms;
 using DevExpress.XtraScheduler;
 using DevExpress.XtraTreeList.Nodes;
 using ZOVReminder.Classes;
+using ZOVReminder.GlobalbaseDataSetTableAdapters;
 
 namespace ZOVReminder.Forms
 {
@@ -62,6 +63,9 @@ namespace ZOVReminder.Forms
             base.LoadFormData(appointment);
             canCheck = true;
 
+            //labelUser = appointment.CustomFields["ZOVReminderUsersID"].ToString();
+            labelUser.Text = Program.Security.UserName;
+
             if (appointment.CustomFields["ZOVReminderUsersID"] == null)
             {
                 labelUser.Text = "";
@@ -73,11 +77,17 @@ namespace ZOVReminder.Forms
                      (Program.Security.ZOVReminderUsersID != 0))
             {
                 canCheck = false;
+                using (GlobalbaseDataSet.ZOVReminderUsersDataTable zovReminderUsers =
+                        new GlobalbaseDataSet.ZOVReminderUsersDataTable())
+                {
+                    GlobalbaseDataSetTableAdapters.ZOVReminderUsersTableAdapter tableAdapter = new ZOVReminderUsersTableAdapter();
+                    tableAdapter.Fill(zovReminderUsers);
+                    labelUser.Text = zovReminderUsers.FindByZOVReminderUsersID((int)appointment.CustomFields["ZOVReminderUsersID"])["UserName"].ToString();
+                }
+
             }
 
 
-            //labelUser = appointment.CustomFields["ZOVReminderUsersID"].ToString();
-            labelUser.Text = Program.Security.UserName;
             _zovReminderUsersID = Program.Security.ZOVReminderUsersID;
             _zovReminderUsers = (appointment.CustomFields["ZOVReminderUsers"] == null? "" : appointment.CustomFields["ZOVReminderUsers"].ToString());
 

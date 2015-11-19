@@ -218,5 +218,10 @@ namespace ZOVReminder.Forms
             }
         }
 
+        private void miChats_Click(object sender, EventArgs e)
+        {
+            OpenChildForms(typeof(FrmChat), "Информационное поле");
+        }
+
     }
 }
