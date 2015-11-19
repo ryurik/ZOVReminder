@@ -839,6 +839,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmCalendar";
             this.Text = "ЗОВ";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCalendar_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.Resize += new System.EventHandler(this.frmCalendar_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).EndInit();

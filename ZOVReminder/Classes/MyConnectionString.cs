@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,27 @@ namespace ZOVReminder.Classes
             catch (Exception E)
             {
                 return E.Message;
+            }
+        }
+
+        public static SqlDataReader ExecuteQuery(string commandText)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(ConnectionString);
+                conn.Open();
+
+
+                SqlCommand comm = new SqlCommand(commandText, conn);
+
+                SqlDataReader dataReader = comm.ExecuteReader();
+
+//                if (!dataReader.HasRows)
+                return dataReader;
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
     }

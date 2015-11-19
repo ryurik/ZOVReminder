@@ -68,7 +68,10 @@ namespace ZOVReminder.Properties {
             get {
                 return ((string)(this["GlobalbaseConnectionString"]));
             }
-            set { this["GlobalbaseConnectionString"] = value; }
+            set
+            {
+                this["GlobalbaseConnectionString"] = value;
+            }
         }
     }
 }
