@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using DevExpress.XtraReports.Native;
 using ZOVReminder.Classes;
 
@@ -60,6 +61,7 @@ namespace ZOVReminder.Forms
                 toolStripStatusLabelConnectionString.Text = MyConnectionString.ConnectionString;
             }
             FrmMainMDI_Resize(sender, e);
+            timerMain.Enabled = true;
         }
         
 
