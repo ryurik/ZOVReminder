@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -9,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using DevExpress.XtraReports.Design;
 using DevExpress.XtraReports.Native;
 using ZOVReminder.Classes;
 
@@ -17,6 +19,7 @@ namespace ZOVReminder.Forms
     public partial class FrmMainMDI : Form
     {
         private bool exitApplicaton = false;
+        private DateTime _lastEditDate = DateTime.MinValue;
 
         [DllImport("user32.dll")]
         static extern int GetWindowLong(IntPtr hWnd, int nIndex);
@@ -61,21 +64,18 @@ namespace ZOVReminder.Forms
                 toolStripStatusLabelConnectionString.Text = MyConnectionString.ConnectionString;
             }
             FrmMainMDI_Resize(sender, e);
+
+            _lastEditDate = MyConnectionString.LastUpdateDateTime(Program.Security.ZOVReminderUsersID);
             timerMain.Enabled = true;
         }
         
 
         private void OpenChildForms(Type frmType, String caption, FormWindowState formWindowState = FormWindowState.Minimized)
         {
-            foreach (Form c in MdiChildren)
+            if (findWindow(frmType, caption) != null)
             {
-                if ((c.GetType() == frmType) && (c.Text.ToLower().Equals(caption.ToLower())))
-                {
-                    c.BringToFront();
-                    return;
-                }
+                return;
             }
-
 
             Type[] types = new Type[0];
             //types[0] = typeof(int);
@@ -191,8 +191,6 @@ namespace ZOVReminder.Forms
         private void CloseForm()
         {
             Close();
-            //            Application.Exit();
-            //Environment.Exit(0);
         }
 
         private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -223,6 +221,42 @@ namespace ZOVReminder.Forms
         private void miChats_Click(object sender, EventArgs e)
         {
             OpenChildForms(typeof(FrmChat), "Информационное поле");
+        }
+
+        private void timerMain_Tick(object sender, EventArgs e)
+        {
+            var frm = findWindow(typeof (frmCalendar), "Напоминание");
+            if (((Program.Security.ZOVReminderUsersID == 0)) || (frm != null))
+            {
+                return;
+            }
+            timerMain.Enabled = false;
+            if (_lastEditDate < MyConnectionString.LastUpdateDateTime(Program.Security.ZOVReminderUsersID))
+            {
+                OpenChildForms(typeof(frmCalendar), "Напоминание");                
+            }
+
+        }
+
+        private object findWindow(Type frmType, string caption, bool bringToFront = true)
+        {
+            foreach (Form c in MdiChildren)
+            {
+                if ((c.GetType() == frmType) && (c.Text.ToLower().Equals(caption.ToLower())))
+                {
+                    if (bringToFront)
+                    {
+                        c.BringToFront();
+                    }
+                    return c;
+                }
+            }
+            return null;
+        }
+
+        private void FrmMainMDI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
 
     }

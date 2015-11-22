@@ -23,7 +23,7 @@ namespace ZOVReminder
         private DateTime lastEditDate = DateTime.MinValue;
         private SqlConnection conn;
 
-
+/*
         private DateTime lastUpdateDateTime
         {
             get
@@ -57,17 +57,9 @@ namespace ZOVReminder
                 {
                     return DateTime.MinValue;
                 }
-/*
-                if ((dsGlobalbase != null) && (dsGlobalbase.ZOVAppointments != null) &&
-                    (dsGlobalbase.ZOVAppointments.Select(x => x.LastEditTime).Any()))
-                {
-                    return dsGlobalbase.ZOVAppointments.Select(x => x.LastEditTime).Max();
-                }
-                return DateTime.MinValue;
- //*/ 
             }
         }
-
+//*/
         public frmCalendar()
         {
             InitializeComponent();
@@ -76,8 +68,9 @@ namespace ZOVReminder
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            conn = new SqlConnection(MyConnectionString.ConnectionString);
-            conn.Open();
+            conn = MyConnectionString.Connection;
+            //conn = new SqlConnection(MyConnectionString.ConnectionString);
+            //conn.Open();
 
             mainSchedulerControl.Start = DateTime.Now;
             mainSchedulerControl.ActiveViewType = DevExpress.XtraScheduler.SchedulerViewType.FullWeek;
@@ -93,7 +86,7 @@ namespace ZOVReminder
             taZOVAppointments.FillByID(dsGlobalbase.ZOVAppointments, Program.Security.ZOVReminderUsersID);
 //            taZOVAppointments.Fill(dsGlobalbase.ZOVAppointments);
             taZOVResources.Fill(dsGlobalbase.ZOVResources);
-            lastEditDate = lastUpdateDateTime;
+            lastEditDate = MyConnectionString.LastUpdateDateTime(Program.Security.ZOVReminderUsersID);
             timerMain.Start();
 
 
@@ -131,7 +124,7 @@ namespace ZOVReminder
         private void timerMain_Tick(object sender, EventArgs e)
         {
             timerMain.Enabled = false;
-            if (lastEditDate < lastUpdateDateTime /*globalbaseDataSet.ZOVAppointments.Select(x => x.LastEditTime).Max()*/)
+            if (lastEditDate < MyConnectionString.LastUpdateDateTime(Program.Security.ZOVReminderUsersID) /*globalbaseDataSet.ZOVAppointments.Select(x => x.LastEditTime).Max()*/)
             {
                 newDs.ZOVAppointments.Clear();
                 newDs.ZOVAppointments.AcceptChanges();
@@ -174,7 +167,7 @@ namespace ZOVReminder
                     }
                 }
                 //lastEditDate = globalbaseDataSet.ZOVAppointments.Select(x => x.LastEditTime).Max();
-                lastEditDate = lastUpdateDateTime;
+                lastEditDate = MyConnectionString.LastUpdateDateTime(Program.Security.ZOVReminderUsersID);
             }
             timerMain.Enabled = true;
         }
@@ -251,7 +244,21 @@ namespace ZOVReminder
 
         private void frmCalendar_FormClosed(object sender, FormClosedEventArgs e)
         {
-            conn.Close();
+            //conn.Close();
+            //if (e.CloseReason == CloseReason.ApplicationExitCall)
+        }
+
+        public override void CheckForChanges()
+        {
+        }
+
+        private void frmCalendar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason != CloseReason.MdiFormClosing)
+            {
+                e.Cancel = true;
+                this.WindowState = FormWindowState.Minimized;
+            }
         }
 
     }

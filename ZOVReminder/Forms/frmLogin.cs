@@ -13,12 +13,12 @@ using ZOVReminder.Classes;
 
 namespace ZOVReminder
 {
-    public partial class frmLogin : Form
+    public partial class FrmLogin : Form
     {
         private int _tryAmount = 3;
         private bool bAllowToClose = false;
         
-        public frmLogin()
+        public FrmLogin()
         {
             InitializeComponent();
             FillComboBox();

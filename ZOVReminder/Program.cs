@@ -21,7 +21,7 @@ namespace ZOVReminder
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 #if DEBUG
-            Application.Run(new frmLogin());
+            Application.Run(new FrmLogin());
             Application.Run(new FrmMainMDI());
             //Application.Run(new frmMain());
 #else

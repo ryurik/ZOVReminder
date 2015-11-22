@@ -1,6 +1,6 @@
 ﻿namespace ZOVReminder
 {
-    partial class frmLogin
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.panelControlLeft = new DevExpress.XtraEditors.PanelControl();
             this.pictureEdit = new DevExpress.XtraEditors.PictureEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();

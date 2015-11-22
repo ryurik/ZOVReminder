@@ -56,8 +56,7 @@ namespace ZOVReminder.Forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            CheckForChanges();
-            Close();
+            CloseForm();
         }
 
         public virtual void CheckForChanges()
@@ -66,6 +65,12 @@ namespace ZOVReminder.Forms
 
         public virtual void UpdateData()
         {
+        }
+
+        public virtual void CloseForm()
+        {
+            CheckForChanges();
+            Close();
         }
 
         private void FrmBase_Resize(object sender, EventArgs e)
