@@ -150,6 +150,12 @@ namespace ZOVReminder.Forms
             // Clear all appointments for UnCheked, must clear Trigger
             // MyConnectionString.ExecuteScalarQuery(String.Format("EXEC SP_ClearAppointmentsForUsers @UniqueID = {0};", appointment.Id));
             // if we try to change foreign appointment
+
+            if ((tbSubject.Text == "") && (MessageBox.Show("Поле Тема не заполнено, продолжить?", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No))
+            {
+                return false;
+            }
+
             if ((Program.Security.ZOVReminderUsersID != 0) && (appointment.CustomFields["ZOVReminderUsersID"] != null) && (appointment.CustomFields["ZOVReminderUsersID"].ToString() != Program.Security.ZOVReminderUsersID.ToString()))
             {
                 return false;
@@ -194,7 +200,20 @@ namespace ZOVReminder.Forms
             string result = builder.ToString().Trim(' ');
 
             appointment.CustomFields["ZOVReminderUsersID"] = _zovReminderUsersID; //Program.Security.ZOVReminderUsersID;
-            appointment.CustomFields["ZOVReminderUsers"] = result; 
+            appointment.CustomFields["ZOVReminderUsers"] = result;
+            if (result == "")
+            {
+                if (MessageBox.Show("Список получателей пуст, продолжить?", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==
+                    DialogResult.Yes)
+                {
+                    return base.SaveFormData(appointment);
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
             return base.SaveFormData(appointment);
         }
         /// <summary>
@@ -248,6 +267,11 @@ namespace ZOVReminder.Forms
             {
                 e.State = e.PrevState;
             }
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
