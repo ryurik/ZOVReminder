@@ -64,6 +64,12 @@
             this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.bsSP_GetTreeList = new System.Windows.Forms.BindingSource(this.components);
             this.taSP_GetTreeList = new ZOVReminder.GlobalbaseDataSetTableAdapters.SP_GetTreeListTableAdapter();
+            this.colAdvancePaynemt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCompleted = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFinalPayment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvoiced = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPaid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colShiped = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).BeginInit();
             this.panelControlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlMain)).BeginInit();
@@ -86,33 +92,32 @@
             // 
             // panelControlBottom
             // 
-            this.panelControlBottom.Location = new System.Drawing.Point(0, 381);
-            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.panelControlBottom.Size = new System.Drawing.Size(1408, 51);
+            this.panelControlBottom.Location = new System.Drawing.Point(0, 399);
+            this.panelControlBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelControlBottom.Size = new System.Drawing.Size(1020, 33);
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(773, 8);
-            this.btnApply.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
+            this.btnApply.Location = new System.Drawing.Point(814, 5);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(1095, 8);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
+            this.btnClose.Location = new System.Drawing.Point(925, 5);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             // 
             // panelControlMain
             // 
             this.panelControlMain.Controls.Add(this.gridControl);
-            this.panelControlMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panelControlMain.Size = new System.Drawing.Size(1400, 342);
+            this.panelControlMain.Margin = new System.Windows.Forms.Padding(3);
+            this.panelControlMain.Size = new System.Drawing.Size(1014, 371);
             // 
             // tabMain
             // 
-            this.tabMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabMain.SelectedTabPage = this.pageMain;
+            this.tabMain.Margin = new System.Windows.Forms.Padding(1);
             this.tabMain.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
-            this.tabMain.Size = new System.Drawing.Size(1408, 381);
+            this.tabMain.Size = new System.Drawing.Size(1020, 399);
             this.tabMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.pageTree});
             this.tabMain.Controls.SetChildIndex(this.pageTree, 0);
@@ -120,8 +125,8 @@
             // 
             // pageMain
             // 
-            this.pageMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pageMain.Size = new System.Drawing.Size(1400, 342);
+            this.pageMain.Margin = new System.Windows.Forms.Padding(1);
+            this.pageMain.Size = new System.Drawing.Size(1014, 371);
             this.pageMain.Text = "Пользователи";
             // 
             // gridControl
@@ -129,12 +134,10 @@
             this.gridControl.DataSource = this.bsZOVReminderUsers;
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl.EmbeddedNavigator.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsZOVReminderUsers, "ZOVReminderUsersID", true));
-            this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl.Location = new System.Drawing.Point(2, 2);
             this.gridControl.MainView = this.gridView;
-            this.gridControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(1396, 338);
+            this.gridControl.Size = new System.Drawing.Size(1010, 367);
             this.gridControl.TabIndex = 2;
             this.gridControl.UseEmbeddedNavigator = true;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -167,7 +170,13 @@
             this.colLastEditTime,
             this.colReadOnly,
             this.colSendToAll,
-            this.colEnabled});
+            this.colEnabled,
+            this.colAdvancePaynemt,
+            this.colCompleted,
+            this.colFinalPayment,
+            this.colInvoiced,
+            this.colPaid,
+            this.colShiped});
             this.gridView.GridControl = this.gridControl;
             this.gridView.Name = "gridView";
             this.gridView.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
@@ -290,8 +299,9 @@
             // pageTree
             // 
             this.pageTree.Controls.Add(this.splitTree);
+            this.pageTree.Margin = new System.Windows.Forms.Padding(2);
             this.pageTree.Name = "pageTree";
-            this.pageTree.Size = new System.Drawing.Size(1400, 342);
+            this.pageTree.Size = new System.Drawing.Size(613, 228);
             this.pageTree.Text = "Дерево";
             // 
             // splitTree
@@ -299,6 +309,7 @@
             this.splitTree.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1;
             this.splitTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitTree.Location = new System.Drawing.Point(0, 0);
+            this.splitTree.Margin = new System.Windows.Forms.Padding(2);
             this.splitTree.Name = "splitTree";
             this.splitTree.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.splitTree.Panel1.Controls.Add(this.gridTreeUsers);
@@ -306,7 +317,7 @@
             this.splitTree.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.splitTree.Panel2.Controls.Add(this.treeListUsers);
             this.splitTree.Panel2.Text = "Panel2";
-            this.splitTree.Size = new System.Drawing.Size(1400, 342);
+            this.splitTree.Size = new System.Drawing.Size(613, 228);
             this.splitTree.SplitterPosition = 456;
             this.splitTree.TabIndex = 1;
             // 
@@ -315,12 +326,10 @@
             this.gridTreeUsers.DataSource = this.bsZOVReminderUsers;
             this.gridTreeUsers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridTreeUsers.EmbeddedNavigator.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsZOVReminderUsers, "ZOVReminderUsersID", true));
-            this.gridTreeUsers.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridTreeUsers.Location = new System.Drawing.Point(0, 0);
             this.gridTreeUsers.MainView = this.vwUsersForTree;
-            this.gridTreeUsers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridTreeUsers.Name = "gridTreeUsers";
-            this.gridTreeUsers.Size = new System.Drawing.Size(680, 338);
+            this.gridTreeUsers.Size = new System.Drawing.Size(452, 224);
             this.gridTreeUsers.TabIndex = 3;
             this.gridTreeUsers.UseEmbeddedNavigator = true;
             this.gridTreeUsers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -399,6 +408,7 @@
             this.treeListUsers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeListUsers.KeyFieldName = "Id";
             this.treeListUsers.Location = new System.Drawing.Point(0, 0);
+            this.treeListUsers.Margin = new System.Windows.Forms.Padding(2);
             this.treeListUsers.Name = "treeListUsers";
             this.treeListUsers.OptionsBehavior.PopulateServiceColumns = true;
             this.treeListUsers.OptionsLayout.AddNewColumns = false;
@@ -406,7 +416,7 @@
             this.treeListUsers.OptionsSelection.UseIndicatorForSelection = true;
             this.treeListUsers.OptionsView.ShowCheckBoxes = true;
             this.treeListUsers.ParentFieldName = "ParentId";
-            this.treeListUsers.Size = new System.Drawing.Size(705, 338);
+            this.treeListUsers.Size = new System.Drawing.Size(148, 224);
             this.treeListUsers.TabIndex = 0;
             this.treeListUsers.AfterCheckNode += new DevExpress.XtraTreeList.NodeEventHandler(this.treeListUsers_AfterCheckNode);
             // 
@@ -446,14 +456,62 @@
             // 
             this.taSP_GetTreeList.ClearBeforeFill = true;
             // 
+            // colAdvancePaynemt
+            // 
+            this.colAdvancePaynemt.Caption = "Предв. расчет";
+            this.colAdvancePaynemt.FieldName = "AdvancePaynemt";
+            this.colAdvancePaynemt.Name = "colAdvancePaynemt";
+            this.colAdvancePaynemt.Visible = true;
+            this.colAdvancePaynemt.VisibleIndex = 9;
+            // 
+            // colCompleted
+            // 
+            this.colCompleted.Caption = "Комплектация";
+            this.colCompleted.FieldName = "Completed";
+            this.colCompleted.Name = "colCompleted";
+            this.colCompleted.Visible = true;
+            this.colCompleted.VisibleIndex = 10;
+            // 
+            // colFinalPayment
+            // 
+            this.colFinalPayment.Caption = "Оконч. расчет";
+            this.colFinalPayment.FieldName = "FinalPayment";
+            this.colFinalPayment.Name = "colFinalPayment";
+            this.colFinalPayment.Visible = true;
+            this.colFinalPayment.VisibleIndex = 11;
+            // 
+            // colInvoiced
+            // 
+            this.colInvoiced.Caption = "Счет фактура";
+            this.colInvoiced.FieldName = "Invoiced";
+            this.colInvoiced.Name = "colInvoiced";
+            this.colInvoiced.Visible = true;
+            this.colInvoiced.VisibleIndex = 12;
+            // 
+            // colPaid
+            // 
+            this.colPaid.Caption = "Оплачено";
+            this.colPaid.FieldName = "Paid";
+            this.colPaid.Name = "colPaid";
+            this.colPaid.Visible = true;
+            this.colPaid.VisibleIndex = 13;
+            // 
+            // colShiped
+            // 
+            this.colShiped.Caption = "Отгружено";
+            this.colShiped.FieldName = "Shiped";
+            this.colShiped.Name = "colShiped";
+            this.colShiped.Visible = true;
+            this.colShiped.VisibleIndex = 14;
+            // 
             // FrmUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1408, 432);
-            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.ClientSize = new System.Drawing.Size(1020, 432);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmUsers";
-            this.Text = "Пользователи";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frmUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).EndInit();
             this.panelControlBottom.ResumeLayout(false);
@@ -514,5 +572,11 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
         private System.Windows.Forms.BindingSource bsSP_GetTreeList;
         private GlobalbaseDataSetTableAdapters.SP_GetTreeListTableAdapter taSP_GetTreeList;
+        private DevExpress.XtraGrid.Columns.GridColumn colAdvancePaynemt;
+        private DevExpress.XtraGrid.Columns.GridColumn colCompleted;
+        private DevExpress.XtraGrid.Columns.GridColumn colFinalPayment;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoiced;
+        private DevExpress.XtraGrid.Columns.GridColumn colPaid;
+        private DevExpress.XtraGrid.Columns.GridColumn colShiped;
     }
 }

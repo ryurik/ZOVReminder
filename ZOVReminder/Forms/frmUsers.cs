@@ -106,7 +106,9 @@ namespace ZOVReminder.Forms
             string result = builder.ToString();
             // Remove the final delimiter
             result = result.TrimEnd(Environment.NewLine.ToCharArray());
-            MessageBox.Show((result != "" ? result : "Никого не выбрал чтоли"));
+            if (tabMain.SelectedTabPageIndex == 1)
+                MessageBox.Show((result != "" ? result : "Никого не выбрал чтоли"));
+
         }
     }
 }
